@@ -16,12 +16,13 @@ export function getAnalyticsConsent(): AnalyticsConsent | null {
 
 export function setAnalyticsConsent(consent: AnalyticsConsent) {
   window.localStorage.setItem(CONSENT_STORAGE_KEY, consent);
+  window.dispatchEvent(new CustomEvent("analytics-consent-changed", { detail: consent }));
 
   if (consent === "granted") {
+    initializeAnalytics();
     if (isInitialized) {
       posthog.opt_in_capturing();
     }
-    initializeAnalytics();
     capturePageView(window.location.hash.slice(1) || "/");
     return;
   }
