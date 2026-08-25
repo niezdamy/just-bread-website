@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed, onMounted, onUnmounted, ref } from "vue";
 
-import { getAnalyticsConsent, setAnalyticsConsent } from "./analytics";
+import { getAnalyticsConsent, setAnalyticsConsent, type AnalyticsConsent } from "./analytics";
 
 const consent = ref(getAnalyticsConsent());
 const showConsentBanner = computed(() => consent.value === null);
@@ -10,6 +10,18 @@ function handleConsent(value: "granted" | "denied") {
   setAnalyticsConsent(value);
   consent.value = value;
 }
+
+function onConsentChanged(event: Event) {
+  consent.value = (event as CustomEvent<AnalyticsConsent>).detail;
+}
+
+onMounted(() => {
+  window.addEventListener("analytics-consent-changed", onConsentChanged);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("analytics-consent-changed", onConsentChanged);
+});
 </script>
 
 <template>
