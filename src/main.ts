@@ -7,6 +7,7 @@ import App from "./App.vue";
 import en from "./locales/en.json";
 import pl from "./locales/pl.json";
 
+import { capturePageView, initializeAnalytics } from "./analytics";
 import { router } from "./router";
 
 const i18n = createI18n({
@@ -16,6 +17,11 @@ const i18n = createI18n({
     en,
     pl,
   },
+});
+
+initializeAnalytics();
+router.afterEach((to) => {
+  capturePageView(to.fullPath);
 });
 
 createApp(App).use(i18n).use(router).mount("#app");
