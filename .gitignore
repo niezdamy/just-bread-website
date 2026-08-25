@@ -1,3 +1,23 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+*.local
+
+# Vite / Vue
+.vite/
+vite.config.ts.timestamp-*
+
+# Vue devtools
+.vue-devtools/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
 ### macOS
 # Finder metadata
 .DS_Store
@@ -6,7 +26,8 @@
 ._*
 
 # Custom folder icons
-Icon
+Icon
+
 
 # Volume root files
 .DocumentRevisions-V100
