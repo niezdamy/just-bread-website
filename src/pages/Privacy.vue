@@ -1,27 +1,33 @@
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { onBeforeUnmount, onMounted, ref } from "vue";
 
-import { setAnalyticsConsent, type AnalyticsConsent } from "../analytics";
+import { getAnalyticsConsent, setAnalyticsConsent, type AnalyticsConsent } from "../analytics";
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n({
   inheritLocale: true
 })
 
-const analyticsConsent = ref<AnalyticsConsent | null>(null);
+const analyticsConsent = ref<AnalyticsConsent | null>(getAnalyticsConsent());
 
 function updateAnalyticsConsent(value: AnalyticsConsent) {
   setAnalyticsConsent(value);
   analyticsConsent.value = value;
 }
+
+const onConsentChanged = (event: Event) => {
+  analyticsConsent.value = (event as CustomEvent<AnalyticsConsent>).detail;
+};
+
+onMounted(() => window.addEventListener("analytics-consent-changed", onConsentChanged));
+onBeforeUnmount(() => window.removeEventListener("analytics-consent-changed", onConsentChanged));
 </script>
 
 <template>
   <h1>Privacy policy page 🥖</h1>
   <h2>Translated: {{ t('title') }} </h2>
   <section class="m-8 max-w-2xl">
-    <h2 class="text-2xl font-semibold">Analityka</h2>
     <p class="mt-3">
       Za Twoją zgodą używamy PostHog do pomiaru odsłon podstron i kliknięć w odnośniki do sklepów z aplikacjami.
       Dane służą wyłącznie do analizy ruchu i ulepszania strony.
