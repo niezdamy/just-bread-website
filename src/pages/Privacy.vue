@@ -29,8 +29,7 @@ onBeforeUnmount(() => window.removeEventListener("analytics-consent-changed", on
   <h2>Translated: {{ t('title') }} </h2>
   <section class="m-8 max-w-2xl">
     <p class="mt-3">
-      Za Twoją zgodą używamy PostHog do pomiaru odsłon podstron i kliknięć w odnośniki do sklepów z aplikacjami.
-      Dane służą wyłącznie do analizy ruchu i ulepszania strony.
+      {{ t('analytics_description') }}
     </p>
     <div class="mt-4 flex flex-wrap gap-3">
       <button
@@ -38,18 +37,18 @@ onBeforeUnmount(() => window.removeEventListener("analytics-consent-changed", on
         class="border border-gray-700 px-4 py-2 text-sm font-semibold"
         @click="updateAnalyticsConsent('denied')"
       >
-        Wyłącz analitykę
+        {{ t('analytics_disable') }}
       </button>
       <button
         type="button"
         class="bg-gold px-4 py-2 text-sm font-semibold text-gray_dark"
         @click="updateAnalyticsConsent('granted')"
       >
-        Włącz analitykę
+        {{ t('analytics_enable') }}
       </button>
     </div>
     <p v-if="analyticsConsent" class="mt-3 text-sm">
-      {{ analyticsConsent === 'granted' ? 'Analityka jest włączona.' : 'Analityka jest wyłączona.' }}
+      {{ analyticsConsent === 'granted' ? t('analytics_status_enabled') : t('analytics_status_disabled') }}
     </p>
   </section>
 
@@ -62,6 +61,16 @@ onBeforeUnmount(() => window.removeEventListener("analytics-consent-changed", on
 <i18n lang="yaml">
     en:
       title: Privacy policy page
+      analytics_description: With your consent, we use PostHog to measure page views and clicks on app store links. Data is used solely for traffic analysis and site improvement.
+      analytics_disable: Disable analytics
+      analytics_enable: Enable analytics
+      analytics_status_enabled: Analytics is enabled.
+      analytics_status_disabled: Analytics is disabled.
     pl:
       title: Polityka prywatności
+      analytics_description: Za Twoją zgodą używamy PostHog do pomiaru odsłon podstron i kliknięć w odnośniki do sklepów z aplikacjami. Dane służą wyłącznie do analizy ruchu i ulepszania strony.
+      analytics_disable: Wyłącz analitykę
+      analytics_enable: Włącz analitykę
+      analytics_status_enabled: Analityka jest włączona.
+      analytics_status_disabled: Analityka jest wyłączona.
 </i18n>
