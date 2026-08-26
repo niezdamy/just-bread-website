@@ -22,7 +22,7 @@ export default tseslint.config(
     files: ['**/*.ts'],
   })),
   {
-    files: ['**/*.ts'],
+    files: ['**/*.{ts,vue}'],
     languageOptions: {
       globals: globals.browser,
     },
