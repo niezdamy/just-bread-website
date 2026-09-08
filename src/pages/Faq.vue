@@ -1,67 +1,64 @@
 
 <script setup lang="ts">
+import { useI18n } from "vue-i18n";
+import NavigationBar from "../components/NavigationBar.vue";
 
-import { useI18n } from 'vue-i18n'
-import NavigationBar from '../components/NavigationBar.vue'
-
-const { t } = useI18n({
-  inheritLocale: true
-})
-
+const { t } = useI18n({ inheritLocale: true });
 </script>
 
 <template>
-  <div class="flex flex-col bg-whtite_gray ">
-
-    <div class="h-48 bg-[url('./assets/faq_1.png')] bg-center bg-cover rounded-3xl ">
-      <div class="flex flex-col w-full h-full justify-center items-center text-white">
-        <img class="w-44 object-scale-down" src="../assets/Logo_Just_Bread.svg" />
+  <main class="min-h-screen bg-whtite_gray text-gray_dark">
+    <header class="bg-gold px-6 py-14 text-center text-gray_dark sm:py-20">
+      <p class="text-sm font-semibold uppercase tracking-widest">Just Bread</p>
+      <h1 class="mt-3 text-3xl font-semibold sm:text-4xl">{{ t("title") }}</h1>
+    </header>
+    <section class="mx-auto max-w-3xl px-6 py-12 sm:py-16" aria-labelledby="faq-heading">
+      <h2 id="faq-heading" class="text-2xl font-semibold text-gray_dark">{{ t("heading") }}</h2>
+      <div class="mt-8 divide-y divide-gray-300 border-y border-gray-300">
+        <article v-for="item in ['app', 'languages', 'recipes', 'recipe_help', 'app_help']" :key="item" class="py-6">
+          <h3 class="font-semibold text-gray_dark">{{ t(`${item}_question`) }}</h3>
+          <p class="mt-2">{{ t(`${item}_answer`) }}<a v-if="item.endsWith('help')" class="ml-1 font-semibold text-gray_dark underline" href="mailto:justbreadapp@gmail.com">justbreadapp@gmail.com</a></p>
+        </article>
       </div>
-    </div>
-
-    <div class="flex w-full justify-center">
-      <p class="text text-3xl m-8"> {{ t('title') }}</p>
-    </div>
-
-    <div class="m-16 my-8">
-      <p class="text text-xl  font-semibold "> {{ t('h_1') }}</p>
-    </div>
-
-    <navigation-bar></navigation-bar>
-  </div>
-
-
-
+      <section class="mt-12 border-l-4 border-gold pl-5" aria-labelledby="contact-heading">
+        <h2 id="contact-heading" class="text-xl font-semibold text-gray_dark">{{ t("contact_heading") }}</h2>
+        <p class="mt-2">{{ t("contact_text") }}</p>
+        <a class="mt-3 inline-block font-semibold text-gray_dark underline" href="mailto:justbreadapp@gmail.com">justbreadapp@gmail.com</a>
+      </section>
+    </section>
+    <NavigationBar />
+  </main>
 </template>
 
-<style scoped>
-
-</style>
-
 <i18n lang="yaml">
-    en:
-      title: Frequently asked questions
-      h_1: About Just Bread
-      h_1_question_1: What is Just Bread?
-      h_1_question_2: Is app free? 
-      h_1_question_3: How can i report a bug?
-      h_1_question_4: Do i need to create account to use app?
-      h_2: About receipes
-      h_3: General questions
-      faq: FAQ
-      contact: Kontakt
-      privacyPolicy: Polityka Prywatności
-
-    pl:
-      title: Najczęsciej zadawane pytania
-      h_1: O Just Bread
-      h_1_question_1: Czym jest Just Bread?
-      h_1_question_2: Czy aplikacja jest darmowa?
-      h_1_question_3: Jak mogę zgłosić błąd?
-      h_1_question_4: Czy potrzebuję utworzyć konto aby korzystać z aplikacji?
-      h_2: About receipes
-      h_3: General questions
-      faq: FAQ
-      contact: Kontakt
-      privacyPolicy: Polityka Prywatności
+en:
+  title: Frequently asked questions
+  heading: FAQ
+  app_question: Where can I find the app?
+  app_answer: The app is available in the Apple App Store and Google Play.
+  languages_question: What languages are supported?
+  languages_answer: Currently supported languages are Polish and English.
+  recipes_question: Will there be more recipes in the future?
+  recipes_answer: Yes, future releases will include more recipes.
+  recipe_help_question: A recipe is unclear. Where can I find help?
+  recipe_help_answer: Please email us at
+  app_help_question: The app is not working. What should I do?
+  app_help_answer: Please email us with the details at
+  contact_heading: Need more help?
+  contact_text: Feel free to contact us.
+pl:
+  title: Najczesciej zadawane pytania
+  heading: FAQ
+  app_question: Gdzie znajde aplikacje?
+  app_answer: Aplikacja jest dostepna w Apple App Store i Google Play.
+  languages_question: Jakie jezyki sa obslugiwane?
+  languages_answer: Obecnie aplikacja obsluguje jezyk polski i angielski.
+  recipes_question: Czy w przyszlosci pojawia sie kolejne przepisy?
+  recipes_answer: Tak, w kolejnych wersjach pojawia sie nowe przepisy.
+  recipe_help_question: Przepis jest niejasny. Gdzie moge znalezc pomoc?
+  recipe_help_answer: Napisz do nas na adres
+  app_help_question: Aplikacja nie dziala. Co powinienem zrobic?
+  app_help_answer: Napisz do nas ze szczegolami na adres
+  contact_heading: Potrzebujesz wiecej pomocy?
+  contact_text: Skontaktuj sie z nami.
 </i18n>
