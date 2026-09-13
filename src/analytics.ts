@@ -5,8 +5,18 @@ export type AnalyticsConsent = "granted" | "denied";
 const CONSENT_STORAGE_KEY = "just-bread-analytics-consent";
 const projectApiKey = import.meta.env.VITE_POSTHOG_KEY;
 const apiHost = import.meta.env.VITE_POSTHOG_HOST ?? "https://eu.i.posthog.com";
+const googleAnalyticsMeasurementId = import.meta.env.VITE_GA_MEASUREMENT_ID;
 
 let isInitialized = false;
+let isGoogleAnalyticsInitialized = false;
+
+declare global {
+  interface Window {
+    dataLayer?: unknown[];
+    gtag?: (...arguments_: unknown[]) => void;
+    [key: `ga-disable-${string}`]: boolean | undefined;
+  }
+}
 
 export function getAnalyticsConsent(): AnalyticsConsent | null {
   const value = window.localStorage.getItem(CONSENT_STORAGE_KEY);
@@ -30,37 +40,72 @@ export function setAnalyticsConsent(consent: AnalyticsConsent) {
   if (isInitialized) {
     posthog.opt_out_capturing();
   }
+
+  if (googleAnalyticsMeasurementId) {
+    window[`ga-disable-${googleAnalyticsMeasurementId}`] = true;
+  }
 }
 
 export function initializeAnalytics() {
-  if (isInitialized || !projectApiKey || getAnalyticsConsent() !== "granted") {
+  if (getAnalyticsConsent() !== "granted") {
     return;
   }
 
-  posthog.init(projectApiKey, {
-    api_host: apiHost,
-    defaults: "2026-05-30",
-    capture_pageview: false,
-    capture_pageleave: true,
-  });
-  isInitialized = true;
+  if (!isInitialized && projectApiKey) {
+    posthog.init(projectApiKey, {
+      api_host: apiHost,
+      defaults: "2026-05-30",
+      capture_pageview: false,
+      capture_pageleave: true,
+    });
+    isInitialized = true;
+  }
+
+  initializeGoogleAnalytics();
+}
+
+function initializeGoogleAnalytics() {
+  if (isGoogleAnalyticsInitialized || !googleAnalyticsMeasurementId) {
+    return;
+  }
+
+  window.dataLayer ??= [];
+  window.gtag ??= (...arguments_: unknown[]) => {
+    window.dataLayer?.push(arguments_);
+  };
+  window[`ga-disable-${googleAnalyticsMeasurementId}`] = false;
+  window.gtag("js", new Date());
+  window.gtag("config", googleAnalyticsMeasurementId, { send_page_view: false });
+
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(googleAnalyticsMeasurementId)}`;
+  document.head.append(script);
+  isGoogleAnalyticsInitialized = true;
 }
 
 export function capturePageView(path: string) {
-  if (!isInitialized) {
-    return;
+  if (isInitialized) {
+    posthog.capture("$pageview", {
+      $current_url: window.location.href,
+      path,
+    });
   }
 
-  posthog.capture("$pageview", {
-    $current_url: window.location.href,
-    path,
-  });
+  if (isGoogleAnalyticsInitialized && googleAnalyticsMeasurementId) {
+    window.gtag?.("event", "page_view", {
+      page_location: window.location.href,
+      page_path: path,
+    });
+  }
 }
 
 export function captureEvent(eventName: string, properties?: Record<string, string>) {
-  if (!isInitialized) {
-    return;
+  if (isInitialized) {
+    posthog.capture(eventName, properties);
   }
 
-  posthog.capture(eventName, properties);
+  if (isGoogleAnalyticsInitialized && googleAnalyticsMeasurementId) {
+    window.gtag?.("event", eventName, properties);
+  }
 }
