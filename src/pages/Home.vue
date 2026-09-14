@@ -1,40 +1,52 @@
 
 <script setup lang="ts">
-
+import { useHead } from "@unhead/vue";
 import { useI18n } from 'vue-i18n'
 import DownloadButtons from '../components/DownloadButtons.vue'
 import NavigationBar from '../components/NavigationBar.vue'
+import { canonicalUrl } from "../seo";
 
 const { t } = useI18n({
   inheritLocale: true
 })
 
+useHead({
+  title: "Just Bread - domowe pieczenie chleba",
+  meta: [
+    { name: "description", content: "Just Bread to aplikacja z przepisami, kalkulatorem hydracji i wskazówkami do domowego pieczenia chleba." },
+    { property: "og:title", content: "Just Bread - domowe pieczenie chleba" },
+    { property: "og:description", content: "Przepisy i narzędzia, które prowadzą krok po kroku przez domowe pieczenie chleba." },
+    { property: "og:type", content: "website" },
+  ],
+  link: [{ rel: "canonical", href: canonicalUrl("/") }],
+});
+
 </script>
 
 <template>
-  <div class="flex flex-col bg-whtite_gray ">
+  <main class="flex flex-col bg-whtite_gray">
     <div class=" flex flex-col justify-between items-center content-center sm:flex-row ">
       <div class="sm:ml-32 ">
-        <img class="object-scale-down" src="../assets/Logo_Just_Bread.svg" />
-        <p class="mb-4 text-xl whitespace-pre-line">{{ t('welcome') }} </p>
+        <img class="object-scale-down" src="../assets/Logo_Just_Bread.svg" alt="Just Bread" width="238" height="104" />
+        <h1 class="mb-4 text-xl whitespace-pre-line">{{ t('welcome') }}</h1>
         <download-buttons></download-buttons>
       </div>
-      <img class="object-scale-down max-h-96 my-8 sm:max-h-full " src="../assets/home_1.png" />
+      <img class="object-scale-down max-h-96 my-8 sm:max-h-full" src="../assets/home_1.png" alt="Ekran aplikacji Just Bread z przepisami na domowe pieczywo" width="440" height="700" fetchpriority="high" />
     </div>
 
-    <img class="object-scale-down" src="../assets/home_2.png" />
+    <img class="object-scale-down" src="../assets/home_2.png" alt="Domowy chleb na zakwasie" width="1360" height="440" loading="lazy" />
 
     <div class="flex flex-col w-full justify-center sm:flex-row">
       <div class="flex flex-col m-16 mt-8 mb-0 justify-center">
         <div class="flex flex-col bg-gray p-12 rounded-3xl justify-center items-center">
-          <img class="object-scale-down" src="../assets/home_phone_1.png" />
+          <img class="object-scale-down" src="../assets/home_phone_1.png" alt="Ekran aplikacji z listą sprawdzonych przepisów" width="330" height="670" loading="lazy" />
           <p class="mt-8 text-center text-xl font-semibold">{{ t('phone_screen_1_description') }}</p>
         </div>
-        <img class="object-scale-down my-4" src="../assets/home_3.png" />
+        <img class="object-scale-down my-4" src="../assets/home_3.png" alt="Przygotowywanie domowego pieczywa" width="440" height="700" loading="lazy" />
 
         <div class="flex flex-col w-full p-4 bg-gold rounded-3xl">
           <div class="flex items-center">
-            <img class="object-scale-down m-2 w-12 h-12" src="../assets/logo_white.svg" />
+            <img class="object-scale-down m-2 w-12 h-12" src="../assets/logo_white.svg" alt="" width="48" height="48" loading="lazy" />
             <div class="flex mr-4 my-2 w-full justify-between text-lg font-semibold text-gray_dark">
               <p class="">JUSTBREAD</p>
               <p>{{ t('modal1_text3') }}</p>
@@ -47,39 +59,39 @@ const { t } = useI18n({
       </div>
 
       <div class="flex flex-col mt-8 mb-0 ">
-        <p class="pb-8 font-semibold text-5xl whitespace-pre-wrap">{{ t('text_1') }}</p>
+        <h2 class="pb-8 font-semibold text-5xl whitespace-pre-wrap">{{ t('text_1') }}</h2>
         <p class="pt-0 text-2xl whitespace-pre-wrap">{{ t('text_2') }}</p>
 
-        <img class="object-scale-down my-24" src="../assets/home_4.png" />
+        <img class="object-scale-down my-24" src="../assets/home_4.png" alt="Wypiekanie chleba w domu" width="555" height="350" loading="lazy" />
 
         <div class="flex w-full justify-center mb-8 sm:justify-end sm:mb-0">
           <div class="flex flex-col bg-gray p-12 rounded-3xl justify-center items-center">
-            <img class="object-scale-down" src="../assets/home_phone_2.png" />
+            <img class="object-scale-down" src="../assets/home_phone_2.png" alt="Baza wiedzy o pieczeniu chleba w aplikacji" width="330" height="670" loading="lazy" />
             <p class="mt-8 text-center text-xl font-semibold">{{ t('phone_screen_2_description') }}</p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="h-96 mb-8  bg-[url('./assets/home_5.jpeg')] bg-center bg-cover rounded-3xl ">
+    <section class="h-96 mb-8 bg-[url('./assets/home_5.avif')] bg-center bg-cover rounded-3xl" aria-label="Pieczenie chleba z Just Bread">
       <div class="flex flex-col w-full h-full justify-center items-center text-white">
         <p class="text-xl font-semibold">{{ t('modal7_text_1') }}</p>
         <p class="my-2 text-4xl font-semibold">{{ t('modal7_text_2') }}</p>
         <download-buttons></download-buttons>
       </div>
-    </div>
+    </section>
 
     <div class="flex mb-8 justify-between w-full overflow-auto ">
       <div class="flex flex-col bg-gray m-2 p-8 rounded-3xl justify-center items-center">
-        <img class="object-scale-down" src="../assets/home_phone_3.png" />
+        <img class="object-scale-down" src="../assets/home_phone_3.png" alt="Kalkulator hydracji w aplikacji Just Bread" width="330" height="670" loading="lazy" />
         <p class="mt-8 text-center text-xl font-semibold">{{ t('phone_screen_3_description') }}</p>
       </div>
       <div class="flex flex-col bg-gray m-2 p-8 rounded-3xl justify-center items-center">
-        <img class="object-scale-down" src="../assets/home_phone_4.png" />
+        <img class="object-scale-down" src="../assets/home_phone_4.png" alt="Minutnik do pieczenia w aplikacji Just Bread" width="330" height="670" loading="lazy" />
         <p class="mt-8 text-center text-xl font-semibold">{{ t('phone_screen_4_description') }}</p>
       </div>
       <div class="flex flex-col bg-gray m-2 p-8 rounded-3xl justify-center items-center">
-        <img class="object-scale-down" src="../assets/home_phone_5.png" />
+        <img class="object-scale-down" src="../assets/home_phone_5.png" alt="Przepis na zdrowe pieczywo w aplikacji Just Bread" width="330" height="670" loading="lazy" />
         <p class="mt-8 text-center text-xl font-semibold">{{ t('phone_screen_5_description') }}</p>
       </div>
     </div>
@@ -90,7 +102,7 @@ const { t } = useI18n({
 
     <div class="flex flex-col my-8 justify-center text-center sm:flex-row">
 
-      <img class="object-scale-down" src="../assets/home_6.png" />
+      <img class="object-scale-down" src="../assets/home_6.png" alt="Domowe wypieki przygotowane z Just Bread" width="555" height="416" loading="lazy" />
 
       <div class="flex flex-col ml-4 bg-gold p-8 px-16 rounded-3xl justify-center">
         <p class="text-3xl font-semibold">{{ t('modal4_text_1') }} </p>
@@ -117,21 +129,21 @@ const { t } = useI18n({
         <download-buttons class="pb-8"></download-buttons>
       </div>
       <div class="flex flex-col bg-gray p-12  rounded-3xl justify-center items-center">
-        <img class="object-scale-down" src="../assets/home_phone_6.png" />
+        <img class="object-scale-down" src="../assets/home_phone_6.png" alt="Ekran główny aplikacji Just Bread" width="330" height="670" loading="lazy" />
         <p class="mt-8 text-center text-xl font-semibold">{{ t('phone_screen_6_description') }}</p>
       </div>
     </div>
 
     <div class="flex justify-between w-full overflow-auto scale-75 sm:scale-100 sm:my-8">
-      <img class="mx-2" src="../assets/home_7.png" />
-      <img class="mr-2" src="../assets/home_8.png" />
-      <img class="mr-2" src="../assets/home_9.png" />
-      <img class="mr-2" src="../assets/home_10.png" />
+      <img class="mx-2" src="../assets/home_7.png" alt="Przepis z aplikacji Just Bread" width="325" height="325" loading="lazy" />
+      <img class="mr-2" src="../assets/home_8.png" alt="Przepis z aplikacji Just Bread" width="325" height="325" loading="lazy" />
+      <img class="mr-2" src="../assets/home_9.png" alt="Przepis z aplikacji Just Bread" width="325" height="325" loading="lazy" />
+      <img class="mr-2" src="../assets/home_10.png" alt="Przepis z aplikacji Just Bread" width="325" height="325" loading="lazy" />
     </div>
 
     <navigation-bar></navigation-bar>
 
-  </div>
+  </main>
 
 
 

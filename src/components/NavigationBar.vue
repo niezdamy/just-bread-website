@@ -22,7 +22,7 @@ const { t } = useI18n({
       <p class="m-8" :class="$route.path == '/privacy' ? 'font-bold' : 'font-semibold'">{{ t('privacyPolicy') }}
       </p>
     </router-link>
-    <a href="https://www.instagram.com/justbreadapp/"> <img class="m-8" src="../assets/instagram.svg" /> </a>
+    <a href="https://www.instagram.com/justbreadapp/" aria-label="Just Bread na Instagramie"><img class="m-8" src="../assets/instagram.svg" alt="" width="22" height="22" loading="lazy" /></a>
   </div>
 </template>
 
