@@ -19,12 +19,20 @@ declare global {
 }
 
 export function getAnalyticsConsent(): AnalyticsConsent | null {
+  if (typeof window === "undefined") {
+    return null;
+  }
+
   const value = window.localStorage.getItem(CONSENT_STORAGE_KEY);
 
   return value === "granted" || value === "denied" ? value : null;
 }
 
 export function setAnalyticsConsent(consent: AnalyticsConsent) {
+  if (typeof window === "undefined") {
+    return;
+  }
+
   window.localStorage.setItem(CONSENT_STORAGE_KEY, consent);
   window.dispatchEvent(new CustomEvent("analytics-consent-changed", { detail: consent }));
 

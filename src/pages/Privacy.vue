@@ -1,13 +1,21 @@
 
 <script setup lang="ts">
+import { useHead } from "@unhead/vue";
 import { onBeforeUnmount, onMounted, ref } from "vue";
 import { useI18n } from "vue-i18n";
 
 import { getAnalyticsConsent, setAnalyticsConsent, type AnalyticsConsent } from "../analytics";
 import NavigationBar from "../components/NavigationBar.vue";
+import { canonicalUrl } from "../seo";
 
 const { t } = useI18n({ inheritLocale: true });
 const analyticsConsent = ref<AnalyticsConsent | null>(getAnalyticsConsent());
+
+useHead({
+  title: "Polityka prywatności | Just Bread",
+  meta: [{ name: "description", content: "Polityka prywatności aplikacji i strony internetowej Just Bread." }],
+  link: [{ rel: "canonical", href: canonicalUrl("/privacy") }],
+});
 
 function updateAnalyticsConsent(value: AnalyticsConsent) {
   setAnalyticsConsent(value);

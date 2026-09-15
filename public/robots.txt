@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://niezdamy.github.io/just-bread-website/sitemap.xml
