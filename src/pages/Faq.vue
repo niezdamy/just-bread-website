@@ -1,9 +1,17 @@
 
 <script setup lang="ts">
+import { useHead } from "@unhead/vue";
 import { useI18n } from "vue-i18n";
 import NavigationBar from "../components/NavigationBar.vue";
+import { canonicalUrl } from "../seo";
 
 const { t } = useI18n({ inheritLocale: true });
+
+useHead({
+  title: "FAQ | Just Bread",
+  meta: [{ name: "description", content: "Odpowiedzi na najczęstsze pytania o aplikację Just Bread i domowe pieczenie chleba." }],
+  link: [{ rel: "canonical", href: canonicalUrl("/faq") }],
+});
 </script>
 
 <template>
