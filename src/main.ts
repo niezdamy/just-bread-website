@@ -1,5 +1,5 @@
-import { createApp } from "vue";
 import { createI18n } from "vue-i18n";
+import { ViteSSG } from "vite-ssg";
 
 import "./style.css";
 import App from "./App.vue";
@@ -8,7 +8,7 @@ import en from "./locales/en.json";
 import pl from "./locales/pl.json";
 
 import { capturePageView, initializeAnalytics } from "./analytics";
-import { router } from "./router";
+import { routes } from "./router";
 
 const i18n = createI18n({
   legacy: false,
@@ -19,9 +19,17 @@ const i18n = createI18n({
   },
 });
 
-initializeAnalytics();
-router.afterEach((to) => {
-  capturePageView(to.fullPath);
-});
+export const createApp = ViteSSG(
+  App,
+  { routes, base: import.meta.env.BASE_URL },
+  ({ app, router }) => {
+    app.use(i18n);
 
-createApp(App).use(i18n).use(router).mount("#app");
+    if (!import.meta.env.SSR) {
+      initializeAnalytics();
+      router.afterEach((to) => {
+        capturePageView(to.fullPath);
+      });
+    }
+  },
+);
