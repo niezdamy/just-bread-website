@@ -1,5 +1,7 @@
 # Just Bread homepage
 
+Live site: [https://niezdamy.github.io/just-bread-website/](https://niezdamy.github.io/just-bread-website/)
+
 Implementation of UI created by Iwona Krzymyk [Figma](https://www.figma.com/file/wKzkSA3qykTvhYUZzB1Qis/Just-Bread-%7C-Iwona-Krzymyk?node-id=49%3A346) for Just Bread app.
 
 ## Tech stack:
@@ -19,6 +21,20 @@ You can reach the app under 5137 port:
 
 ```
 http://127.0.0.1:5173/#/
+```
+
+## Tests
+
+Run the frontend test suite once:
+
+```bash
+npm test
+```
+
+Run tests in watch mode during development:
+
+```bash
+npx vitest
 ```
 
 ## Quality checks

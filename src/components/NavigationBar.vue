@@ -15,6 +15,9 @@ const { t } = useI18n({
     <router-link to="/pizza-calculator">
       <p class="m-4 sm:m-8" :class="$route.path == '/pizza-calculator' ? 'font-bold' : 'font-semibold'"> {{ t('pizzaCalculator') }}</p>
     </router-link>
+    <router-link to="/hydration-calculator">
+      <p class="m-4 sm:m-8" :class="$route.path == '/hydration-calculator' ? 'font-bold' : 'font-semibold'"> {{ t('hydrationCalculator') }}</p>
+    </router-link>
     <router-link to="/faq">
       <p class="m-4 sm:m-8" :class="$route.path == '/faq' ? 'font-bold' : 'font-semibold'"> {{ t('faq') }}</p>
     </router-link>
@@ -33,6 +36,7 @@ const { t } = useI18n({
   en:
     home: Home
     pizzaCalculator: Pizza calculator
+    hydrationCalculator: Hydration calculator
     faq: FAQ
     contact: Contact
     privacyPolicy: Privacy Policy
@@ -40,6 +44,7 @@ const { t } = useI18n({
   pl:
     home: Strona Główna
     pizzaCalculator: Kalkulator pizzy
+    hydrationCalculator: Kalkulator hydratacji
     faq: FAQ
     contact: Kontakt
     privacyPolicy: Polityka Prywatności
