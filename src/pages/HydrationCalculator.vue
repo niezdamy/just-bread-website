@@ -81,7 +81,6 @@ function resetCalculator() {
           <span class="font-semibold">{{ t("hydration") }}</span>
           <span class="float-right inline-block min-w-[4ch] text-right tabular-nums text-sm">{{ hydration }}%</span>
           <input v-model.number="hydration" class="mt-4 block w-full accent-gold" type="range" :min="bakeType === 'sourdough' ? 60 : 50" :max="bakeType === 'sourdough' ? 100 : 80" step="1" />
-          <span class="mt-2 block text-sm text-gray-600">{{ t(bakeType === "sourdough" ? "sourdough_hint" : "yeast_hint") }}</span>
         </label>
 
         <template v-if="bakeType === 'sourdough'">
@@ -89,7 +88,6 @@ function resetCalculator() {
             <span class="font-semibold">{{ t("sourdough_percentage") }}</span>
             <span class="float-right inline-block min-w-[4ch] text-right tabular-nums text-sm">{{ sourdoughPercentage }}%</span>
             <input v-model.number="sourdoughPercentage" class="mt-4 block w-full accent-gold" data-testid="sourdough-percentage" type="range" min="0" max="50" step="1" />
-            <span class="mt-2 block text-sm text-gray-600">{{ t("sourdough_amount_hint", { amount: formatWeight(sourdoughAmount) }) }}</span>
           </label>
         </template>
 
