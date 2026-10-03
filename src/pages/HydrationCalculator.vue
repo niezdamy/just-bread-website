@@ -132,6 +132,12 @@ function resetCalculator() {
           <h3 class="font-semibold">{{ t("sourdough_note_title") }}</h3>
           <p class="mt-1 text-sm">{{ t("sourdough_note", { flour: formatWeight(sourdoughFlour), water: formatWeight(sourdoughWater) }) }}</p>
         </aside>
+
+        <aside class="mt-8 border-l-4 border-gray_dark pl-4">
+          <h3 class="font-semibold">{{ t("guide_title") }}</h3>
+          <p class="mt-1 text-sm">{{ t("guide_summary") }}</p>
+          <router-link class="mt-3 inline-block font-semibold underline" to="/hydratacja-ciasta">{{ t("guide_link") }}</router-link>
+        </aside>
       </section>
     </section>
     <NavigationBar />
@@ -164,6 +170,9 @@ en:
   sourdough_amount: Ripe sourdough starter
   sourdough_note_title: Included in the starter
   sourdough_note: "The starter contains {flour} g flour and {water} g water. These amounts are already deducted above."
+  guide_title: What is dough hydration?
+  guide_summary: Learn how hydration affects dough and find typical ranges for bread, pizza and sourdough baking.
+  guide_link: Read the hydration guide
 pl:
   title: Kalkulator hydratacji chleba
   subtitle: Ustaw hydratację wypieku na zakwasie lub drożdżach i poznaj dokładne ilości składników.
@@ -189,4 +198,7 @@ pl:
   sourdough_amount: Dojrzały zakwas
   sourdough_note_title: Skład zakwasu
   sourdough_note: "Zakwas zawiera {flour} g mąki i {water} g wody. Te ilości zostały już odjęte powyżej."
+  guide_title: Czym jest hydratacja ciasta?
+  guide_summary: Dowiedz się, jak hydratacja wpływa na ciasto i poznaj typowe wartości dla chleba, pizzy oraz wypieków na zakwasie.
+  guide_link: Przeczytaj poradnik o hydratacji
 </i18n>
