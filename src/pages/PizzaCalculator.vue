@@ -106,7 +106,7 @@ function resetCalculator() {
 <i18n lang="yaml">
 en:
   title: Neapolitan pizza calculator
-  subtitle: Calculate the proportions for a light, airy pizza dough.
+  subtitle: Calculate the ingredients for a light, airy pizza dough.
   settings: Dough settings
   portions: Number of pizzas
   ball_weight: Dough ball weight
@@ -118,32 +118,32 @@ en:
   reset: Reset settings
   neapolitan: Neapolitan pizza
   recipe: Your ingredients
-  recipe_for: "For {count} dough balls of {weight} g each"
+  recipe_for: "Makes {count} dough balls, {weight} g each"
   flour: Flour type 00
   water: Water
   salt: Salt
   yeast_amount: "{type}"
-  tip_title: A simple timing guide
-  tip: Let the dough rest at room temperature for 2 hours, then refrigerate it for 18-24 hours. Remove it 1-2 hours before baking.
+  tip_title: A simple fermentation schedule
+  tip: Let the dough rest at room temperature for 2 hours, then refrigerate it for 18–24 hours. Take it out 1–2 hours before baking.
 pl:
   title: Kalkulator pizzy neapolitańskiej
-  subtitle: Oblicz proporcje na lekkie i puszyste ciasto do pizzy.
+  subtitle: Oblicz ilości składników na lekkie i puszyste ciasto do pizzy.
   settings: Ustawienia ciasta
-  portions: Liczba pizz
-  ball_weight: Waga kulki ciasta
+  portions: Liczba porcji
+  ball_weight: Masa porcji ciasta
   hydration: Hydratacja
-  hydration_hint: 65% to dobry punkt wyjścia do ręcznego formowania ciasta.
+  hydration_hint: 65% to dobry punkt wyjścia do ręcznego rozciągania ciasta.
   yeast: Rodzaj drożdży
   fresh_yeast: Drożdże świeże
   dry_yeast: Drożdże suszone
   reset: Przywróć ustawienia
   neapolitan: Pizza neapolitańska
   recipe: Twoje składniki
-  recipe_for: "Na {count} kulki ciasta po {weight} g"
+  recipe_for: "Liczba porcji: {count} × {weight} g"
   flour: Mąka typu 00
   water: Woda
   salt: Sól
   yeast_amount: "{type}"
   tip_title: Prosty plan fermentacji
-  tip: Zostaw ciasto na 2 godziny w temperaturze pokojowej, a następnie włóż je do lodówki na 18-24 godziny. Wyjmij 1-2 godziny przed pieczeniem.
+  tip: Zostaw ciasto na 2 godziny w temperaturze pokojowej, a następnie włóż je do lodówki na 18–24 godziny. Wyjmij je 1–2 godziny przed pieczeniem.
 </i18n>

@@ -80,7 +80,7 @@ en:
   scope_title: Scope
   scope_text: This policy covers the Just Bread mobile application distributed through Apple App Store and Google Play, and the Just Bread website. It does not cover third-party websites or services linked from the app or website.
   mobile_app_title: Mobile Application
-  mobile_app_text: Just Bread does not require or provide user accounts. The app does not collect names, email addresses, contacts, precise location, payment information, photos, camera, microphone, or health data. If you consent to analytics in the app, PostHog may process technical device and usage data, such as app screens viewed, interactions, app version, device and operating-system information, approximate location inferred from IP address, and timestamps.
+  mobile_app_text: Just Bread does not require or provide user accounts. The app does not collect names, email addresses, contacts, precise location, payment information, photographs, data from the camera or microphone, or health data. If you consent to analytics in the app, PostHog may process technical device and usage data, such as app screens viewed, interactions, app version, device and operating-system information, approximate location inferred from your IP address, and timestamps.
   website_title: Website
   website_text: The website stores your analytics preference in local storage. If you consent to analytics, PostHog and Google Analytics may process technical and usage data, including pages viewed, page URL, app-store link clicks, browser and device information, approximate location inferred from IP address, and timestamps.
   purpose_title: Purposes of Processing
@@ -119,52 +119,52 @@ en:
   analytics_status_enabled: Analytics is enabled.
   analytics_status_disabled: Analytics is disabled.
 pl:
-  title: Polityka prywatnosci
-  intro_1: Niniejsza Polityka prywatnosci opisuje zasady przetwarzania danych osobowych podczas korzystania z aplikacji mobilnej i strony internetowej Just Bread.
-  intro_2: Szanujemy Twoja prywatnosc. Analityka jest opcjonalna i włączana wyłącznie po wyrazeniu zgody.
-  intro_3: Nie sprzedajemy danych osobowych ani nie wykorzystujemy ich do reklam lub profilowania.
-  intro_4: Ta polityka jest polityka prywatnosci aplikacji mobilnej Just Bread i jest rowniez dostepna na tej stronie.
+  title: Polityka prywatności
+  intro_1: Ta polityka opisuje, w jaki sposób przetwarzamy dane osobowe podczas korzystania z aplikacji mobilnej i strony internetowej Just Bread.
+  intro_2: Szanujemy Twoją prywatność. Analityka jest opcjonalna i uruchamia się wyłącznie po wyrażeniu zgody.
+  intro_3: Nie sprzedajemy danych osobowych ani nie wykorzystujemy ich do celów reklamowych lub profilowania.
+  intro_4: Niniejsza polityka dotyczy aplikacji mobilnej Just Bread i jest również dostępna na tej stronie.
   controller_title: Administrator danych
-  controller_text: Administratorem Twoich danych osobowych jest Oskar Poprawski. W sprawach zwiazanych z prywatnoscia skorzystaj z danych kontaktowych ponizej.
+  controller_text: Administratorem Twoich danych osobowych jest Oskar Poprawski. W sprawach dotyczących prywatności skontaktuj się z nami, korzystając z danych podanych poniżej.
   scope_title: Zakres
-  scope_text: Polityka obejmuje aplikacje mobilna Just Bread dystrybuowana w Apple App Store i Google Play oraz strone internetowa Just Bread. Nie obejmuje stron ani uslug podmiotow trzecich, do ktorych prowadza linki z aplikacji lub strony.
+  scope_text: Polityka obejmuje aplikację mobilną Just Bread dystrybuowaną w sklepach Apple App Store i Google Play oraz stronę internetową Just Bread. Nie obejmuje stron ani usług podmiotów trzecich, do których prowadzą linki z aplikacji lub strony.
   mobile_app_title: Aplikacja mobilna
-  mobile_app_text: Just Bread nie wymaga ani nie oferuje kont uzytkownika. Aplikacja nie zbiera imienia i nazwiska, adresu e-mail, kontaktow, dokladnej lokalizacji, danych platniczych, zdjec, danych z aparatu, mikrofonu ani danych zdrowotnych. Po wyrazeniu zgody na analityke PostHog moze przetwarzac dane techniczne urzadzenia i dane o korzystaniu z aplikacji, takie jak przegladane ekrany, interakcje, wersja aplikacji, informacje o urzadzeniu i systemie operacyjnym, przyblizona lokalizacja wnioskowana z adresu IP oraz znaczniki czasu.
+  mobile_app_text: Just Bread nie wymaga założenia konta i nie oferuje kont użytkowników. Aplikacja nie zbiera imion i nazwisk, adresów e-mail, kontaktów, precyzyjnej lokalizacji, danych płatniczych, zdjęć, danych z aparatu ani mikrofonu czy danych o stanie zdrowia. Jeśli wyrazisz zgodę na analitykę w aplikacji, PostHog może przetwarzać dane techniczne urządzenia i informacje o korzystaniu z aplikacji, takie jak wyświetlane ekrany, interakcje, wersja aplikacji, informacje o urządzeniu i systemie operacyjnym, przybliżona lokalizacja ustalana na podstawie adresu IP oraz znaczniki czasu.
   website_title: Strona internetowa
-  website_text: Strona zapisuje w local storage Twoj wybor dotyczacy analityki. Po wyrazeniu zgody PostHog i Google Analytics moga przetwarzac dane techniczne i dane o korzystaniu, w tym odwiedzane strony, adres URL, klikniecia w linki do sklepow z aplikacjami, informacje o przegladarce i urzadzeniu, przyblizona lokalizacje wnioskowana z adresu IP oraz znaczniki czasu.
+  website_text: Strona zapisuje Twój wybór dotyczący analityki w pamięci lokalnej przeglądarki. Po wyrażeniu zgody PostHog i Google Analytics mogą przetwarzać dane techniczne i informacje o korzystaniu ze strony, w tym odwiedzane podstrony, adresy URL, kliknięcia w linki do sklepów z aplikacjami, informacje o przeglądarce i urządzeniu, przybliżoną lokalizację ustalaną na podstawie adresu IP oraz znaczniki czasu.
   purpose_title: Cele przetwarzania
-  purpose_text: Dane analityczne wykorzystujemy, aby rozumiec sposob korzystania ze strony, mierzyc odwiedziny i klikniecia w linki do sklepow, diagnozowac problemy techniczne oraz ulepszac strone i aplikacje.
+  purpose_text: Wykorzystujemy dane analityczne, aby lepiej rozumieć, jak użytkownicy korzystają ze strony, mierzyć liczbę odwiedzin i kliknięć w linki do sklepów, diagnozować problemy techniczne oraz ulepszać stronę i aplikację.
   legal_basis_title: Podstawa prawna
-  legal_basis_text: Podstawa prawna opcjonalnej analityki to Twoja zgoda zgodnie z art. 6 ust. 1 lit. a RODO. Zgode mozesz wycofac w dowolnym momencie za pomoca ponizszych przyciskow. Wycofanie zgody nie wplywa na zgodnosc z prawem przetwarzania przed jej wycofaniem.
+  legal_basis_text: Podstawą prawną opcjonalnej analityki jest Twoja zgoda zgodnie z art. 6 ust. 1 lit. a RODO. Możesz ją wycofać w dowolnym momencie za pomocą poniższych przycisków. Wycofanie zgody nie wpływa na zgodność z prawem przetwarzania, którego dokonano przed jej wycofaniem.
   analytics_title: Analityka strony i zgoda
-  analytics_text: PostHog i Google Analytics sa uruchamiane na stronie dopiero po wyrazeniu zgody. Bez zgody analityka nie jest inicjalizowana ani w aplikacji, ani na stronie. Po wycofaniu zgody aplikacja lub strona rezygnuje z dalszego zbierania danych analitycznych. Dzialanie aplikacji nie zalezy od wyrazenia zgody na analityke.
+  analytics_text: PostHog i Google Analytics uruchamiają się na stronie dopiero po wyrażeniu zgody. Bez zgody analityka nie jest uruchamiana ani w aplikacji, ani na stronie. Po wycofaniu zgody aplikacja lub strona przestaje gromadzić kolejne dane analityczne. Działanie aplikacji nie zależy od wyrażenia zgody na analitykę.
   cookies_title: Pliki cookie
-  cookies_text: Korzystamy z local storage, aby zapamietac Twoj wybor dotyczacy analityki. Po jej włączeniu PostHog i Google Analytics moga uzywac plikow cookie lub podobnych technologii. Wybor mozesz zmienic ponizej lub wyczyscic dane przegladarki.
-  providers_title: Usugodawcy zewnetrzni
-  providers_text: "Korzystamy z nastepujacych uslugodawcow:"
-  provider_1: PostHog, Inc. - analityka strony internetowej.
-  provider_2: Google LLC - analityka strony internetowej Google Analytics.
-  provider_3: Dane PostHog sa wysylane do europejskiego punktu dostepowego uslugi.
-  provider_4: Dostawcy przetwarzaja dane, aby swiadczyc analityke, zgodnie z obowiazujacymi warunkami przetwarzania danych.
-  providers_more: Nie udostepniamy danych analitycznych innym podmiotom na potrzeby ich wlasnego marketingu.
+  cookies_text: Korzystamy z pamięci lokalnej przeglądarki, aby zapamiętać Twój wybór dotyczący analityki. Po wyrażeniu zgody PostHog i Google Analytics mogą używać plików cookie lub podobnych technologii do celów analitycznych. Możesz zmienić swój wybór poniżej lub wyczyścić dane przeglądarki.
+  providers_title: Zewnętrzni dostawcy usług
+  providers_text: "Korzystamy z usług następujących dostawców:"
+  provider_1: PostHog, Inc. – analityka strony internetowej.
+  provider_2: Google LLC – usługa Google Analytics do analityki strony internetowej.
+  provider_3: Dane PostHog są przesyłane do europejskiego punktu dostępowego tej usługi.
+  provider_4: Dostawcy przetwarzają dane w celu świadczenia usług analitycznych, zgodnie z obowiązującymi ich warunkami przetwarzania danych.
+  providers_more: Nie udostępniamy danych analitycznych innym podmiotom na potrzeby ich własnych działań marketingowych.
   retention_title: Okres przechowywania danych
-  retention_text: Dane analityczne przechowujemy tylko tak dlugo, jak jest to konieczne dla wskazanych celow lub wymagane przez prawo. Informacja o Twojej zgodzie pozostaje na urzadzeniu lub w przegladarce do czasu jej zmiany, odinstalowania aplikacji albo wyczyszczenia odpowiednich danych aplikacji lub przegladarki.
+  retention_text: Przechowujemy dane analityczne tylko tak długo, jak jest to konieczne do realizacji wskazanych celów lub wymagane przez prawo. Informacja o Twojej zgodzie pozostaje na urządzeniu lub w przeglądarce do czasu zmiany wyboru, odinstalowania aplikacji albo wyczyszczenia odpowiednich danych aplikacji lub przeglądarki.
   deletion_title: Usuwanie danych
-  deletion_text: Just Bread nie oferuje kont uzytkownika, wiec usuwanie konta nie ma zastosowania. Aby zadac usuniecia powiazanych z Toba danych analitycznych, skontaktuj sie z nami pod ponizszym adresem e-mail. Mozemy poprosic o informacje potrzebne do odnalezienia danych i zrealizujemy zadanie zgodnie z obowiazujacymi przepisami.
+  deletion_text: Just Bread nie oferuje kont użytkowników, dlatego usuwanie konta nie ma zastosowania. Aby zażądać usunięcia dotyczących Ciebie danych analitycznych, skontaktuj się z nami pod adresem e-mail podanym poniżej. Możemy poprosić o informacje potrzebne do odnalezienia tych danych. Zrealizujemy żądanie zgodnie z obowiązującymi przepisami.
   rights_title: Twoje prawa
-  rights_text: Z zastrzezeniem obowiazujacych przepisow mozesz zadac dostepu do danych, ich sprostowania lub usuniecia, ograniczenia przetwarzania, przenoszenia danych albo wniesc sprzeciw. Mozesz tez zlozyc skarge do wlasciwego organu ochrony danych osobowych.
-  security_title: Bezpieczenstwo
-  security_text: Stosujemy rozsadne srodki techniczne i organizacyjne, aby chronic dane osobowe. Zadna metoda transmisji ani przechowywania nie jest jednak w pelni bezpieczna, dlatego nie mozemy zagwarantowac absolutnego bezpieczenstwa.
+  rights_text: Z zastrzeżeniem obowiązujących przepisów możesz zażądać dostępu do swoich danych, ich sprostowania lub usunięcia, ograniczenia przetwarzania albo przeniesienia. Możesz również wnieść sprzeciw wobec przetwarzania i złożyć skargę do właściwego organu ochrony danych osobowych.
+  security_title: Bezpieczeństwo
+  security_text: Stosujemy odpowiednie środki techniczne i organizacyjne, aby chronić dane osobowe. Żadna metoda przesyłania ani przechowywania danych nie jest jednak w pełni bezpieczna, dlatego nie możemy zagwarantować całkowitego bezpieczeństwa.
   links_title: Linki do innych stron
-  links_text: Usluga moze zawierac linki do stron podmiotow trzecich. Zalecamy zapoznanie sie z ich politykami prywatnosci. Nie mamy kontroli nad ich trescia, politykami prywatnosci ani praktykami i nie ponosimy za nie odpowiedzialnosci.
-  changes_title: Zmiany w Polityce prywatnosci
-  changes_text: Mozemy aktualizowac te polityke, gdy zmieniaja sie nasze praktyki przetwarzania danych lub wymagania prawne. Aktualna wersja bedzie zawsze opublikowana na tej stronie.
-  effective: Ostatnia aktualizacja 2026-09-08.
+  links_text: Usługa może zawierać linki do stron podmiotów trzecich. Zalecamy zapoznanie się z ich politykami prywatności. Nie mamy kontroli nad treściami tych stron, ich politykami prywatności ani stosowanymi przez nie praktykami, dlatego nie ponosimy za nie odpowiedzialności.
+  changes_title: Zmiany w polityce prywatności
+  changes_text: Możemy aktualizować tę politykę w przypadku zmian w sposobie przetwarzania danych lub w przepisach prawa. Aktualna wersja będzie zawsze dostępna na tej stronie.
+  effective: Ostatnia aktualizacja: 8 września 2026 r.
   contact_title: Kontakt
-  contact_text: W razie pytan lub sugestii dotyczacych Polityki prywatnosci napisz do nas na adres
-  analytics_description: Ten wybor dotyczy analityki na tej stronie. W aplikacji mobilnej mozesz zmienic analogiczne ustawienie w aplikacji. Za zgoda PostHog i Google Analytics mierza odslony podstron i klikniecia w linki do sklepow z aplikacjami.
-  analytics_disable: Wyłącz analityke
-  analytics_enable: Włącz analityke
+  contact_text: Jeśli masz pytania lub sugestie dotyczące polityki prywatności, napisz do nas na adres
+  analytics_description: To ustawienie dotyczy analityki na tej stronie. Analogiczne ustawienie możesz zmienić w aplikacji mobilnej. Za Twoją zgodą PostHog i Google Analytics mierzą liczbę odsłon podstron oraz kliknięć w linki do sklepów z aplikacjami.
+  analytics_disable: Wyłącz analitykę
+  analytics_enable: Włącz analitykę
   analytics_status_enabled: Analityka jest włączona.
   analytics_status_disabled: Analityka jest wyłączona.
 </i18n>

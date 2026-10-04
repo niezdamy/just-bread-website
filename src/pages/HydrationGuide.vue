@@ -4,7 +4,7 @@ import NavigationBar from "../components/NavigationBar.vue";
 import { canonicalUrl } from "../seo";
 
 useHead({
-  title: "Hydratacja ciasta - co to jest i jak ją dobrać? | Just Bread",
+  title: "Hydratacja ciasta – co to jest i jak ją dobrać? | Just Bread",
   meta: [{ name: "description", content: "Dowiedz się, czym jest hydratacja ciasta, jak ją obliczyć i jakie wartości sprawdzają się w chlebie, pizzy, focacci i wypiekach na zakwasie." }],
   link: [{ rel: "canonical", href: canonicalUrl("/hydratacja-ciasta") }],
 });
@@ -14,7 +14,7 @@ useHead({
   <main class="min-h-screen bg-whtite_gray text-gray_dark">
     <header class="bg-gold px-6 py-14 text-center sm:py-20">
       <p class="text-sm font-semibold uppercase tracking-widest">Just Bread</p>
-      <h1 class="mx-auto mt-3 max-w-3xl text-3xl font-semibold sm:text-4xl">Hydratacja ciasta - co to jest?</h1>
+      <h1 class="mx-auto mt-3 max-w-3xl text-3xl font-semibold sm:text-4xl">Hydratacja ciasta – co to jest?</h1>
       <p class="mx-auto mt-4 max-w-2xl text-lg">Prosty wskaźnik, który pomaga przewidzieć konsystencję ciasta i dobrać ilość wody do wypieku.</p>
     </header>
 

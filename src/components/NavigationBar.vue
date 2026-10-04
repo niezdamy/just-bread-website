@@ -42,10 +42,10 @@ const { t } = useI18n({
     privacyPolicy: Privacy Policy
 
   pl:
-    home: Strona Główna
+    home: Strona główna
     pizzaCalculator: Kalkulator pizzy
     hydrationCalculator: Kalkulator hydratacji
     faq: FAQ
     contact: Kontakt
-    privacyPolicy: Polityka Prywatności
+    privacyPolicy: Polityka prywatności
 </i18n>

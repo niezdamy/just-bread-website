@@ -61,13 +61,13 @@ onUnmounted(() => {
 <i18n lang="yaml">
   en:
     consent_title: Site Analytics
-    consent_description: We use PostHog and Google Analytics to understand site traffic and improve the app. Consent is voluntary.
+    consent_description: We use PostHog and Google Analytics to understand how people use this website and to improve the app. Providing consent is optional.
     consent_deny: Decline
     consent_accept: Accept
     consent_privacy_link: Privacy Policy
   pl:
     consent_title: Analityka strony
-    consent_description: Używamy PostHog i Google Analytics, aby rozumieć ruch na stronie i ulepszać aplikację. Zgoda jest dobrowolna.
+    consent_description: Korzystamy z PostHog i Google Analytics, aby sprawdzić, jak użytkownicy korzystają ze strony, i ulepszać aplikację. Wyrażenie zgody jest dobrowolne.
     consent_deny: Odrzuć
     consent_accept: Akceptuję
     consent_privacy_link: Polityka prywatności

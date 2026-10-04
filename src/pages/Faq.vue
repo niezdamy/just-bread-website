@@ -42,8 +42,8 @@ useHead({
 en:
   title: Frequently asked questions
   heading: FAQ
-  app_question: Where can I find the app?
-  app_answer: The app is available in the Apple App Store and Google Play.
+  app_question: Where can I download the app?
+  app_answer: The app is available on the Apple App Store and Google Play.
   languages_question: What languages are supported?
   languages_answer: Currently supported languages are Polish and English.
   recipes_question: Will there be more recipes in the future?
@@ -55,18 +55,18 @@ en:
   contact_heading: Need more help?
   contact_text: Feel free to contact us.
 pl:
-  title: Najczesciej zadawane pytania
+  title: Najczęściej zadawane pytania
   heading: FAQ
-  app_question: Gdzie znajde aplikacje?
-  app_answer: Aplikacja jest dostepna w Apple App Store i Google Play.
-  languages_question: Jakie jezyki sa obslugiwane?
-  languages_answer: Obecnie aplikacja obsluguje jezyk polski i angielski.
-  recipes_question: Czy w przyszlosci pojawia sie kolejne przepisy?
-  recipes_answer: Tak, w kolejnych wersjach pojawia sie nowe przepisy.
-  recipe_help_question: Przepis jest niejasny. Gdzie moge znalezc pomoc?
+  app_question: Gdzie mogę pobrać aplikację?
+  app_answer: Aplikację znajdziesz w sklepach Apple App Store i Google Play.
+  languages_question: Jakie języki obsługuje aplikacja?
+  languages_answer: Obecnie aplikacja jest dostępna w języku polskim i angielskim.
+  recipes_question: Czy pojawią się kolejne przepisy?
+  recipes_answer: Tak, w przyszłych aktualizacjach dodamy nowe przepisy.
+  recipe_help_question: Nie rozumiem przepisu. Gdzie mogę uzyskać pomoc?
   recipe_help_answer: Napisz do nas na adres
-  app_help_question: Aplikacja nie dziala. Co powinienem zrobic?
-  app_help_answer: Napisz do nas ze szczegolami na adres
-  contact_heading: Potrzebujesz wiecej pomocy?
-  contact_text: Skontaktuj sie z nami.
+  app_help_question: Aplikacja nie działa. Co mogę zrobić?
+  app_help_answer: Opisz problem i napisz do nas na adres
+  contact_heading: Potrzebujesz pomocy?
+  contact_text: Skontaktuj się z nami.
 </i18n>
