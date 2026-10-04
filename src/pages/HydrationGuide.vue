@@ -22,7 +22,7 @@ useHead({
       <section>
         <h2 class="text-2xl font-semibold">Czym jest hydratacja ciasta?</h2>
         <p class="mt-4">Hydratacja określa, ile wody przypada na 100 g mąki. Ciasto o hydratacji 70% zawiera 70 g wody na każde 100 g mąki. To procent piekarski: mąka zawsze stanowi 100%, a woda jest liczona względem jej masy.</p>
-        <p class="mt-4">Dla 500 g mąki i 70% hydratacji potrzebujesz 350 g wody. Wyższa wartość zwykle daje bardziej miękki i otwarty miękisz, ale ciasto staje się luźniejsze oraz wymaga lepszej techniki składania i formowania.</p>
+        <p class="mt-4">Przy 500 g mąki i hydratacji 70% potrzebujesz 350 g wody. Wyższa wartość zwykle daje bardziej miękki, otwarty miękisz, ale ciasto staje się luźniejsze i wymaga lepszej techniki składania oraz formowania.</p>
       </section>
 
       <section>
@@ -56,7 +56,7 @@ useHead({
 
       <section>
         <h2 class="text-2xl font-semibold">Od czego zacząć?</h2>
-        <p class="mt-4">Jeśli dopiero zaczynasz, wybierz 65% dla wypieków drożdżowych albo 70% dla chleba na zakwasie. Zmieniaj hydratację małymi krokami, po 2-3 punkty procentowe. Rodzaj mąki, jej świeżość i sposób prowadzenia ciasta wpływają na to, ile wody rzeczywiście wchłonie.</p>
+        <p class="mt-4">Jeśli dopiero zaczynasz, wybierz hydratację 65% dla wypieków drożdżowych albo 70% dla chleba na zakwasie. Zmieniaj ją małymi krokami, po 2–3 punkty procentowe. Rodzaj i świeżość mąki oraz sposób prowadzenia ciasta wpływają na to, ile wody rzeczywiście wchłonie.</p>
       </section>
 
       <aside class="border-l-4 border-gold bg-gray px-6 py-5">

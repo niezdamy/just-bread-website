@@ -71,12 +71,12 @@ onBeforeUnmount(() => window.removeEventListener("analytics-consent-changed", on
 <i18n lang="yaml">
 en:
   title: Privacy Policy
-  intro_1: This Privacy Policy describes how personal data is processed when you use the Just Bread mobile application and this website.
+  intro_1: This Privacy Policy explains how we process personal data when you use the Just Bread mobile app or this website.
   intro_2: We respect your privacy. Analytics are optional and are activated only after you give your consent.
   intro_3: We do not sell personal data or use it for advertising or profiling.
-  intro_4: This policy is the privacy policy for the Just Bread mobile application and is also available on this website.
+  intro_4: This policy applies to the Just Bread mobile app and is also published on this website.
   controller_title: Data Controller
-  controller_text: The controller of your personal data is Oskar Poprawski. For privacy-related matters, use the contact details below.
+  controller_text: The controller of your personal data is Oskar Poprawski. For privacy-related questions, contact us using the details below.
   scope_title: Scope
   scope_text: This policy covers the Just Bread mobile application distributed through Apple App Store and Google Play, and the Just Bread website. It does not cover third-party websites or services linked from the app or website.
   mobile_app_title: Mobile Application
@@ -88,7 +88,7 @@ en:
   legal_basis_title: Legal Basis
   legal_basis_text: The legal basis for optional analytics is your consent under Article 6(1)(a) GDPR. You may withdraw consent at any time using the controls below. Withdrawal does not affect the lawfulness of processing before it was withdrawn.
   analytics_title: Website Analytics and Consent
-  analytics_text: PostHog and Google Analytics are activated on the website only after consent. Without consent, analytics is not initialized in the app or on the website. When consent is withdrawn, the app or website opts out of further analytics collection. App functionality is not conditional on granting analytics consent.
+  analytics_text: PostHog and Google Analytics are activated on the website only after consent. Without consent, analytics is not initialized in the app or on the website. When consent is withdrawn, analytics collection stops in the app or on the website. App functionality does not depend on granting consent to analytics.
   cookies_title: Cookies
   cookies_text: We use local storage to remember your analytics choice. When enabled, PostHog and Google Analytics may use cookies or similar technologies to provide analytics. You can change your choice at any time below or clear your browser storage.
   providers_title: Service Providers
@@ -113,7 +113,7 @@ en:
   effective: Last updated 2026-09-08.
   contact_title: Contact Us
   contact_text: For questions or suggestions about this Privacy Policy, contact us at
-  analytics_description: This control applies to analytics on this website. In the mobile app, you can change the equivalent setting in the app. With consent, PostHog and Google Analytics measure page views and clicks on app-store links.
+  analytics_description: This setting applies to analytics on this website. You can change the equivalent setting in the mobile app. With consent, PostHog and Google Analytics measure page views and clicks on app-store links.
   analytics_disable: Disable analytics
   analytics_enable: Enable analytics
   analytics_status_enabled: Analytics is enabled.
@@ -159,7 +159,7 @@ pl:
   links_text: Usługa może zawierać linki do stron podmiotów trzecich. Zalecamy zapoznanie się z ich politykami prywatności. Nie mamy kontroli nad treściami tych stron, ich politykami prywatności ani stosowanymi przez nie praktykami, dlatego nie ponosimy za nie odpowiedzialności.
   changes_title: Zmiany w polityce prywatności
   changes_text: Możemy aktualizować tę politykę w przypadku zmian w sposobie przetwarzania danych lub w przepisach prawa. Aktualna wersja będzie zawsze dostępna na tej stronie.
-  effective: Ostatnia aktualizacja: 8 września 2026 r.
+  effective: "Ostatnia aktualizacja: 8 września 2026 r."
   contact_title: Kontakt
   contact_text: Jeśli masz pytania lub sugestie dotyczące polityki prywatności, napisz do nas na adres
   analytics_description: To ustawienie dotyczy analityki na tej stronie. Analogiczne ustawienie możesz zmienić w aplikacji mobilnej. Za Twoją zgodą PostHog i Google Analytics mierzą liczbę odsłon podstron oraz kliknięć w linki do sklepów z aplikacjami.

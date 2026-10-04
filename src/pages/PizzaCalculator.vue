@@ -119,7 +119,7 @@ en:
   neapolitan: Neapolitan pizza
   recipe: Your ingredients
   recipe_for: "Makes {count} dough balls, {weight} g each"
-  flour: Flour type 00
+  flour: Type 00 flour
   water: Water
   salt: Salt
   yeast_amount: "{type}"
