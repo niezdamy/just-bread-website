@@ -1,7 +1,57 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import { useHead } from "@unhead/vue";
 import NavigationBar from "../components/NavigationBar.vue";
 import { canonicalUrl } from "../seo";
+import focacciaImage from "../assets/hydration-focaccia.jpeg";
+import yeastRollsImage from "../assets/hydration-yeast-rolls.jpeg";
+import yeastBreadImage from "../assets/home_6.png";
+import sourdoughBreadImage from "../assets/home_9.png";
+import pizzaImage from "../assets/home_10.png";
+
+type BakeImage = {
+  src: string;
+  alt: string;
+  source?: {
+    label: string;
+    url: string;
+  };
+};
+
+const yeastRolls = {
+  src: yeastRollsImage,
+  alt: "Bułki drożdżowe pieczone w naczyniu",
+  source: {
+    label: "Pexels, zdjęcie: Mark Stebnicki",
+    url: "https://www.pexels.com/photo/freshly-baked-golden-dinner-rolls-in-oven-38314235/",
+  },
+} satisfies BakeImage;
+
+const pizza = {
+  src: pizzaImage,
+  alt: "Pizza z pomidorami i bazylią",
+} satisfies BakeImage;
+
+const yeastBread = {
+  src: yeastBreadImage,
+  alt: "Świeży bochenek chleba drożdżowego",
+} satisfies BakeImage;
+
+const sourdoughBread = {
+  src: sourdoughBreadImage,
+  alt: "Kromki chleba na zakwasie z widocznym miękiszem",
+} satisfies BakeImage;
+
+const focaccia = {
+  src: focacciaImage,
+  alt: "Przekrojona focaccia z widocznym, porowatym miękiszem",
+  source: {
+    label: "Pexels, zdjęcie: Natalia Olivera",
+    url: "https://www.pexels.com/photo/delicious-herb-and-onion-focaccia-bread-slice-30666820/",
+  },
+} satisfies BakeImage;
+
+const selectedImage = ref<BakeImage | null>(null);
 
 useHead({
   title: "Hydratacja ciasta – co to jest i jak ją dobrać? | Just Bread",
@@ -38,17 +88,53 @@ useHead({
           <table class="w-full border-collapse text-left">
             <thead class="border-b-2 border-gray_dark">
               <tr>
+                <th class="py-3 pr-5 font-semibold">Zdjęcie</th>
                 <th class="py-3 pr-5 font-semibold">Wypiek</th>
                 <th class="py-3 pr-5 font-semibold">Typowy zakres</th>
                 <th class="py-3 font-semibold">Charakterystyka</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-gray-300">
-              <tr><td class="py-4 pr-5 font-semibold">Bułki i proste ciasto drożdżowe</td><td class="py-4 pr-5">55-65%</td><td class="py-4">Stabilne, łatwe do wyrabiania i formowania.</td></tr>
-              <tr><td class="py-4 pr-5 font-semibold">Pizza</td><td class="py-4 pr-5">60-70%</td><td class="py-4">Elastyczne ciasto, wygodne do rozciągania.</td></tr>
-              <tr><td class="py-4 pr-5 font-semibold">Chleb drożdżowy</td><td class="py-4 pr-5">65-75%</td><td class="py-4">Dobry punkt wyjścia do codziennego chleba.</td></tr>
-              <tr><td class="py-4 pr-5 font-semibold">Chleb na zakwasie</td><td class="py-4 pr-5">70-80%</td><td class="py-4">Bardziej otwarty miękisz; wymaga składania ciasta.</td></tr>
-              <tr><td class="py-4 pr-5 font-semibold">Focaccia i ciabatta</td><td class="py-4 pr-5">75-90%</td><td class="py-4">Bardzo wilgotne ciasto z dużymi pęcherzami powietrza.</td></tr>
+              <tr>
+                <td class="py-3 pr-5">
+                  <button class="block rounded-lg focus:outline-none focus:ring-2 focus:ring-gray_dark" type="button" :aria-label="`Powiększ zdjęcie: ${yeastRolls.alt}`" @click="selectedImage = yeastRolls">
+                    <img class="h-16 w-20 rounded-lg object-cover" :src="yeastRolls.src" :alt="yeastRolls.alt" width="80" height="64" loading="lazy" />
+                  </button>
+                </td>
+                <td class="py-4 pr-5 font-semibold">Bułki i proste ciasto drożdżowe</td><td class="py-4 pr-5">55-65%</td><td class="py-4">Stabilne, łatwe do wyrabiania i formowania.</td>
+              </tr>
+              <tr>
+                <td class="py-3 pr-5">
+                  <button class="block rounded-lg focus:outline-none focus:ring-2 focus:ring-gray_dark" type="button" :aria-label="`Powiększ zdjęcie: ${pizza.alt}`" @click="selectedImage = pizza">
+                    <img class="h-16 w-20 rounded-lg object-cover" :src="pizza.src" :alt="pizza.alt" width="80" height="64" loading="lazy" />
+                  </button>
+                </td>
+                <td class="py-4 pr-5 font-semibold">Pizza</td><td class="py-4 pr-5">60-70%</td><td class="py-4">Elastyczne ciasto, wygodne do rozciągania.</td>
+              </tr>
+              <tr>
+                <td class="py-3 pr-5">
+                  <button class="block rounded-lg focus:outline-none focus:ring-2 focus:ring-gray_dark" type="button" :aria-label="`Powiększ zdjęcie: ${yeastBread.alt}`" @click="selectedImage = yeastBread">
+                    <img class="h-16 w-20 rounded-lg object-cover" :src="yeastBread.src" :alt="yeastBread.alt" width="80" height="64" loading="lazy" />
+                  </button>
+                </td>
+                <td class="py-4 pr-5 font-semibold">Chleb drożdżowy</td><td class="py-4 pr-5">65-75%</td><td class="py-4">Dobry punkt wyjścia do codziennego chleba.</td>
+              </tr>
+              <tr>
+                <td class="py-3 pr-5">
+                  <button class="block rounded-lg focus:outline-none focus:ring-2 focus:ring-gray_dark" type="button" :aria-label="`Powiększ zdjęcie: ${sourdoughBread.alt}`" @click="selectedImage = sourdoughBread">
+                    <img class="h-16 w-20 rounded-lg object-cover" :src="sourdoughBread.src" :alt="sourdoughBread.alt" width="80" height="64" loading="lazy" />
+                  </button>
+                </td>
+                <td class="py-4 pr-5 font-semibold">Chleb na zakwasie</td><td class="py-4 pr-5">70-80%</td><td class="py-4">Bardziej otwarty miękisz; wymaga składania ciasta.</td>
+              </tr>
+              <tr>
+                <td class="py-3 pr-5">
+                  <button class="block rounded-lg focus:outline-none focus:ring-2 focus:ring-gray_dark" type="button" :aria-label="`Powiększ zdjęcie: ${focaccia.alt}`" @click="selectedImage = focaccia">
+                    <img class="h-16 w-20 rounded-lg object-cover" :src="focaccia.src" :alt="focaccia.alt" width="80" height="64" loading="lazy" />
+                  </button>
+                </td>
+                <td class="py-4 pr-5 font-semibold">Focaccia i ciabatta</td><td class="py-4 pr-5">75-90%</td><td class="py-4">Bardzo wilgotne ciasto z dużymi pęcherzami powietrza.</td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -65,6 +151,23 @@ useHead({
         <router-link class="mt-4 inline-block font-semibold underline" to="/hydration-calculator">Przejdź do kalkulatora hydratacji</router-link>
       </aside>
     </article>
+    <div
+      v-if="selectedImage"
+      class="fixed inset-0 z-50 flex items-center justify-center bg-black/75 p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Powiększone zdjęcie wypieku"
+      @click.self="selectedImage = null"
+      @keydown.esc.window="selectedImage = null"
+    >
+      <div class="relative max-h-full max-w-4xl">
+        <button class="absolute right-2 top-2 z-10 rounded-full bg-white px-3 py-1 font-semibold text-gray_dark focus:outline-none focus:ring-2 focus:ring-gold" type="button" aria-label="Zamknij powiększone zdjęcie" @click="selectedImage = null">Zamknij</button>
+        <img class="max-h-[85vh] max-w-full rounded-lg object-contain" :src="selectedImage.src" :alt="selectedImage.alt" />
+        <p v-if="selectedImage.source" class="mt-2 text-center text-sm text-white">
+          <a class="underline" :href="selectedImage.source.url" target="_blank" rel="noreferrer">{{ selectedImage.source.label }}</a>
+        </p>
+      </div>
+    </div>
     <NavigationBar />
   </main>
 </template>
