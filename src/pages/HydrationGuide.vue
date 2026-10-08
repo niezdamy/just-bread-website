@@ -4,8 +4,8 @@ import { useHead } from "@unhead/vue";
 import NavigationBar from "../components/NavigationBar.vue";
 import { canonicalUrl } from "../seo";
 import focacciaImage from "../assets/hydration-focaccia.jpeg";
-import yeastRollsImage from "../assets/hydration-yeast-rolls.jpeg";
-import yeastBreadImage from "../assets/home_6.png";
+import yeastBreadImage from "../assets/hydration-yeast-bread.jpeg";
+import yeastRollImage from "../assets/hydration-yeast-roll.jpeg";
 import sourdoughBreadImage from "../assets/home_9.png";
 import pizzaImage from "../assets/home_10.png";
 
@@ -19,11 +19,11 @@ type BakeImage = {
 };
 
 const yeastRolls = {
-  src: yeastRollsImage,
-  alt: "Bułki drożdżowe pieczone w naczyniu",
+  src: yeastRollImage,
+  alt: "Przekrojona bułka drożdżowa z widocznym miękiszem",
   source: {
-    label: "Pexels, zdjęcie: Mark Stebnicki",
-    url: "https://www.pexels.com/photo/freshly-baked-golden-dinner-rolls-in-oven-38314235/",
+    label: "Pexels, zdjęcie: Cats Coming",
+    url: "https://www.pexels.com/photo/a-close-up-of-sliced-ciabatta-7568493/",
   },
 } satisfies BakeImage;
 
@@ -34,7 +34,11 @@ const pizza = {
 
 const yeastBread = {
   src: yeastBreadImage,
-  alt: "Świeży bochenek chleba drożdżowego",
+  alt: "Przekrojony chleb drożdżowy z widocznym miękiszem",
+  source: {
+    label: "Pexels, zdjęcie: eat kubba",
+    url: "https://www.pexels.com/photo/a-sliced-bread-11842164/",
+  },
 } satisfies BakeImage;
 
 const sourdoughBread = {
