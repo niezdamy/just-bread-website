@@ -39,6 +39,8 @@ npx vitest
 
 ## Quality checks
 
+Before opening a pull request, run the linter, test suite, and production build:
+
 ```bash
 npm run lint
 npm test
