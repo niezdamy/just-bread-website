@@ -28,7 +28,7 @@ const { t } = useI18n({
       <p class="m-4 sm:m-8" :class="$route.path == '/privacy' ? 'font-bold' : 'font-semibold'">{{ t('privacyPolicy') }}
       </p>
     </router-link>
-    <a href="https://www.instagram.com/justbreadapp/" aria-label="Just Bread na Instagramie"><img class="m-8" src="../assets/instagram.svg" alt="" width="22" height="22" loading="lazy" /></a>
+    <a href="https://www.instagram.com/justbreadapp/" :aria-label="t('instagram')"><img class="m-8" src="../assets/instagram.svg" alt="" width="22" height="22" loading="lazy" /></a>
   </div>
 </template>
 
@@ -40,12 +40,14 @@ const { t } = useI18n({
     faq: FAQ
     contact: Contact
     privacyPolicy: Privacy Policy
+    instagram: Just Bread on Instagram
 
   pl:
-    home: Strona Główna
+    home: Strona główna
     pizzaCalculator: Kalkulator pizzy
     hydrationCalculator: Kalkulator hydratacji
     faq: FAQ
     contact: Kontakt
-    privacyPolicy: Polityka Prywatności
+    privacyPolicy: Polityka prywatności
+    instagram: Just Bread na Instagramie
 </i18n>

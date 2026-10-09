@@ -32,10 +32,10 @@ describe('DownloadButtons', () => {
     const polishWrapper = mountButtons('pl')
     const englishWrapper = mountButtons('en')
 
-    expect(polishWrapper.find('img[alt="Pobierz z App Store"]').exists()).toBe(true)
-    expect(polishWrapper.find('img[alt="Pobierz z Google Play"]').exists()).toBe(true)
-    expect(englishWrapper.find('img[alt="Download on the App Store"]').exists()).toBe(true)
-    expect(englishWrapper.find('img[alt="Get it on Google Play"]').exists()).toBe(true)
+    expect(polishWrapper.find(('img[alt="Pobierz z App Store"]')).exists()()).toBe(true)
+    expect(polishWrapper.find(('img[alt="Pobierz z Google Play"]')).exists()()).toBe(true)
+    expect(englishWrapper.find(('img[alt="Download on the App Store"]')).exists()()).toBe(true)
+    expect(englishWrapper.find(('img[alt="Get it on Google Play"]')).exists()()).toBe(true)
   })
 
   it('calls captureEvent with apple store data when App Store link is clicked', async () => {
