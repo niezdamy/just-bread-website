@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { onMounted, onUnmounted, ref } from "vue";
 import { useHead } from "@unhead/vue";
 import NavigationBar from "../components/NavigationBar.vue";
 import { canonicalUrl } from "../seo";
@@ -56,6 +56,20 @@ const focaccia = {
 } satisfies BakeImage;
 
 const selectedImage = ref<BakeImage | null>(null);
+
+function closeImageOnEscape(event: KeyboardEvent) {
+  if (event.key === "Escape") {
+    selectedImage.value = null;
+  }
+}
+
+onMounted(() => {
+  window.addEventListener("keydown", closeImageOnEscape);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("keydown", closeImageOnEscape);
+});
 
 useHead({
   title: "Hydratacja ciasta – co to jest i jak ją dobrać? | Just Bread",
@@ -162,7 +176,6 @@ useHead({
       aria-modal="true"
       aria-label="Powiększone zdjęcie wypieku"
       @click.self="selectedImage = null"
-      @keydown.esc.window="selectedImage = null"
     >
       <div class="relative max-h-full max-w-4xl">
         <button class="absolute right-2 top-2 z-10 rounded-full bg-white px-3 py-1 font-semibold text-gray_dark focus:outline-none focus:ring-2 focus:ring-gold" type="button" aria-label="Zamknij powiększone zdjęcie" @click="selectedImage = null">Zamknij</button>
