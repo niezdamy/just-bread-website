@@ -56,6 +56,7 @@ const focaccia = {
 } satisfies BakeImage;
 
 const selectedImage = ref<BakeImage | null>(null);
+const pageUrl = canonicalUrl("/hydratacja-ciasta");
 
 function closeImageOnEscape(event: KeyboardEvent) {
   if (event.key === "Escape") {
@@ -73,8 +74,31 @@ onUnmounted(() => {
 
 useHead({
   title: "Hydratacja ciasta – co to jest i jak ją dobrać? | Just Bread",
-  meta: [{ name: "description", content: "Dowiedz się, czym jest hydratacja ciasta, jak ją obliczyć i jakie wartości sprawdzają się w chlebie, pizzy, focacci i wypiekach na zakwasie." }],
-  link: [{ rel: "canonical", href: canonicalUrl("/hydratacja-ciasta") }],
+  meta: [
+    { name: "description", content: "Dowiedz się, czym jest hydratacja ciasta, jak ją obliczyć i jakie wartości sprawdzają się w chlebie, pizzy, focacci i wypiekach na zakwasie." },
+    { property: "og:title", content: "Hydratacja ciasta – co to jest i jak ją dobrać? | Just Bread" },
+    { property: "og:description", content: "Prosty przewodnik po hydratacji ciasta do chleba, pizzy, focacci i wypieków na zakwasie." },
+    { property: "og:type", content: "article" },
+    { property: "og:url", content: pageUrl },
+    { name: "twitter:card", content: "summary" },
+  ],
+  link: [{ rel: "canonical", href: pageUrl }],
+  script: [{
+    type: "application/ld+json",
+    children: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: "Hydratacja ciasta – co to jest i jak ją dobrać?",
+      description: "Przewodnik po obliczaniu i dobieraniu hydratacji ciasta.",
+      inLanguage: "pl",
+      mainEntityOfPage: pageUrl,
+      publisher: {
+        "@type": "Organization",
+        name: "Just Bread",
+        url: canonicalUrl("/"),
+      },
+    }),
+  }],
 });
 </script>
 

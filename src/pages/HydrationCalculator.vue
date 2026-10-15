@@ -1,9 +1,70 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
+import { useHead } from "@unhead/vue";
 import { useI18n } from "vue-i18n";
 import NavigationBar from "../components/NavigationBar.vue";
+import { canonicalUrl } from "../seo";
 
 const { t } = useI18n({ inheritLocale: true });
+const pageUrl = canonicalUrl("/hydration-calculator");
+
+useHead({
+  title: "Kalkulator hydratacji ciasta chlebowego | Just Bread",
+  meta: [
+    { name: "description", content: "Kalkulator hydratacji ciasta chlebowego na zakwasie i drożdżach. Oblicz ilość mąki, wody, zakwasu i soli z uwzględnieniem hydratacji zakwasu." },
+    { property: "og:title", content: "Kalkulator hydratacji ciasta chlebowego | Just Bread" },
+    { property: "og:description", content: "Oblicz składniki ciasta na zakwasie lub drożdżach, z uwzględnieniem wody i mąki z zakwasu." },
+    { property: "og:type", content: "website" },
+    { property: "og:url", content: pageUrl },
+    { name: "twitter:card", content: "summary" },
+  ],
+  link: [{ rel: "canonical", href: pageUrl }],
+  script: [{
+    type: "application/ld+json",
+    children: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      name: "Kalkulator hydratacji ciasta chlebowego",
+      description: "Kalkulator składników ciasta chlebowego na zakwasie i drożdżach.",
+      url: pageUrl,
+      applicationCategory: "UtilitiesApplication",
+      operatingSystem: "Web",
+      inLanguage: "pl",
+    }),
+  }, {
+    type: "application/ld+json",
+    children: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Jak oblicza się hydratację?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Podziel całkowitą ilość wody przez całkowitą ilość mąki i pomnóż wynik przez 100. Przy wypieku na zakwasie uwzględnij wodę i mąkę znajdujące się w zakwasie.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Dlaczego kalkulator odejmuje mąkę i wodę z zakwasu?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Zakwas składa się z mąki i wody. Jego skład jest już częścią całej receptury, więc odjęcie tych ilości zapobiega podwójnemu dodaniu składników.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Jaką hydratację wybrać?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Zacznij od około 65% dla ciasta drożdżowego lub 70% dla ciasta na zakwasie, a potem zmieniaj wartość małymi krokami zależnie od mąki, techniki i oczekiwanego efektu.",
+          },
+        },
+      ],
+    }),
+  }],
+});
 
 const bakeType = ref<"sourdough" | "yeast">("sourdough");
 const flour = ref(500);
@@ -140,6 +201,22 @@ function resetCalculator() {
         </aside>
       </section>
     </section>
+    <article class="mx-auto max-w-3xl space-y-10 px-6 pb-12 sm:pb-16">
+      <section aria-labelledby="calculator-method-heading">
+        <h2 id="calculator-method-heading" class="text-2xl font-semibold">{{ t("method_title") }}</h2>
+        <p class="mt-4">{{ t("method_text") }}</p>
+      </section>
+
+      <section aria-labelledby="hydration-calculator-faq-heading">
+        <h2 id="hydration-calculator-faq-heading" class="text-2xl font-semibold">{{ t("faq_title") }}</h2>
+        <div class="mt-5 divide-y divide-gray-300 border-y border-gray-300">
+          <section v-for="item in ['formula', 'starter', 'percentage']" :key="item" class="py-5">
+            <h3 class="font-semibold">{{ t(`faq_${item}_question`) }}</h3>
+            <p class="mt-2">{{ t(`faq_${item}_answer`) }}</p>
+          </section>
+        </div>
+      </section>
+    </article>
     <NavigationBar />
   </main>
 </template>
@@ -173,6 +250,15 @@ en:
   guide_title: What is dough hydration?
   guide_summary: Learn how hydration affects dough and find typical ranges for bread, pizza and sourdough baking.
   guide_link: Read the hydration guide
+  method_title: How the hydration calculator works
+  method_text: Hydration is the ratio of all water to all flour, expressed as a percentage. For sourdough dough, this calculator includes the flour and water already contained in the starter before showing the ingredients to add.
+  faq_title: Hydration calculator FAQ
+  faq_formula_question: How is hydration calculated?
+  faq_formula_answer: Divide the total water by the total flour and multiply by 100. Include the water and flour in the starter when you bake with sourdough.
+  faq_starter_question: Why does the calculator subtract flour and water from the starter?
+  faq_starter_answer: Starter is made from flour and water. Its contribution is already part of the total recipe, so subtracting it prevents adding the same ingredients twice.
+  faq_percentage_question: What hydration percentage should I choose?
+  faq_percentage_answer: Start around 65% for yeasted dough or 70% for sourdough, then adjust in small steps based on flour, technique, and the result you want.
 pl:
   title: Kalkulator hydratacji chleba
   subtitle: Ustaw hydratację wypieku na zakwasie lub drożdżach i poznaj dokładne ilości składników.
@@ -201,4 +287,13 @@ pl:
   guide_title: Czym jest hydratacja ciasta?
   guide_summary: Dowiedz się, jak hydratacja wpływa na ciasto i poznaj typowe wartości dla chleba, pizzy oraz wypieków na zakwasie.
   guide_link: Przeczytaj poradnik o hydratacji
+  method_title: Jak działa kalkulator hydratacji?
+  method_text: Hydratacja to stosunek całej wody do całej mąki, wyrażony w procentach. W cieście na zakwasie kalkulator uwzględnia mąkę i wodę zawarte już w zakwasie, zanim pokaże składniki do dodania.
+  faq_title: Pytania o kalkulator hydratacji
+  faq_formula_question: Jak oblicza się hydratację?
+  faq_formula_answer: Podziel całkowitą ilość wody przez całkowitą ilość mąki i pomnóż wynik przez 100. Przy wypieku na zakwasie uwzględnij wodę i mąkę znajdujące się w zakwasie.
+  faq_starter_question: Dlaczego kalkulator odejmuje mąkę i wodę z zakwasu?
+  faq_starter_answer: Zakwas składa się z mąki i wody. Jego skład jest już częścią całej receptury, więc odjęcie tych ilości zapobiega podwójnemu dodaniu składników.
+  faq_percentage_question: Jaką hydratację wybrać?
+  faq_percentage_answer: Zacznij od około 65% dla ciasta drożdżowego lub 70% dla ciasta na zakwasie, a potem zmieniaj wartość małymi krokami zależnie od mąki, techniki i oczekiwanego efektu.
 </i18n>
