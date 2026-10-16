@@ -21,7 +21,7 @@ useHead({
   link: [{ rel: "canonical", href: pageUrl }],
   script: [{
     type: "application/ld+json",
-    children: JSON.stringify({
+    innerHTML: JSON.stringify({
       "@context": "https://schema.org",
       "@type": "WebApplication",
       name: "Kalkulator ciasta na pizzę neapolitańską",
@@ -33,7 +33,7 @@ useHead({
     }),
   }, {
     type: "application/ld+json",
-    children: JSON.stringify({
+    innerHTML: JSON.stringify({
       "@context": "https://schema.org",
       "@type": "FAQPage",
       mainEntity: [

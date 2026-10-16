@@ -85,7 +85,7 @@ useHead({
   link: [{ rel: "canonical", href: pageUrl }],
   script: [{
     type: "application/ld+json",
-    children: JSON.stringify({
+    innerHTML: JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Article",
       headline: "Hydratacja ciasta – co to jest i jak ją dobrać?",
