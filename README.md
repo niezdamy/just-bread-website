@@ -23,6 +23,10 @@ You can reach the app under 5137 port:
 http://127.0.0.1:5173/#/
 ```
 
+## SEO configuration
+
+Set `VITE_SITE_URL` to the public, canonical site URL without a trailing slash. It is used for canonical links and structured data. The production workflow sets it to the current GitHub Pages URL; update both [`.env.example`](.env.example) and the deployment workflow when moving to a custom domain.
+
 ## Tests
 
 Run the frontend test suite once:
