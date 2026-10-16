@@ -1,8 +1,8 @@
 # Just Bread homepage
 
-Live site: [https://niezdamy.github.io/just-bread-website/](https://niezdamy.github.io/just-bread-website/)
+Live site: [https://justbread.app/](https://justbread.app/)
 
-Implementation of UI created by Iwona Krzymyk [Figma](https://www.figma.com/file/wKzkSA3qykTvhYUZzB1Qis/Just-Bread-%7C-Iwona-Krzymyk?node-id=49%3A346) for Just Bread app.
+Implementation of UI created by Iwona Poprawska-Krzymyk [Figma](https://www.figma.com/file/wKzkSA3qykTvhYUZzB1Qis/Just-Bread-%7C-Iwona-Krzymyk?node-id=49%3A346) for Just Bread app.
 
 ## Tech stack:
 
@@ -25,7 +25,7 @@ http://127.0.0.1:5173/#/
 
 ## SEO configuration
 
-Set `VITE_SITE_URL` to the public, canonical site URL without a trailing slash. It is used for canonical links and structured data. The production workflow sets it to the current GitHub Pages URL; update both [`.env.example`](.env.example) and the deployment workflow when moving to a custom domain.
+Set `VITE_SITE_URL` to the public, canonical site URL without a trailing slash. It is used for canonical links and structured data. The production workflow sets it to `https://justbread.app`; update both [`.env.example`](.env.example) and the deployment workflow if the canonical domain changes.
 
 ## Tests
 
