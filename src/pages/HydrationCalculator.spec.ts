@@ -1,4 +1,5 @@
 import { mount } from "@vue/test-utils";
+import { createHead } from "@unhead/vue/client";
 import { describe, expect, it } from "vitest";
 import { createI18n } from "vue-i18n";
 import HydrationCalculator from "./HydrationCalculator.vue";
@@ -12,8 +13,11 @@ function mountCalculator() {
 
   return mount(HydrationCalculator, {
     global: {
-      plugins: [i18n],
-      stubs: { NavigationBar: true },
+      plugins: [i18n, createHead()],
+      stubs: {
+        NavigationBar: true,
+        RouterLink: true,
+      },
     },
   });
 }

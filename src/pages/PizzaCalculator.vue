@@ -1,9 +1,70 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
+import { useHead } from "@unhead/vue";
 import { useI18n } from "vue-i18n";
 import NavigationBar from "../components/NavigationBar.vue";
+import { canonicalUrl } from "../seo";
 
 const { t } = useI18n({ inheritLocale: true });
+const pageUrl = canonicalUrl("/pizza-calculator");
+
+useHead({
+  title: "Kalkulator ciasta na pizzę neapolitańską | Just Bread",
+  meta: [
+    { name: "description", content: "Kalkulator ciasta na pizzę neapolitańską: oblicz ilość mąki, wody, soli i drożdży dla wybranej liczby pizz, masy kulek oraz hydratacji." },
+    { property: "og:title", content: "Kalkulator ciasta na pizzę neapolitańską | Just Bread" },
+    { property: "og:description", content: "Oblicz składniki ciasta na pizzę neapolitańską i poznaj prosty plan fermentacji." },
+    { property: "og:type", content: "website" },
+    { property: "og:url", content: pageUrl },
+    { name: "twitter:card", content: "summary" },
+  ],
+  link: [{ rel: "canonical", href: pageUrl }],
+  script: [{
+    type: "application/ld+json",
+    innerHTML: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      name: "Kalkulator ciasta na pizzę neapolitańską",
+      description: "Kalkulator ilości mąki, wody, soli i drożdży do ciasta na pizzę neapolitańską.",
+      url: pageUrl,
+      applicationCategory: "UtilitiesApplication",
+      operatingSystem: "Web",
+      inLanguage: "pl",
+    }),
+  }, {
+    type: "application/ld+json",
+    innerHTML: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Jaką hydratację wybrać do pizzy neapolitańskiej?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Zacznij od 65%. Taka wartość daje ciasto wygodne do pracy ręcznej i jednocześnie sprzyja lekkiemu rantowi. Dopasuj ją do mąki, czasu fermentacji i własnej wprawy w formowaniu.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Jakie drożdże wybrać?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Wybierz drożdże, które masz w domu. Kalkulator dostosowuje ich ilość do drożdży świeżych lub suszonych, ale czas i temperatura fermentacji nadal wymagają dopasowania do warunków.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Czy fermentacja 18–24 godziny jest obowiązkowa?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Nie. To prosty punkt wyjścia dla fermentacji w lodówce. Dostosuj czas do temperatury w pomieszczeniu i lodówce oraz do siły użytej mąki.",
+          },
+        },
+      ],
+    }),
+  }],
+});
 
 const portions = ref(4);
 const doughBallWeight = ref(250);
@@ -99,6 +160,35 @@ function resetCalculator() {
         </aside>
       </section>
     </section>
+
+    <article class="mx-auto max-w-3xl space-y-10 px-6 pb-12 sm:pb-16">
+      <section aria-labelledby="how-it-works-heading">
+        <h2 id="how-it-works-heading" class="text-2xl font-semibold">{{ t("how_it_works_title") }}</h2>
+        <p class="mt-4">{{ t("how_it_works_text") }}</p>
+        <p class="mt-4">{{ t("method_text") }}</p>
+      </section>
+
+      <section aria-labelledby="starting-point-heading">
+        <h2 id="starting-point-heading" class="text-2xl font-semibold">{{ t("starting_point_title") }}</h2>
+        <p class="mt-4">{{ t("starting_point_text") }}</p>
+      </section>
+
+      <section aria-labelledby="pizza-faq-heading">
+        <h2 id="pizza-faq-heading" class="text-2xl font-semibold">{{ t("faq_title") }}</h2>
+        <div class="mt-5 divide-y divide-gray-300 border-y border-gray-300">
+          <section v-for="item in ['hydration', 'yeast', 'fermentation']" :key="item" class="py-5">
+            <h3 class="font-semibold">{{ t(`faq_${item}_question`) }}</h3>
+            <p class="mt-2">{{ t(`faq_${item}_answer`) }}</p>
+          </section>
+        </div>
+      </section>
+
+      <aside class="border-l-4 border-gold bg-gray px-6 py-5">
+        <h2 class="text-xl font-semibold">{{ t("hydration_guide_title") }}</h2>
+        <p class="mt-2">{{ t("hydration_guide_text") }}</p>
+        <router-link class="mt-4 inline-block font-semibold underline" to="/hydratacja-ciasta">{{ t("hydration_guide_link") }}</router-link>
+      </aside>
+    </article>
     <NavigationBar />
   </main>
 </template>
@@ -125,6 +215,21 @@ en:
   yeast_amount: "{type}"
   tip_title: A simple fermentation schedule
   tip: Let the dough rest at room temperature for 2 hours, then refrigerate it for 18–24 hours. Take it out 1–2 hours before baking.
+  how_it_works_title: How the calculator works
+  how_it_works_text: Enter the number and weight of dough balls, then choose hydration and yeast type. The calculator uses the total dough weight to calculate the flour, water, salt, and yeast.
+  method_text: The default formula uses 3% salt and 65% hydration, calculated against the flour weight. Fresh yeast is set to 0.1% of flour weight; dry yeast is set to 0.04%.
+  starting_point_title: A practical starting point for pizza dough
+  starting_point_text: 65% hydration is a balanced place to start when stretching dough by hand. If your flour and technique can handle wetter dough, increase hydration gradually by 1–2 percentage points.
+  faq_title: Pizza dough calculator FAQ
+  faq_hydration_question: What hydration should I use for Neapolitan-style pizza?
+  faq_hydration_answer: Start at 65%. This produces dough that is manageable by hand while still giving a light crust. Adapt the value to your flour, fermentation, and shaping experience.
+  faq_yeast_question: Which yeast should I choose?
+  faq_yeast_answer: Select the yeast you have at home. The calculator adjusts its amount for fresh or dry yeast, but fermentation time and temperature still need to match your conditions.
+  faq_fermentation_question: Is the 18–24 hour schedule mandatory?
+  faq_fermentation_answer: No. It is a simple cold-fermentation starting point. Adjust it for room temperature, refrigerator temperature, and the strength of your flour.
+  hydration_guide_title: Learn about dough hydration
+  hydration_guide_text: Understand how the water-to-flour ratio changes dough consistency and choose a value suited to your bake.
+  hydration_guide_link: Read the hydration guide
 pl:
   title: Kalkulator pizzy neapolitańskiej
   subtitle: Oblicz ilości składników na lekkie i puszyste ciasto do pizzy.
@@ -146,4 +251,19 @@ pl:
   yeast_amount: "{type}"
   tip_title: Prosty plan fermentacji
   tip: Zostaw ciasto na 2 godziny w temperaturze pokojowej, a następnie włóż je do lodówki na 18–24 godziny. Wyjmij je 1–2 godziny przed pieczeniem.
+  how_it_works_title: Jak działa kalkulator ciasta na pizzę?
+  how_it_works_text: Podaj liczbę i masę kulek ciasta, a następnie wybierz hydratację oraz rodzaj drożdży. Kalkulator wykorzystuje całkowitą masę ciasta, aby obliczyć ilość mąki, wody, soli i drożdży.
+  method_text: Domyślna formuła zakłada 3% soli i 65% hydratacji liczonych względem masy mąki. Ilość świeżych drożdży wynosi 0,1% masy mąki, a suszonych 0,04%.
+  starting_point_title: Od czego zacząć przy cieście na pizzę?
+  starting_point_text: Hydratacja 65% to zrównoważony punkt wyjścia do ręcznego rozciągania ciasta. Jeśli mąka i technika pozwalają na bardziej wilgotne ciasto, zwiększaj hydratację stopniowo, o 1–2 punkty procentowe.
+  faq_title: Pytania o kalkulator ciasta na pizzę
+  faq_hydration_question: Jaką hydratację wybrać do pizzy neapolitańskiej?
+  faq_hydration_answer: Zacznij od 65%. Taka wartość daje ciasto wygodne do pracy ręcznej i jednocześnie sprzyja lekkiemu rantowi. Dopasuj ją do mąki, czasu fermentacji i własnej wprawy w formowaniu.
+  faq_yeast_question: Jakie drożdże wybrać?
+  faq_yeast_answer: Wybierz drożdże, które masz w domu. Kalkulator dostosowuje ich ilość do drożdży świeżych lub suszonych, ale czas i temperatura fermentacji nadal wymagają dopasowania do warunków.
+  faq_fermentation_question: Czy fermentacja 18–24 godziny jest obowiązkowa?
+  faq_fermentation_answer: Nie. To prosty punkt wyjścia dla fermentacji w lodówce. Dostosuj czas do temperatury w pomieszczeniu i lodówce oraz do siły użytej mąki.
+  hydration_guide_title: Dowiedz się więcej o hydratacji ciasta
+  hydration_guide_text: Poznaj wpływ proporcji wody do mąki na konsystencję ciasta i dobierz wartość odpowiednią do wypieku.
+  hydration_guide_link: Przeczytaj poradnik o hydratacji
 </i18n>

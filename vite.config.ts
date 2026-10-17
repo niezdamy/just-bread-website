@@ -5,7 +5,7 @@ import vueI18n from '@intlify/unplugin-vue-i18n/vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: process.env.GITHUB_ACTIONS ? '/just-bread-website/' : '/',
+  base: '/',
   plugins: [
     vue(),
     vueI18n({

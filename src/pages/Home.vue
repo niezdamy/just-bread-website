@@ -19,6 +19,26 @@ useHead({
     { property: "og:type", content: "website" },
   ],
   link: [{ rel: "canonical", href: canonicalUrl("/") }],
+  script: [{
+    type: "application/ld+json",
+    innerHTML: JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          name: "Just Bread",
+          url: canonicalUrl("/"),
+          sameAs: ["https://www.instagram.com/justbreadapp/"],
+        },
+        {
+          "@type": "WebSite",
+          name: "Just Bread",
+          url: canonicalUrl("/"),
+          inLanguage: "pl",
+        },
+      ],
+    }),
+  }],
 });
 
 </script>
