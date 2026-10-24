@@ -2,7 +2,6 @@
 <script setup lang="ts">
 import { useHead } from "@unhead/vue";
 import { useI18n } from 'vue-i18n'
-import bakingSectionImage from '../assets/home_5.avif'
 import DownloadButtons from '../components/DownloadButtons.vue'
 import NavigationBar from '../components/NavigationBar.vue'
 import { canonicalUrl } from "../seo";
@@ -94,12 +93,8 @@ useHead({
       </div>
     </div>
 
-    <section
-      class="h-96 mb-8 bg-gray_dark bg-center bg-cover rounded-3xl"
-      :style="{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(${bakingSectionImage})` }"
-      :aria-label="t('baking_section_alt')"
-    >
-      <div class="flex flex-col w-full h-full justify-center items-center text-white">
+    <section class="h-96 mb-8 bg-white rounded-3xl" :aria-label="t('baking_section_alt')">
+      <div class="flex flex-col w-full h-full justify-center items-center text-gray_dark">
         <p class="text-xl font-semibold">{{ t('modal7_text_1') }}</p>
         <p class="my-2 text-4xl font-semibold">{{ t('modal7_text_2') }}</p>
         <download-buttons></download-buttons>
