@@ -93,8 +93,8 @@ useHead({
       </div>
     </div>
 
-    <section class="h-96 mb-8 bg-[url('./assets/home_5.avif')] bg-center bg-cover rounded-3xl" :aria-label="t('baking_section_alt')">
-      <div class="flex flex-col w-full h-full justify-center items-center text-white">
+    <section class="h-96 mb-8 bg-white rounded-3xl" :aria-label="t('baking_section_alt')">
+      <div class="flex flex-col w-full h-full justify-center items-center text-gray_dark">
         <p class="text-xl font-semibold">{{ t('modal7_text_1') }}</p>
         <p class="my-2 text-4xl font-semibold">{{ t('modal7_text_2') }}</p>
         <download-buttons></download-buttons>
