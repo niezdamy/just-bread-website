@@ -1,16 +1,16 @@
-import recipeData from "../website-recipes-export/recipes.json";
+import recipeData from "./data/recipes.json";
 
 export const recipes = recipeData;
 export type Recipe = (typeof recipes)[number];
 export type RecipeLanguage = "pl" | "en";
 
 const recipeImages = import.meta.glob<string>(
-  "../website-recipes-export/assets/breads/*.jpeg",
+  "./assets/recipes/*.jpeg",
   { eager: true, import: "default", query: "?url" },
 );
 
 export function getRecipeImage(path: string) {
-  const image = recipeImages[`../website-recipes-export/${path}`];
+  const image = recipeImages[`./${path}`];
 
   if (!image) {
     throw new Error(`Recipe image not found: ${path}`);

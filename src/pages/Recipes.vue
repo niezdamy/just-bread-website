@@ -33,7 +33,7 @@ useHead({
   <main class="min-h-screen bg-whtite_gray text-[#2b2118]">
     <header class="relative isolate overflow-hidden bg-[#2b2118] px-6 py-16 text-white sm:py-24">
       <img
-        :src="getRecipeImage('assets/breads/psz2.jpeg')"
+        :src="getRecipeImage('assets/recipes/daily-wheat-bread-02.jpeg')"
         alt=""
         class="absolute inset-0 -z-20 h-full w-full object-cover opacity-35"
       />
