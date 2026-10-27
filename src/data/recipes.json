@@ -5,13 +5,13 @@
       "en": "Homemade sourdough",
       "pl": "Domowy zakwas"
     },
-    "image": "assets/recipes/sourdough-starter-04.jpeg",
+    "image": "assets/recipes/sourdough-starter-04",
     "images": [
-      "assets/recipes/sourdough-starter-01.jpeg",
-      "assets/recipes/sourdough-starter-02.jpeg",
-      "assets/recipes/sourdough-starter-03.jpeg",
-      "assets/recipes/sourdough-starter-04.jpeg",
-      "assets/recipes/sourdough-starter-05.jpeg"
+      "assets/recipes/sourdough-starter-01",
+      "assets/recipes/sourdough-starter-02",
+      "assets/recipes/sourdough-starter-03",
+      "assets/recipes/sourdough-starter-04",
+      "assets/recipes/sourdough-starter-05"
     ],
     "rating": "5",
     "category": {
@@ -157,12 +157,12 @@
       "en": "Fast yeast bread",
       "pl": "Szybki chleb drożdżowy"
     },
-    "image": "assets/recipes/quick-yeast-bread-02.jpeg",
+    "image": "assets/recipes/quick-yeast-bread-02",
     "images": [
-      "assets/recipes/quick-yeast-bread-01.jpeg",
-      "assets/recipes/quick-yeast-bread-02.jpeg",
-      "assets/recipes/quick-yeast-bread-03.jpeg",
-      "assets/recipes/quick-yeast-bread-04.jpeg"
+      "assets/recipes/quick-yeast-bread-01",
+      "assets/recipes/quick-yeast-bread-02",
+      "assets/recipes/quick-yeast-bread-03",
+      "assets/recipes/quick-yeast-bread-04"
     ],
     "rating": "4.1",
     "category": {
@@ -293,12 +293,12 @@
       "en": "Easy pizza",
       "pl": "Prosta pizza"
     },
-    "image": "assets/recipes/easy-pizza-04.jpeg",
+    "image": "assets/recipes/easy-pizza-04",
     "images": [
-      "assets/recipes/easy-pizza-01.jpeg",
-      "assets/recipes/easy-pizza-02.jpeg",
-      "assets/recipes/easy-pizza-03.jpeg",
-      "assets/recipes/easy-pizza-04.jpeg"
+      "assets/recipes/easy-pizza-01",
+      "assets/recipes/easy-pizza-02",
+      "assets/recipes/easy-pizza-03",
+      "assets/recipes/easy-pizza-04"
     ],
     "rating": "4.7",
     "category": {
@@ -445,10 +445,10 @@
       "en": "Daily wheat bread",
       "pl": "Codzienny chleb pszenny"
     },
-    "image": "assets/recipes/daily-wheat-bread-02.jpeg",
+    "image": "assets/recipes/daily-wheat-bread-02",
     "images": [
-      "assets/recipes/daily-wheat-bread-01.jpeg",
-      "assets/recipes/daily-wheat-bread-02.jpeg"
+      "assets/recipes/daily-wheat-bread-01",
+      "assets/recipes/daily-wheat-bread-02"
     ],
     "rating": "4.2",
     "category": {
@@ -568,14 +568,14 @@
       "en": "Smooth wheat bread",
       "pl": "Delikatny chleb pszenny"
     },
-    "image": "assets/recipes/soft-wheat-bread-01.jpeg",
+    "image": "assets/recipes/soft-wheat-bread-01",
     "images": [
-      "assets/recipes/soft-wheat-bread-01.jpeg",
-      "assets/recipes/soft-wheat-bread-02.jpeg",
-      "assets/recipes/soft-wheat-bread-03.jpeg",
-      "assets/recipes/soft-wheat-bread-04.jpeg",
-      "assets/recipes/soft-wheat-bread-05.jpeg",
-      "assets/recipes/soft-wheat-bread-06.jpeg"
+      "assets/recipes/soft-wheat-bread-01",
+      "assets/recipes/soft-wheat-bread-02",
+      "assets/recipes/soft-wheat-bread-03",
+      "assets/recipes/soft-wheat-bread-04",
+      "assets/recipes/soft-wheat-bread-05",
+      "assets/recipes/soft-wheat-bread-06"
     ],
     "rating": "4.6",
     "category": {
@@ -727,10 +727,10 @@
       "en": "Healthy wheat-rye bread",
       "pl": "Zdrowy chleb pszenno-żytni"
     },
-    "image": "assets/recipes/whole-wheat-rye-bread-02.jpeg",
+    "image": "assets/recipes/whole-wheat-rye-bread-02",
     "images": [
-      "assets/recipes/whole-wheat-rye-bread-01.jpeg",
-      "assets/recipes/whole-wheat-rye-bread-02.jpeg"
+      "assets/recipes/whole-wheat-rye-bread-01",
+      "assets/recipes/whole-wheat-rye-bread-02"
     ],
     "rating": "4.3",
     "category": {
@@ -850,12 +850,12 @@
       "en": "Banana bread",
       "pl": "Chlebek bananowy"
     },
-    "image": "assets/recipes/banana-bread-04.jpeg",
+    "image": "assets/recipes/banana-bread-04",
     "images": [
-      "assets/recipes/banana-bread-01.jpeg",
-      "assets/recipes/banana-bread-02.jpeg",
-      "assets/recipes/banana-bread-03.jpeg",
-      "assets/recipes/banana-bread-04.jpeg"
+      "assets/recipes/banana-bread-01",
+      "assets/recipes/banana-bread-02",
+      "assets/recipes/banana-bread-03",
+      "assets/recipes/banana-bread-04"
     ],
     "rating": "4.5",
     "category": {
@@ -1035,11 +1035,11 @@
       "en": "Neapolitan Pizza (3h)",
       "pl": "Pizza Neapolitańska (3h)"
     },
-    "image": "assets/recipes/neapolitan-pizza-01.jpeg",
+    "image": "assets/recipes/neapolitan-pizza-01",
     "images": [
-      "assets/recipes/neapolitan-pizza-02.jpeg",
-      "assets/recipes/neapolitan-pizza-03.jpeg",
-      "assets/recipes/neapolitan-pizza-04.jpeg"
+      "assets/recipes/neapolitan-pizza-02",
+      "assets/recipes/neapolitan-pizza-03",
+      "assets/recipes/neapolitan-pizza-04"
     ],
     "rating": "4.8",
     "category": {
@@ -1175,13 +1175,13 @@
       "en": "Hamburger Buns",
       "pl": "Bułki do Hamburgerów "
     },
-    "image": "assets/recipes/hamburger-buns-01.jpeg",
+    "image": "assets/recipes/hamburger-buns-01",
     "images": [
-      "assets/recipes/hamburger-buns-02.jpeg",
-      "assets/recipes/hamburger-buns-03.jpeg",
-      "assets/recipes/hamburger-buns-04.jpeg",
-      "assets/recipes/hamburger-buns-05.jpeg",
-      "assets/recipes/hamburger-buns-06.jpeg"
+      "assets/recipes/hamburger-buns-02",
+      "assets/recipes/hamburger-buns-03",
+      "assets/recipes/hamburger-buns-04",
+      "assets/recipes/hamburger-buns-05",
+      "assets/recipes/hamburger-buns-06"
     ],
     "rating": "4.7",
     "category": {

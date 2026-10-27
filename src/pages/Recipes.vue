@@ -4,7 +4,7 @@ import { useHead } from "@unhead/vue";
 import { useI18n } from "vue-i18n";
 import NavigationBar from "../components/NavigationBar.vue";
 import { canonicalUrl } from "../seo";
-import { filterRecipes, getRecipeImage, recipes } from "../recipes";
+import { filterRecipes, getRecipeImage, getRecipeImageSrcSet, recipes } from "../recipes";
 
 const { locale, t } = useI18n({ inheritLocale: true });
 const search = ref("");
@@ -32,11 +32,20 @@ useHead({
 <template>
   <main class="min-h-screen bg-whtite_gray text-[#2b2118]">
     <header class="relative isolate overflow-hidden bg-[#2b2118] px-6 py-16 text-white sm:py-24">
-      <img
-        :src="getRecipeImage('assets/recipes/daily-wheat-bread-02.jpeg')"
-        alt=""
-        class="absolute inset-0 -z-20 h-full w-full object-cover opacity-35"
-      />
+      <picture>
+        <source
+          type="image/avif"
+          :srcset="getRecipeImageSrcSet('assets/recipes/daily-wheat-bread-02.jpeg', 'avif')"
+          sizes="100vw"
+        />
+        <img
+          :src="getRecipeImage('assets/recipes/daily-wheat-bread-02.jpeg')"
+          :srcset="getRecipeImageSrcSet('assets/recipes/daily-wheat-bread-02.jpeg', 'jpg')"
+          sizes="100vw"
+          alt=""
+          class="absolute inset-0 -z-20 h-full w-full object-cover opacity-35"
+        />
+      </picture>
       <div class="absolute inset-0 -z-10 bg-gradient-to-r from-[#21180f]/95 via-[#21180f]/75 to-[#21180f]/20" />
       <div class="mx-auto max-w-6xl">
         <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">{{ t("eyebrow") }}</p>
@@ -98,12 +107,21 @@ useHead({
           class="group overflow-hidden rounded-3xl border border-[#eee7dd] bg-white shadow-[0_8px_28px_rgba(50,35,20,0.06)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(50,35,20,0.12)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#9b6a27]"
         >
           <div class="relative aspect-[4/3] overflow-hidden bg-gray">
-            <img
-              :src="getRecipeImage(recipe.image)"
-              :alt="recipe.title[language]"
-              class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-              loading="lazy"
-            />
+            <picture>
+              <source
+                type="image/avif"
+                :srcset="getRecipeImageSrcSet(recipe.image, 'avif')"
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+              />
+              <img
+                :src="getRecipeImage(recipe.image)"
+                :srcset="getRecipeImageSrcSet(recipe.image, 'jpg')"
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                :alt="recipe.title[language]"
+                class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            </picture>
             <span class="absolute left-4 top-4 rounded-full bg-white/95 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#735322]">
               {{ recipe.category[language] }}
             </span>

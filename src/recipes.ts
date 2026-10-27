@@ -5,18 +5,45 @@ export type Recipe = (typeof recipes)[number];
 export type RecipeLanguage = "pl" | "en";
 
 const recipeImages = import.meta.glob<string>(
-  "./assets/recipes/*.jpeg",
+  "./assets/recipes/optimized/*.{avif,jpg}",
   { eager: true, import: "default", query: "?url" },
 );
 
-export function getRecipeImage(path: string) {
-  const image = recipeImages[`./${path}`];
+type RecipeImageFormat = "avif" | "jpg";
 
-  if (!image) {
-    throw new Error(`Recipe image not found: ${path}`);
+function getRecipeImageVariants(path: string, format: RecipeImageFormat) {
+  const filename = path.split("/").pop();
+  const stem = filename?.replace(/\.[^.]+$/, "");
+
+  if (!stem) {
+    throw new Error(`Invalid recipe image path: ${path}`);
   }
 
-  return image;
+  const prefix = `./assets/recipes/optimized/${stem}-`;
+  const variants = Object.entries(recipeImages)
+    .filter(([imagePath]) => imagePath.startsWith(prefix) && imagePath.endsWith(`.${format}`))
+    .map(([imagePath, image]) => {
+      const width = Number(imagePath.slice(prefix.length, -format.length - 1));
+      return { image, width };
+    })
+    .sort((left, right) => left.width - right.width);
+
+  if (variants.length === 0) {
+    throw new Error(`Recipe image not found: ${path} (${format})`);
+  }
+
+  return variants;
+}
+
+export function getRecipeImage(path: string) {
+  const variants = getRecipeImageVariants(path, "jpg");
+  return variants[variants.length - 1].image;
+}
+
+export function getRecipeImageSrcSet(path: string, format: RecipeImageFormat) {
+  return getRecipeImageVariants(path, format)
+    .map(({ image, width }) => `${image} ${width}w`)
+    .join(", ");
 }
 
 function normalize(value: string) {

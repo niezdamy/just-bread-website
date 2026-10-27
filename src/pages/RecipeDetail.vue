@@ -4,7 +4,7 @@ import { useHead } from "@unhead/vue";
 import { useI18n } from "vue-i18n";
 import NavigationBar from "../components/NavigationBar.vue";
 import { canonicalUrl } from "../seo";
-import { getRecipeImage, recipes } from "../recipes";
+import { getRecipeImage, getRecipeImageSrcSet, recipes } from "../recipes";
 
 const props = defineProps<{ recipeId: number }>();
 const { locale, t } = useI18n({ inheritLocale: true });
@@ -35,12 +35,21 @@ useHead(() => ({
       <article class="mt-6 overflow-hidden rounded-3xl border border-[#eee7dd] bg-white shadow-[0_12px_40px_rgba(50,35,20,0.08)]">
         <header class="grid lg:grid-cols-[1.1fr_0.9fr]">
           <div class="relative min-h-64 bg-gray sm:min-h-96">
-            <img
-              :src="getRecipeImage(recipe.image)"
-              :alt="recipe.title[language].trim()"
-              class="absolute inset-0 h-full w-full object-cover"
-              fetchpriority="high"
-            />
+            <picture>
+              <source
+                type="image/avif"
+                :srcset="getRecipeImageSrcSet(recipe.image, 'avif')"
+                sizes="(min-width: 1024px) 55vw, 100vw"
+              />
+              <img
+                :src="getRecipeImage(recipe.image)"
+                :srcset="getRecipeImageSrcSet(recipe.image, 'jpg')"
+                sizes="(min-width: 1024px) 55vw, 100vw"
+                :alt="recipe.title[language].trim()"
+                class="absolute inset-0 h-full w-full object-cover"
+                fetchpriority="high"
+              />
+            </picture>
           </div>
           <div class="flex flex-col justify-center p-6 sm:p-10 lg:p-12">
             <p class="text-sm font-semibold uppercase tracking-[0.16em] text-[#9b6a27]">{{ recipe.category[language] }}</p>
@@ -100,14 +109,25 @@ useHead(() => ({
         <section v-if="recipe.images.length" class="border-t border-[#eee7dd] px-6 py-8 sm:px-10 lg:px-12" :aria-label="t('gallery')">
           <h2 class="text-2xl font-semibold">{{ t("gallery") }}</h2>
           <div class="mt-5 flex snap-x gap-4 overflow-x-auto pb-3">
-            <img
+            <picture
               v-for="(image, index) in recipe.images"
               :key="image"
-              :src="getRecipeImage(image)"
-              :alt="`${recipe.title[language].trim()} — ${t('photo')} ${index + 1}`"
-              class="h-48 w-64 shrink-0 snap-start rounded-2xl object-cover sm:h-56 sm:w-80"
-              loading="lazy"
-            />
+              class="shrink-0 snap-start"
+            >
+              <source
+                type="image/avif"
+                :srcset="getRecipeImageSrcSet(image, 'avif')"
+                sizes="320px"
+              />
+              <img
+                :src="getRecipeImage(image)"
+                :srcset="getRecipeImageSrcSet(image, 'jpg')"
+                sizes="320px"
+                :alt="`${recipe.title[language].trim()} — ${t('photo')} ${index + 1}`"
+                class="h-48 w-64 rounded-2xl object-cover sm:h-56 sm:w-80"
+                loading="lazy"
+              />
+            </picture>
           </div>
         </section>
 
