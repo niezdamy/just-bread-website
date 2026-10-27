@@ -1,0 +1,1428 @@
+[
+  {
+    "id": 2,
+    "title": {
+      "en": "Homemade sourdough",
+      "pl": "Domowy zakwas"
+    },
+    "image": "assets/recipes/sourdough-starter-04",
+    "images": [
+      "assets/recipes/sourdough-starter-01",
+      "assets/recipes/sourdough-starter-02",
+      "assets/recipes/sourdough-starter-03",
+      "assets/recipes/sourdough-starter-04",
+      "assets/recipes/sourdough-starter-05"
+    ],
+    "rating": "5",
+    "category": {
+      "en": "Sourdough",
+      "pl": "Zakwas"
+    },
+    "difficulty": {
+      "en": "Beginner",
+      "pl": "Łatwy"
+    },
+    "totalTime": {
+      "en": "6 days",
+      "pl": "6 dni"
+    },
+    "ingredients": [
+      {
+        "name": {
+          "en": "Water",
+          "pl": "Woda"
+        },
+        "amount": "300",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      },
+      {
+        "name": {
+          "en": "Flour",
+          "pl": "Mąka"
+        },
+        "amount": "300",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      }
+    ],
+    "steps": [
+      {
+        "id": 21,
+        "title": {
+          "en": "First day",
+          "pl": "Dzień pierwszy"
+        },
+        "text": {
+          "en": "Prepare jar ~1 l. \n\nMix 50 g of rye flour with 50 g of water in temperature around 30°C. \n\nStir well and cover with towel and let for 1 day in room temperature.",
+          "pl": "Przygotuj słoik o pojemności około 1 l. \n\nDodaj 50 g mąki żytniej [typ około 720] oraz 50 g wody w temperaturze około 30°C. \n\nWymieszaj dokładnie i przykryj słoik ręcznikiem. Zostaw zakwas na 1 dzień w temperaturze pokojowej."
+        },
+        "waitTime": {
+          "en": "24 h",
+          "pl": "24 h"
+        },
+        "waitMinutes": 1440
+      },
+      {
+        "id": 22,
+        "title": {
+          "en": "Second day",
+          "pl": "Dzień drugi"
+        },
+        "text": {
+          "en": "Add to jar 50 g of rye flour with 50 g of water and stir. \n\nCover with towel and let for 1 day.",
+          "pl": "Dodaj do słoika 50 g mąki żytniej oraz 50 g wody. Dokładnie wymieszaj. \n\nPrzykryj słoik ręcznikiem i zostaw zakwas na 1 dzień w temperaturze pokojowej."
+        },
+        "waitTime": {
+          "en": "24 h",
+          "pl": "24 h"
+        },
+        "waitMinutes": 1440
+      },
+      {
+        "id": 23,
+        "title": {
+          "en": "Third day",
+          "pl": "Dzień trzeci"
+        },
+        "text": {
+          "en": "Add to jar 50 g of rye flour with 50 g of water and stir. \n\nCover with towel and let for 1 day.",
+          "pl": "Dodaj do słoika 50 g mąki żytniej oraz 50 g wody. Dokładnie wymieszaj. \n\nPrzykryj słoik ręcznikiem i zostaw zakwas na 1 dzień w temperaturze pokojowej."
+        },
+        "waitTime": {
+          "en": "24 h",
+          "pl": "24 h"
+        },
+        "waitMinutes": 1440
+      },
+      {
+        "id": 24,
+        "title": {
+          "en": "Fourth day",
+          "pl": "Dzień czwarty"
+        },
+        "text": {
+          "en": "Add to jar 50 g of rye flour with 50 g of water and stir. \n\nCover with towel and let for 1 day.",
+          "pl": "Dodaj do słoika 50 g mąki żytniej oraz 50 g wody. Dokładnie wymieszaj. \n\nPrzykryj słoik ręcznikiem i zostaw zakwas na 1 dzień w temperaturze pokojowej."
+        },
+        "waitTime": {
+          "en": "24 h",
+          "pl": "24 h"
+        },
+        "waitMinutes": 1440
+      },
+      {
+        "id": 25,
+        "title": {
+          "en": "Fifth day",
+          "pl": "Dzień piąty"
+        },
+        "text": {
+          "en": "Add to jar 50 g of rye flour with 50 g of water and stir. \n\nCover with towel and let for 1 day.",
+          "pl": "Dodaj do słoika 50 g mąki żytniej oraz 50 g wody. Dokładnie wymieszaj. \n\nPrzykryj słoik ręcznikiem i zostaw zakwas na 1 dzień w temperaturze pokojowej."
+        },
+        "waitTime": {
+          "en": "24 h",
+          "pl": "24 h"
+        },
+        "waitMinutes": 1440
+      },
+      {
+        "id": 26,
+        "title": {
+          "en": "Sixth day",
+          "pl": "Dzień szósty"
+        },
+        "text": {
+          "en": "Add to jar 50 g of rye flour with 50 g of water and stir.  \n\nYour sourdough is ready! You can use it to prepare bread.  \n\nYou can store sourdough in fridge. To make sourdough active again take it from fridge to room temperature and add 50 g of flour and 50 g of water. \n\nYour sourdough will be strongest in interval 6-14 h after feeding.",
+          "pl": "Dodaj do słoika 50 g mąki żytniej oraz 50 g wody. Dokładnie wymieszaj. \n\nTwój zakwas jest gotowy i aktywny! Możesz teraz użyć zakwasu do przygotowania chleba. \n\nZakwas nadaje się do przechowywania w lodówce w zamkniętym słoiku. Żeby zakwas był ponownie aktywny należy wyjąć go z lodówki do temperatury pokojowej, dodać 50 g mąki oraz 50 g wody a następnie wymieszać. \n\nZakwas będzie najmocniejszy w przedziale pomiędzy 6 a 14 godziną po jego dokarmieniu."
+        },
+        "waitTime": {
+          "en": "24 h",
+          "pl": "24 h"
+        },
+        "waitMinutes": 1440
+      }
+    ],
+    "author": "Tomek Lach",
+    "videoUrl": "https://www.youtube.com/watch?v=PzWD89vITNQ"
+  },
+  {
+    "id": 3,
+    "title": {
+      "en": "Fast yeast bread",
+      "pl": "Szybki chleb drożdżowy"
+    },
+    "image": "assets/recipes/quick-yeast-bread-02",
+    "images": [
+      "assets/recipes/quick-yeast-bread-01",
+      "assets/recipes/quick-yeast-bread-02",
+      "assets/recipes/quick-yeast-bread-03",
+      "assets/recipes/quick-yeast-bread-04"
+    ],
+    "rating": "4.1",
+    "category": {
+      "en": "Yeast",
+      "pl": "Drożdże"
+    },
+    "difficulty": {
+      "en": "Beginner",
+      "pl": "Łatwy"
+    },
+    "totalTime": {
+      "en": "2 h",
+      "pl": "2 h"
+    },
+    "ingredients": [
+      {
+        "name": {
+          "en": "Water",
+          "pl": "Woda"
+        },
+        "amount": "400",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      },
+      {
+        "name": {
+          "en": "Flour",
+          "pl": "Mąka"
+        },
+        "amount": "500",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      },
+      {
+        "name": {
+          "en": "Salt",
+          "pl": "Sól"
+        },
+        "amount": "12",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      },
+      {
+        "name": {
+          "en": "Dry yeast",
+          "pl": "Suche drożdże"
+        },
+        "amount": "7",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      },
+      {
+        "name": {
+          "en": "Sugar",
+          "pl": "Cukier"
+        },
+        "amount": "12",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      }
+    ],
+    "steps": [
+      {
+        "id": 31,
+        "title": {
+          "en": "Preparing dough",
+          "pl": "Przygotowanie ciasta"
+        },
+        "text": {
+          "en": "Mix 7 g of yeast powder (or 25 g of fresh yeast) with 400 g of water in temperature around 30°C. \n\nIn the bowl mix 500 g of wheat flour with 12 g of sugar and 12 g of salt. \n\nAdd water with yeast to bowl, stir well and cover tight bowl. Leave dough in room temperature for 40 minutes.",
+          "pl": "Wymieszaj 7 g suchych drożdży (lub 25 g świeżych drożdży) z 400 g wody w temperaturze około 30°C. \n\nW osobnej misce połącz 500 g przesianej mąki pszennej dowolnego typu, 12 g cukru oraz 12 g soli. \n\nDodaj wodę z drożdzami do miski z suchymi składnikami, wymieszaj dokładnie i przykryj ręcznikiem. Odstaw ciasto na 40 minut w temperaturze pokojowej."
+        },
+        "waitTime": {
+          "en": "40 min",
+          "pl": "40 min"
+        },
+        "waitMinutes": 40
+      },
+      {
+        "id": 32,
+        "title": {
+          "en": "Preparing to bake",
+          "pl": "Przygotowanie do pieczenia"
+        },
+        "text": {
+          "en": "Put dough from bowl to rectangle cake pan covered with baking paper. \n\nCover with towel and wait 20 minutes. \n\nTip: You can decorate top of dough with seeds like sunflower or pumpkin.",
+          "pl": "Przełóż ciasto z miski do prostokątnej foremki wyłożonej papierem do pieczenia i przykryj ręcznikiem. Odczekaj 20 minut w temperaturze pokojowej. \n\nWskazówka: Jeśli chcesz, udekoruj górę chleba pestkami słonecznika, dyni lub płatkami owsianymi."
+        },
+        "waitTime": {
+          "en": "20 min",
+          "pl": "20 min"
+        },
+        "waitMinutes": 20
+      },
+      {
+        "id": 33,
+        "title": {
+          "en": "Baking bread",
+          "pl": "Pieczenie chleba"
+        },
+        "text": {
+          "en": "Set oven for 210°C [410°F] (top and bottom heat), put the pan in it and wait 60 minutes. \n\nTip: You can cover mold with aluminum foil on the last 20 minutes of baking. \n\nAfter baking remove paper from bread and let it cool for 40 minutes.",
+          "pl": "Nagrzej piekarnik do 210°C, grzanie góra-dół. Włóż foremkę do piekarnika na 60 minut. \n\nWskazówka: Możesz przykryć chleb folią aluminiową na ostatnie 20 minut pieczenia. \n\nPo upieczeniu wyjmij chleb z foremki i zdejmij papier do pieczenia. Odczekaj 40 minut do czasu ostudzenia chleba."
+        },
+        "waitTime": {
+          "en": "60 min",
+          "pl": "60 min"
+        },
+        "waitMinutes": 60
+      }
+    ],
+    "author": "Tomek Lach",
+    "videoUrl": "https://www.youtube.com/watch?v=p-HW2BjFBQU"
+  },
+  {
+    "id": 5,
+    "title": {
+      "en": "Easy pizza",
+      "pl": "Prosta pizza"
+    },
+    "image": "assets/recipes/easy-pizza-04",
+    "images": [
+      "assets/recipes/easy-pizza-01",
+      "assets/recipes/easy-pizza-02",
+      "assets/recipes/easy-pizza-03",
+      "assets/recipes/easy-pizza-04"
+    ],
+    "rating": "4.7",
+    "category": {
+      "en": "Yeast",
+      "pl": "Drożdże"
+    },
+    "difficulty": {
+      "en": "Beginner",
+      "pl": "Łatwy"
+    },
+    "totalTime": {
+      "en": "1 h 30 min",
+      "pl": "1 h 30 min"
+    },
+    "ingredients": [
+      {
+        "name": {
+          "en": "Flour",
+          "pl": "Mąka"
+        },
+        "amount": "250",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      },
+      {
+        "name": {
+          "en": "Water",
+          "pl": "Woda"
+        },
+        "amount": "150",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      },
+      {
+        "name": {
+          "en": "Salt",
+          "pl": "Sól"
+        },
+        "amount": "3",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      },
+      {
+        "name": {
+          "en": "Dry yeast",
+          "pl": "Suche drożdże"
+        },
+        "amount": "5",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      },
+      {
+        "name": {
+          "en": "Olive oil",
+          "pl": "Oliwa z oliwek"
+        },
+        "amount": "2",
+        "unit": {
+          "en": "tbsp",
+          "pl": "łyżki"
+        }
+      }
+    ],
+    "steps": [
+      {
+        "id": 51,
+        "title": {
+          "en": "Preparing ingredients",
+          "pl": "Przygotowanie składników"
+        },
+        "text": {
+          "en": "Grammage for one pizza. All ingredients should be in room temperature. The recipe doesn’t require the use of a food processor. \n\nMix instant yeast with 150 g of warm water (at about 30-35°C or 86-95°F). \n\nIn a large bowl for wheat flour (the best for pizza is type \"00\") add salt and olive oil.",
+          "pl": "Podana gramatura na jedną pizzę. Wszystkie składniki powinny być w temperaturze pokojowej. W przepisie nie trzeba używać robota kuchennego. \n\nSuche drożdże wymieszaj z ciepłą wodą (w temperaturze około 30-35°C). \n\nW dużej misce przesiej 250 g mąki pszennej (najlepiej typu \"00\") dodaj 3 g soli oraz 2 łyżki oliwy."
+        },
+        "waitTime": {
+          "en": "",
+          "pl": ""
+        },
+        "waitMinutes": 0
+      },
+      {
+        "id": 52,
+        "title": {
+          "en": "Forming and rising of the dough",
+          "pl": "Wyrabianie i wyrastanie ciasta"
+        },
+        "text": {
+          "en": "Add water with yeast to bowl with flour and stir with a spoon until ingredients form one mass. \n\nPut mass on a floured worktop and knead it with your hands (knead, stretch, roll). A well-made dough has a structure smooth, soft and resilient. \n\nLeave the ball of dough prepared this way to grow on a worktop, additionally sprinkle flour on top of it and cover it with the bowl in which it was made. Bowl could be sprayed with water from inside to ensure adequate humidity. \n\nLeave for an hour.",
+          "pl": "Do naczynia z mąką wlej drożdże z wodą i mieszaj łyżką, do momentu utworzenia jednolitej masy. \n\nPrzełóż masę na blat obsypany mąką i wyrabiaj dłońmi (zagniataj, rozciągaj, wałkuj). Dobrze wyrobione ciasto ma gładką i sprężystą strukturę. \n\nKulkę ciasta zostaw do wyrośnięcia na blacie, dodatkowo oprósz mąką jej wierzch i przykryj tym naczyniem, w którym było wyrabiane. Miskę można od środka spryskać wodą, aby zapewnić odpowiednią wilgotność podczas wyrastania ciasta. \n\nPozostaw na godzinę."
+        },
+        "waitTime": {
+          "en": "60 min",
+          "pl": "60 min"
+        },
+        "waitMinutes": 60
+      },
+      {
+        "id": 53,
+        "title": {
+          "en": "Creating a pizza",
+          "pl": "Formowanie pizzy"
+        },
+        "text": {
+          "en": "Warm up oven to maximum temperature - more than 230°C (446°F). \n\nKnead the risen dough with your fingers, then put it on a baking pan covered with a bit of olive oil and form a round pizza shape. The technique of shaping the pizza is freely chosen. \n\nPut on pizza your favourite extras (tomato sauce, cheese, ham, oregano, basil).",
+          "pl": "Rozgrzej piekarnik do maksymalnej temperatury - 230°C lub więcej. \n\nWyrośniętą kulkę ciasta uformuj na blaszce wysmarowanej oliwą z oliwek do docelowego kształtu. Technika formowania pizzy jest dowolna. \n\nNa pizzę nałóż ulubione dodatki (sos pomidorowy, ser, szynkę, oregano, bazylię)."
+        },
+        "waitTime": {
+          "en": "",
+          "pl": ""
+        },
+        "waitMinutes": 0
+      },
+      {
+        "id": 54,
+        "title": {
+          "en": "Baking pizza",
+          "pl": "Pieczenie pizzy"
+        },
+        "text": {
+          "en": "Put the prepared pizza in the oven on the lowest shelf and bake from 5-8 minutes. \n\nIt is best to check the time individually baking, which depends on many factors (incl. baking on stone or in the oven without dedicated settings). \n\nEnjoy!",
+          "pl": "Przygotowaną pizzę włóż do piekarnika na najniższą półkę i piecz od 5-8 minut (aż do zarumienienia spodu). \n\nNajlepiej indywidualnie sprawdzić czas pieczenia, który zależny jest od wielu czynników (np. pieczenie na kamieniu bądź w piekarniku gazowym dają różne rezultaty). \n\nSmacznego!"
+        },
+        "waitTime": {
+          "en": "5 min",
+          "pl": "5 min"
+        },
+        "waitMinutes": 5
+      }
+    ],
+    "author": "Tomek Lach",
+    "videoUrl": "https://www.youtube.com/watch?v=-g-o2WZ8AzM"
+  },
+  {
+    "id": 0,
+    "title": {
+      "en": "Daily wheat bread",
+      "pl": "Codzienny chleb pszenny"
+    },
+    "image": "assets/recipes/daily-wheat-bread-02",
+    "images": [
+      "assets/recipes/daily-wheat-bread-01",
+      "assets/recipes/daily-wheat-bread-02"
+    ],
+    "rating": "4.2",
+    "category": {
+      "en": "Sourdough",
+      "pl": "Zakwas"
+    },
+    "difficulty": {
+      "en": "Beginner",
+      "pl": "Łatwy"
+    },
+    "totalTime": {
+      "en": "13 h",
+      "pl": "13 h"
+    },
+    "ingredients": [
+      {
+        "name": {
+          "en": "Water",
+          "pl": "Woda"
+        },
+        "amount": "350",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      },
+      {
+        "name": {
+          "en": "Flour",
+          "pl": "Mąka"
+        },
+        "amount": "550",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      },
+      {
+        "name": {
+          "en": "Sourdough",
+          "pl": "Zakwas"
+        },
+        "amount": "100",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      },
+      {
+        "name": {
+          "en": "Salt",
+          "pl": "Sól"
+        },
+        "amount": "12",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      }
+    ],
+    "steps": [
+      {
+        "id": 1,
+        "title": {
+          "en": "Preparing starter",
+          "pl": "Przygotowanie zaczynu"
+        },
+        "text": {
+          "en": "Prepare bowl bigger than 1 l. \n\nMix 100 g of sourdough with 150 g of water and 150 g of wheat flour [Type 500-800]. \n\nCover bowl and wait 8 h in room temperature. You can leave starter for night. It will be most active between 8-14 h after preparation.",
+          "pl": "Przygotuj dużą miskę, o pojemności większej niż 1 litr. \n\nWymieszaj 100 g zakwasu razem z 150 g wody oraz 150 g mąki pszennej [Typ pomiędzy 500-800]. \n\nPrzykryj miskę i odczekaj co najmniej 8 godzin w temperaturze pokojowej. Możesz zostawić zaczyn na całą noc. Najbardziej aktywny jest pomiędzy 8 a 14 godziną od przygotowania."
+        },
+        "waitTime": {
+          "en": "8 h",
+          "pl": "8 h"
+        },
+        "waitMinutes": 480
+      },
+      {
+        "id": 2,
+        "title": {
+          "en": "Preparing dough",
+          "pl": "Przygotowanie ciasta"
+        },
+        "text": {
+          "en": "Mix starter with 400 g of wheat flour [Type 500-800], 200 g of water and 12 g of salt. \n\nPut the dough into the cake pan covered by baking paper and cover it with towel. Wait 4 h in room temperature. \n\nTip: You can use wet spoon to smooth out surface of dough.",
+          "pl": "Dodaj do zaczynu 400 g mąki pszennej [Typ pomiędzy 500-800], 200 g wody oraz 12 g soli - dokładnie wymieszaj. \n\nPrzełóż ciasto do foremki wyłożonej papierem do pieczenia i przykryj ręcznikiem. Odstaw ciasto do wyrośnięcia na 4 godziny w temperaturze pokojowej. \n\nWskazówka: możesz wygładzić powierzchnię ciasta po włożeniu do foremki za pomocą mokrej łyżki. Nasiona słonecznika lub pestki dyni mogą udekorować górę chleba."
+        },
+        "waitTime": {
+          "en": "4 h",
+          "pl": "4 h"
+        },
+        "waitMinutes": 240
+      },
+      {
+        "id": 3,
+        "title": {
+          "en": "Baking bread",
+          "pl": "Pieczenie chleba"
+        },
+        "text": {
+          "en": "Set oven for 210°C (410°F) (top and bottom heat), put the pan in it and wait 60 minutes. \n\nTip: You can cover top of bread with aluminum foil for last 20 minuntes of baking. \n\nAfter baking remove paper from bread and let it cool for 40 minutes.",
+          "pl": "Nagrzej piekarnik do 210°C, grzanie góra-dół. Włóż foremkę do piekarnika na 60 minut. \n\nWskazówka: Możesz przykryć chleb folią aluminiową na ostatnie 20 minut pieczenia. \n\nPo upieczeniu wyjmij chleb z foremki i zdejmij papier do pieczenia. Odczekaj 40 minut do czasu ostudzenia chleba."
+        },
+        "waitTime": {
+          "en": "60 min",
+          "pl": "60 min"
+        },
+        "waitMinutes": 60
+      }
+    ],
+    "author": "Tomek Lach",
+    "videoUrl": "https://www.youtube.com/watch?v=6BeDDl8-VD0"
+  },
+  {
+    "id": 6,
+    "title": {
+      "en": "Smooth wheat bread",
+      "pl": "Delikatny chleb pszenny"
+    },
+    "image": "assets/recipes/soft-wheat-bread-01",
+    "images": [
+      "assets/recipes/soft-wheat-bread-01",
+      "assets/recipes/soft-wheat-bread-02",
+      "assets/recipes/soft-wheat-bread-03",
+      "assets/recipes/soft-wheat-bread-04",
+      "assets/recipes/soft-wheat-bread-05",
+      "assets/recipes/soft-wheat-bread-06"
+    ],
+    "rating": "4.6",
+    "category": {
+      "en": "Sourdough",
+      "pl": "Zakwas"
+    },
+    "difficulty": {
+      "en": "Medium",
+      "pl": "Średni"
+    },
+    "totalTime": {
+      "en": "8 h",
+      "pl": "8 h"
+    },
+    "ingredients": [
+      {
+        "name": {
+          "en": "Water",
+          "pl": "Woda"
+        },
+        "amount": "245",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      },
+      {
+        "name": {
+          "en": "Flour",
+          "pl": "Mąka"
+        },
+        "amount": "375",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      },
+      {
+        "name": {
+          "en": "Sourdough",
+          "pl": "Zakwas"
+        },
+        "amount": "120",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      },
+      {
+        "name": {
+          "en": "Salt",
+          "pl": "Sól"
+        },
+        "amount": "11",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      }
+    ],
+    "steps": [
+      {
+        "id": 61,
+        "title": {
+          "en": "Preparing dough",
+          "pl": "Przygotowanie ciasta"
+        },
+        "text": {
+          "en": "Note: For that recipe banneton (proofing basket) and flour with more than 12,5 g of protein are needed. Use hint from step 2 if you don't have these things. \n\nIn bowl mix 245 g of water and 11 g of salt. Add 120 g of sourdough feeded 10-12 hours ealier and stir well. \n\nAdd to bowl 375 g of wheat flour (for that recipe flour shoud have more than 12,5 g of protein in 100 g of flour). \n\nCover bowl and wait 1 h in room temperature.",
+          "pl": "Informacja: W tym przepisie używany jest koszyk do wyrastania chleba (banneton) oraz mąka zawierająca więcej niż 12,5 g białka. Jeżeli nie masz tych rzeczy użyj wskazówki z kroku 2. \n\nW misce wymieszaj 245 g wody z 11 g soli. Dodaj 120 g zakwasu dokarmionego 10-12 godzin wcześniej i wszystko wymieszaj. \n\nDo miski dodaj 375 g mąki pszennej (do tego przepisu mąka powinna mieć więcej niż 12,5 g białka w 100 g mąki). \n\nPrzykryj miskę i odczekaj 1 godzinę w temperaturze pokojowej."
+        },
+        "waitTime": {
+          "en": "1 h",
+          "pl": "1 h"
+        },
+        "waitMinutes": 60
+      },
+      {
+        "id": 62,
+        "title": {
+          "en": "Proofing dough",
+          "pl": "Wyrastanie ciasta"
+        },
+        "text": {
+          "en": "Take out dough from bowl to worktop without flour. Form bowl to create surface tension (check Youtube for \"Sourdough bread shaping\") \n\nPut dough in bowl with smooth surface facing up. Cover bowl and wait 4 h in room temperature. \n\nHint: if You don't have proofing basket (banneton) put dough in cake pan with baking paper, and skip next step. Wait 6 h.",
+          "pl": "Wyciągnij ciasto z miski na blat bez mąki. Uformuj z ciasta kulę by stworzyć napięcie powierzchniowe (polecam filmy na Youtube \"Sourdough bread shaping\") \n\nPrzełóż do miski ciasto skierowane gładką powierzchnią kuli ku górze. Przykryj miskę i odstaw ciasto do wyrośnięcia na 4 godziny w temperaturze pokojowej. \n\nWskazówka: jeśli nie masz koszyka do wyrastania ciasta i nie chcesz formować ciasta ręcznie to w tym kroku możesz włożyć ciasto do foremki wyłożonej papierem do pieczenia i pominąć następny krok. Wtedy wyrastanie potrwa 6 godzin."
+        },
+        "waitTime": {
+          "en": "4 h",
+          "pl": "4 h"
+        },
+        "waitMinutes": 240
+      },
+      {
+        "id": 63,
+        "title": {
+          "en": "Shaping dough",
+          "pl": "Formowanie ciasta"
+        },
+        "text": {
+          "en": "Take out dough from bowl to worktop without flour. Form dough in shape of proofing basket (banneton). \n\nDust banneton with flour and put dough in it. Cover banneton with towell and wait 2 h.",
+          "pl": "Wyciągnij ciasto z miski na blat bez mąki. Delikatnie uformuj ciasto do kształtu koszyka do wyrastania - powietrze uwięzione wewnątrz ciasta jest bardzo istotne. \n\nPowierzchnia koszyka do wyrastania powinna być pokryta mąką by zapobiec przyklejaniu się ciasta. Przełóż chleb do koszyka, przykryj ręcznikiem i odczekaj 2 godziny."
+        },
+        "waitTime": {
+          "en": "2 h",
+          "pl": "2 h"
+        },
+        "waitMinutes": 120
+      },
+      {
+        "id": 64,
+        "title": {
+          "en": "Baking bread part 1",
+          "pl": "Pieczenie chleba część 1"
+        },
+        "text": {
+          "en": "Preheat oven to 250°C (482) (top and bottom heat). Flip banneton on baking tray covered with baking paper. Remove excess flour from bread. Use razor or sharp knife cut in line along the bread. \n\nTip: You can add metal bowl with water to the oven for better humidity.",
+          "pl": "Nagrzej piekarnik do 250°C, grzanie góra-dół. Na blachę wyłożoną papierem do pieczenia wyciągnij chleb z koszyka do wyrastania (odwróć go pewnym ruchem). Usuń nadmiar mąki. Wzdłóż chleba natnij linię za pomocą żyletki lub ostrego noża. \n\nWskazówka: Do piekarnika możesz włożyć metalową miskę z wodą zapewniającą lepszą wilgotność podczas pieczenia chleba."
+        },
+        "waitTime": {
+          "en": "20 min",
+          "pl": "20 min"
+        },
+        "waitMinutes": 20
+      },
+      {
+        "id": 65,
+        "title": {
+          "en": "Baking bread part 2",
+          "pl": "Pieczenie chleba część 2"
+        },
+        "text": {
+          "en": "Change oven temperature to 210°C (410°F) (top and bottom heat). Remove bowl with water. Wait 20 min.",
+          "pl": "Zmień temperaturę na pierkarniku do 210°C, grzanie góra-dół. Wyciągnij miskę z wodą jeśli była w piekarniku"
+        },
+        "waitTime": {
+          "en": "20 min",
+          "pl": "20 min"
+        },
+        "waitMinutes": 20
+      }
+    ],
+    "author": "Culinary Exploration",
+    "videoUrl": "https://www.youtube.com/watch?v=4r8irdLuUtc"
+  },
+  {
+    "id": 1,
+    "title": {
+      "en": "Healthy wheat-rye bread",
+      "pl": "Zdrowy chleb pszenno-żytni"
+    },
+    "image": "assets/recipes/whole-wheat-rye-bread-02",
+    "images": [
+      "assets/recipes/whole-wheat-rye-bread-01",
+      "assets/recipes/whole-wheat-rye-bread-02"
+    ],
+    "rating": "4.3",
+    "category": {
+      "en": "Sourdough",
+      "pl": "Zakwas"
+    },
+    "difficulty": {
+      "en": "Beginner",
+      "pl": "Łatwy"
+    },
+    "totalTime": {
+      "en": "13 h",
+      "pl": "13 h "
+    },
+    "ingredients": [
+      {
+        "name": {
+          "en": "Water",
+          "pl": "Woda"
+        },
+        "amount": "360",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      },
+      {
+        "name": {
+          "en": "Flour",
+          "pl": "Mąka"
+        },
+        "amount": "500",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      },
+      {
+        "name": {
+          "en": "Sourdough",
+          "pl": "Zakwas"
+        },
+        "amount": "150",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      },
+      {
+        "name": {
+          "en": "Salt",
+          "pl": "Sól"
+        },
+        "amount": "12",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      }
+    ],
+    "steps": [
+      {
+        "id": 11,
+        "title": {
+          "en": "Preparing starter",
+          "pl": "Przygotowanie zaczynu"
+        },
+        "text": {
+          "en": "Prepare bowl bigger than 1 l. \n\nMix 150 g of sourdough with 150 g of water and 150 g of rye flour [Type around 720]. \n\nCover bowl and wait 8h in room temperature. You can leave starter for night. It will be most active between 8-14 h after preparation.",
+          "pl": "Przygotuj dużą miskę, o pojemności większej niż 1 litr. \n\nWymieszaj 150 g zakwasu z 150 g wody oraz 150 g mąki żytniej [Typ około 720]. \n\nPrzykryj miskę i odczekaj co najmniej 8 godzin w temperaturze pokojowej. Możesz zostawić zaczyn na całą noc. Najbardziej aktywny jest pomiędzy 8 a 14 godziną od przygotowania."
+        },
+        "waitTime": {
+          "en": "8 h",
+          "pl": "8 h"
+        },
+        "waitMinutes": 480
+      },
+      {
+        "id": 12,
+        "title": {
+          "en": "Preparing dough",
+          "pl": "Przygotowanie ciasta"
+        },
+        "text": {
+          "en": "Mix starter with 150 g of rye flour [Type around 720], 200 g of wheat flour [Type between 500-800] , 210 g of water and 12g of salt. \n\nPut the dough into the cake pan covered by baking paper and cover it with towel. Wait 4 h in room temperature. \n\nTip: You can use wet spoon to smooth out surface of dough. You can decorate top of dough with seeds like sunflower or pumpkin.",
+          "pl": "Dodaj do zaczynu 150 g mąki żytniej [Typ około 720], 200 g mąki pszennej [Typ pomiędzy 500-800], 210 g wody oraz 12 g soli - dokładnie wymieszaj. \n\nPrzełóż ciasto do foremki wyłożonej papierem do pieczenia i przykryj ręcznikiem. Odstaw ciasto do wyrośnięcia na 4 godziny w temperaturze pokojowej. \n\nWskazówka: Możesz wygładzić powierzchnię ciasta po włożeniu do foremki za pomocą mokrej łyżki. Jeśli chcesz, udekoruj górę chleba pestkami słonecznika lub dyni."
+        },
+        "waitTime": {
+          "en": "4 h",
+          "pl": "4 h"
+        },
+        "waitMinutes": 240
+      },
+      {
+        "id": 13,
+        "title": {
+          "en": "Baking bread",
+          "pl": "Pieczenie chleba"
+        },
+        "text": {
+          "en": "Set oven for 210°C (410°F) (top and bottom heat), put the pan in it and wait 60 minutes. \n\nTip: You can cover top of bread with aluminum foil for last 20 minuntes of baking. \n\nAfter baking remove paper from bread and let it cool for 40 minutes.",
+          "pl": "Nagrzej piekarnik do 210°C, grzanie góra-dół. Włóż foremkę do piekarnika na 60 minut. \n\nWskazówka: Możesz przykryć chleb folią aluminiową na ostatnie 20 minut pieczenia. \n\nPo upieczeniu wyjmij chleb z foremki i zdejmij papier do pieczenia. Odczekaj 40 minut do czasu ostudzenia chleba."
+        },
+        "waitTime": {
+          "en": "60 min",
+          "pl": "60 min"
+        },
+        "waitMinutes": 60
+      }
+    ],
+    "author": "Tomek Lach",
+    "videoUrl": ""
+  },
+  {
+    "id": 4,
+    "title": {
+      "en": "Banana bread",
+      "pl": "Chlebek bananowy"
+    },
+    "image": "assets/recipes/banana-bread-04",
+    "images": [
+      "assets/recipes/banana-bread-01",
+      "assets/recipes/banana-bread-02",
+      "assets/recipes/banana-bread-03",
+      "assets/recipes/banana-bread-04"
+    ],
+    "rating": "4.5",
+    "category": {
+      "en": "Sweet",
+      "pl": "Słodkie"
+    },
+    "difficulty": {
+      "en": "Beginner",
+      "pl": "Łatwy"
+    },
+    "totalTime": {
+      "en": "1 h 10 min",
+      "pl": "1 h 10 min"
+    },
+    "ingredients": [
+      {
+        "name": {
+          "en": "Banana",
+          "pl": "Banan"
+        },
+        "amount": "4",
+        "unit": {
+          "en": "pieces",
+          "pl": "sztuki"
+        }
+      },
+      {
+        "name": {
+          "en": "Butter",
+          "pl": "Masło"
+        },
+        "amount": "125",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      },
+      {
+        "name": {
+          "en": "Honey",
+          "pl": "Miód"
+        },
+        "amount": "3",
+        "unit": {
+          "en": "tsbp",
+          "pl": "łyżki"
+        }
+      },
+      {
+        "name": {
+          "en": "Eggs",
+          "pl": "Jajka"
+        },
+        "amount": "2",
+        "unit": {
+          "en": "pieces",
+          "pl": "sztuki"
+        }
+      },
+      {
+        "name": {
+          "en": "Wheat flour",
+          "pl": "Mąka pszenna"
+        },
+        "amount": "300",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      },
+      {
+        "name": {
+          "en": "Baking soda",
+          "pl": "Soda"
+        },
+        "amount": "1,5",
+        "unit": {
+          "en": "tsp",
+          "pl": "łyżeczki"
+        }
+      },
+      {
+        "name": {
+          "en": "Salt",
+          "pl": "Sól"
+        },
+        "amount": "1",
+        "unit": {
+          "en": "pinch",
+          "pl": "szczypta"
+        }
+      },
+      {
+        "name": {
+          "en": "Cinnamon",
+          "pl": "Cynamon"
+        },
+        "amount": "1",
+        "unit": {
+          "en": "tsp",
+          "pl": "łyżeczka"
+        }
+      }
+    ],
+    "steps": [
+      {
+        "id": 41,
+        "title": {
+          "en": "Preparing dry ingredients",
+          "pl": "Przygotowanie suchych składników"
+        },
+        "text": {
+          "en": "All ingredients should be in room  temperature. In the recipe no need to use a mixer. \n\nSieve flour, baking soda, a pinch of salt and cinnamon, mix and put aside.",
+          "pl": "Wszystkie składniki powinny być w temperaturze pokojowej. W przepisie nie trzeba używać miksera. \n\nMąkę, sodę oczyszczoną, szczyptę soli i cynamon przesiej, wymieszaj i odłóż na bok."
+        },
+        "waitTime": {
+          "en": "",
+          "pl": ""
+        },
+        "waitMinutes": 0
+      },
+      {
+        "id": 42,
+        "title": {
+          "en": "Preparing wet ingredients",
+          "pl": "Przygotowanie mokrych składników"
+        },
+        "text": {
+          "en": "Mix in a large bowl melted butter with honey and add whisked eggs with a fork. On a plate mashed the bananas (you can leave bigger pieces) and mix them into the others wet ingredients.",
+          "pl": "W dużym naczyniu wymieszaj roztopione masło z miodem oraz dodaj roztrzepane widelcem jajka. Na talerzu rozgnieć banany (mogą też zostać większe kawałki) i wmieszaj je do pozostałych, mokrych składników."
+        },
+        "waitTime": {
+          "en": "",
+          "pl": ""
+        },
+        "waitMinutes": 0
+      },
+      {
+        "id": 43,
+        "title": {
+          "en": "Preparing dough",
+          "pl": "Przygotowanie ciasta"
+        },
+        "text": {
+          "en": "Combine the dry ingredients with banana mixture. Mix the cake well - it should be thick, consistent and sheen. \n\nAt this stage you can also add your favorite ingredients like dried fruit and chopped nuts or coconut shreds. \n\nPut the cake into a small bread mold  of size 10 x 20 cm (4 x 8 inch), greased with butter and sprinkled with flour.",
+          "pl": "Suche składniki połącz z masą bananową. Ciasto dokładnie wymieszaj - ma być gęste, jednolite i błyszczące. \n\nNa tym etapie możesz wrzucić także swoje ulubione dodatki jak bakalie, posiekane orzechy czy wiórki kokosowe. \n\nCiasto przełóż do małej keksówki o wymiarach 10 x 20 cm wysmarowanej masłem i oprószonej mąką pszenną."
+        },
+        "waitTime": {
+          "en": "",
+          "pl": ""
+        },
+        "waitMinutes": 0
+      },
+      {
+        "id": 44,
+        "title": {
+          "en": "Baking dough",
+          "pl": "Pieczenie ciasta"
+        },
+        "text": {
+          "en": "Bake the cake around 60 minutes in the oven heated to 175°C ( or so 350°F ) to the so-called dry stick (toothpick inserted into center of cake comes out clean). \n\nAfter baking take the banana bread out of the oven. Pull it out of the form and put it aside to cool down.",
+          "pl": "Ciasto piecz około 60 minut w piekarniku nagrzanym do 175°C do tzw. suchego patyczka. \n\nPo upieczeniu wyjmij ciasto z pieca. Uwolnij je z foremki i przełóż na kratkę do przestudzenia."
+        },
+        "waitTime": {
+          "en": "60 min",
+          "pl": "60 min"
+        },
+        "waitMinutes": 60
+      }
+    ],
+    "author": "ELISE BAUER",
+    "videoUrl": ""
+  },
+  {
+    "id": 7,
+    "title": {
+      "en": "Neapolitan Pizza (3h)",
+      "pl": "Pizza Neapolitańska (3h)"
+    },
+    "image": "assets/recipes/neapolitan-pizza-01",
+    "images": [
+      "assets/recipes/neapolitan-pizza-02",
+      "assets/recipes/neapolitan-pizza-03",
+      "assets/recipes/neapolitan-pizza-04"
+    ],
+    "rating": "4.8",
+    "category": {
+      "en": "Yeast",
+      "pl": "Drożdże"
+    },
+    "difficulty": {
+      "en": "Beginner",
+      "pl": "Łatwy"
+    },
+    "totalTime": {
+      "en": "3 h",
+      "pl": "3 h"
+    },
+    "ingredients": [
+      {
+        "name": {
+          "en": "Yeast",
+          "pl": "Drożdże"
+        },
+        "amount": "2",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      },
+      {
+        "name": {
+          "en": "Water",
+          "pl": "Woda"
+        },
+        "amount": "375",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      },
+      {
+        "name": {
+          "en": "Flour type \"00\"",
+          "pl": "Mąka typu \"00\""
+        },
+        "amount": "500",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      },
+      {
+        "name": {
+          "en": "Salt",
+          "pl": "Sól"
+        },
+        "amount": "12",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      }
+    ],
+    "steps": [
+      {
+        "id": 71,
+        "title": {
+          "en": "Mixing Dough",
+          "pl": "Mieszanie Ciasta"
+        },
+        "text": {
+          "en": "Mix 2g of yeast with 375g of water. Add 500g of type \"00\" flour and 12g of salt. Mix the dough by hand.",
+          "pl": "Wymieszaj 2 g drożdży z 375 g wody. Dodaj 500 g mąki typu \"00\" i 12 g soli. Wymieszaj ciasto ręcznie."
+        },
+        "waitTime": {
+          "en": "5 min",
+          "pl": "5 min"
+        },
+        "waitMinutes": 5
+      },
+      {
+        "id": 72,
+        "title": {
+          "en": "First Rest",
+          "pl": "Pierwszy Odpoczynek"
+        },
+        "text": {
+          "en": "Let the dough rest for 30 minutes.",
+          "pl": "Odstaw ciasto na 30 minut."
+        },
+        "waitTime": {
+          "en": "30 min",
+          "pl": "30 min"
+        },
+        "waitMinutes": 30
+      },
+      {
+        "id": 73,
+        "title": {
+          "en": "Stretch, Fold & Second Rest",
+          "pl": "Rozciąganie, Składanie i Drugi Odpoczynek"
+        },
+        "text": {
+          "en": "Stretch and fold the dough, then let it rest for 1 hour.",
+          "pl": "Rozciągnij i złóż ciasto, a następnie odstaw na 1 godzinę."
+        },
+        "waitTime": {
+          "en": "1 h",
+          "pl": "1 h"
+        },
+        "waitMinutes": 60
+      },
+      {
+        "id": 74,
+        "title": {
+          "en": "Forming Dough and Final Proofing",
+          "pl": "Formowanie Ciasta i Końcowe Wyrastanie"
+        },
+        "text": {
+          "en": "Divide the dough into 290g balls and let them proof for 1.5 hours.",
+          "pl": "Podziel i uformuj ciasto na kulki o wadze 290g pozostaw do podwojenia objętości na 1,5 godziny.."
+        },
+        "waitTime": {
+          "en": "1h 30 min",
+          "pl": "1h 30 min"
+        },
+        "waitMinutes": 90
+      }
+    ],
+    "author": "Julian Sisofo",
+    "videoUrl": "https://www.youtube.com/watch?v=7-5eCAiUYPg"
+  },
+  {
+    "id": 8,
+    "title": {
+      "en": "Hamburger Buns",
+      "pl": "Bułki do Hamburgerów "
+    },
+    "image": "assets/recipes/hamburger-buns-01",
+    "images": [
+      "assets/recipes/hamburger-buns-02",
+      "assets/recipes/hamburger-buns-03",
+      "assets/recipes/hamburger-buns-04",
+      "assets/recipes/hamburger-buns-05",
+      "assets/recipes/hamburger-buns-06"
+    ],
+    "rating": "4.7",
+    "category": {
+      "en": "Buns",
+      "pl": "Bułki"
+    },
+    "difficulty": {
+      "en": "Intermediate",
+      "pl": "Średniozaawansowany"
+    },
+    "totalTime": {
+      "en": "2 h 30 min",
+      "pl": "2 h 30 min"
+    },
+    "ingredients": [
+      {
+        "name": {
+          "en": "Flour type 650",
+          "pl": "Mąka typ 650"
+        },
+        "amount": "400",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      },
+      {
+        "name": {
+          "en": "Butter",
+          "pl": "Masło"
+        },
+        "amount": "40",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      },
+      {
+        "name": {
+          "en": "Milk",
+          "pl": "Mleko"
+        },
+        "amount": "150",
+        "unit": {
+          "en": "ml",
+          "pl": "ml"
+        }
+      },
+      {
+        "name": {
+          "en": "Fresh Yeast",
+          "pl": "Świeże Drożdże"
+        },
+        "amount": "25",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      },
+      {
+        "name": {
+          "en": "Salt",
+          "pl": "Sól"
+        },
+        "amount": "5",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      },
+      {
+        "name": {
+          "en": "Brown Sugar",
+          "pl": "Brązowy Cukier"
+        },
+        "amount": "10",
+        "unit": {
+          "en": "g",
+          "pl": "g"
+        }
+      },
+      {
+        "name": {
+          "en": "Warm Water",
+          "pl": "Ciepła Woda"
+        },
+        "amount": "100",
+        "unit": {
+          "en": "ml",
+          "pl": "ml"
+        }
+      },
+      {
+        "name": {
+          "en": "Egg Yolk",
+          "pl": "Żółtko Jaja"
+        },
+        "amount": "1",
+        "unit": {
+          "en": " ",
+          "pl": " "
+        }
+      },
+      {
+        "name": {
+          "en": "Milk",
+          "pl": "Mleko"
+        },
+        "amount": "Few",
+        "unit": {
+          "en": " ",
+          "pl": "ml"
+        }
+      },
+      {
+        "name": {
+          "en": "Sesame Seeds",
+          "pl": "Sezam"
+        },
+        "amount": "To taste",
+        "unit": {
+          "en": " ",
+          "pl": " "
+        }
+      }
+    ],
+    "steps": [
+      {
+        "id": 81,
+        "title": {
+          "en": "Making the Leaven",
+          "pl": "Przygotowanie Zaczynu"
+        },
+        "text": {
+          "en": "Combine milk, warm water, yeast, sugar, and a spoonful of flour to make the leaven. Let it sit for 10 minutes.",
+          "pl": "Połącz mleko, ciepłą wodę, drożdże, cukier i łyżkę mąki, aby zrobić zaczyn. Odstaw na 10 minut."
+        },
+        "waitTime": {
+          "en": "15 min",
+          "pl": "15 min"
+        },
+        "waitMinutes": 15
+      },
+      {
+        "id": 82,
+        "title": {
+          "en": "Mixing the Dough",
+          "pl": "Wyrabianie Ciasta"
+        },
+        "text": {
+          "en": "Mix the leaven with the rest of the ingredients.",
+          "pl": "Wymieszaj zaczyn z resztą składników."
+        },
+        "waitTime": {
+          "en": "5 min",
+          "pl": "5 min"
+        },
+        "waitMinutes": 5
+      },
+      {
+        "id": 83,
+        "title": {
+          "en": "Kneading the Dough",
+          "pl": "Wyrabianie Ciasta"
+        },
+        "text": {
+          "en": "Knead the dough for 10-15 minutes.",
+          "pl": "Wyrabiaj ciasto przez 10-15 minut."
+        },
+        "waitTime": {
+          "en": "15 min",
+          "pl": "15 min"
+        },
+        "waitMinutes": 15
+      },
+      {
+        "id": 84,
+        "title": {
+          "en": "First Rise",
+          "pl": "Pierwsze Wyrastanie"
+        },
+        "text": {
+          "en": "Divide the dough into four equal parts and shape them into balls. Place on a baking sheet, cover, and let rise in a warm place for an hour.",
+          "pl": "Podziel ciasto na cztery równe części i uformuj z nich kulki. Umieść na blasze, przykryj i odstaw w ciepłe miejsce na godzinę do wyrośnięcia."
+        },
+        "waitTime": {
+          "en": "1 h",
+          "pl": "1 h"
+        },
+        "waitMinutes": 60
+      },
+      {
+        "id": 85,
+        "title": {
+          "en": "Shaping the Buns",
+          "pl": "Formowanie Bułek"
+        },
+        "text": {
+          "en": "Deflate the dough balls and shape them into final buns. Cover again and let rise for another half hour.",
+          "pl": "Delikatnie spłaszcz wyrośnięte ciasto i uformuj ostateczne bułki. Przykryj ponownie i odstaw na kolejne pół godziny do wyrośnięcia."
+        },
+        "waitTime": {
+          "en": "35 min",
+          "pl": "35 min"
+        },
+        "waitMinutes": 35
+      },
+      {
+        "id": 86,
+        "title": {
+          "en": "Baking",
+          "pl": "Pieczenie"
+        },
+        "text": {
+          "en": "Brush the buns with a mixture of egg yolk and a little milk, then sprinkle with sesame seeds. Bake in a preheated oven at 200 degrees Celsius for about 15-20 minutes, or until golden brown.",
+          "pl": "Posmaruj bułki mieszanką żółtka i odrobiny mleka, a następnie posyp sezamem. Piecz w nagrzanym piekarniku w temperaturze 200 stopni Celsjusza przez około 15-20 minut, lub do uzyskania złotego koloru."
+        },
+        "waitTime": {
+          "en": "20 min",
+          "pl": "20 min"
+        },
+        "waitMinutes": 20
+      },
+      {
+        "id": 87,
+        "title": {
+          "en": "Cooling",
+          "pl": "Chłodzenie"
+        },
+        "text": {
+          "en": "Let the baked buns cool down before slicing.",
+          "pl": "Upieczone bułki ostudź przed pokrojeniem."
+        },
+        "waitTime": {
+          "en": "10 min",
+          "pl": "10 min"
+        },
+        "waitMinutes": 10
+      }
+    ],
+    "author": "Policzona Szama",
+    "videoUrl": "https://www.youtube.com/watch?v=JL4jyt-LbWI"
+  }
+]
