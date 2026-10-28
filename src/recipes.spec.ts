@@ -21,11 +21,19 @@ describe("recipe collection", () => {
     expect(results.every((recipe) => recipe.category.en === "Sourdough")).toBe(true);
   });
 
-  it("provides responsive AVIF and JPEG variants for recipe photos", () => {
-    const imagePath = recipes[0].image;
+  it("provides matching responsive AVIF and JPEG variants for every recipe photo", () => {
+    const imagePaths = recipes.flatMap((recipe) => [recipe.image, ...recipe.images]);
 
-    expect(getRecipeImage(imagePath)).toContain(".jpg");
-    expect(getRecipeImageSrcSet(imagePath, "avif")).toContain(".avif");
-    expect(getRecipeImageSrcSet(imagePath, "jpg")).toMatch(/\d+w/);
+    for (const imagePath of new Set(imagePaths)) {
+      const avifSet = getRecipeImageSrcSet(imagePath, "avif");
+      const jpegSet = getRecipeImageSrcSet(imagePath);
+      const widths = (srcSet: string) =>
+        srcSet.split(", ").map((candidate) => candidate.split(" ").at(-1));
+
+      expect(getRecipeImage(imagePath)).toContain(".jpg");
+      expect(avifSet).toContain(".avif");
+      expect(avifSet).toMatch(/\d+w/);
+      expect(widths(avifSet)).toEqual(widths(jpegSet));
+    }
   });
 });

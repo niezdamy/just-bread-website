@@ -32,7 +32,7 @@ useHead({
 <template>
   <main class="min-h-screen bg-whtite_gray text-[#2b2118]">
     <header class="relative isolate overflow-hidden bg-[#2b2118] px-6 py-16 text-white sm:py-24">
-      <picture>
+      <picture class="absolute inset-0 -z-20 h-full w-full">
         <source
           type="image/avif"
           :srcset="getRecipeImageSrcSet('assets/recipes/daily-wheat-bread-02.jpeg', 'avif')"
@@ -40,10 +40,10 @@ useHead({
         />
         <img
           :src="getRecipeImage('assets/recipes/daily-wheat-bread-02.jpeg')"
-          :srcset="getRecipeImageSrcSet('assets/recipes/daily-wheat-bread-02.jpeg', 'jpg')"
+          :srcset="getRecipeImageSrcSet('assets/recipes/daily-wheat-bread-02.jpeg')"
           sizes="100vw"
           alt=""
-          class="absolute inset-0 -z-20 h-full w-full object-cover opacity-35"
+          class="absolute inset-0 h-full w-full object-cover opacity-35"
         />
       </picture>
       <div class="absolute inset-0 -z-10 bg-gradient-to-r from-[#21180f]/95 via-[#21180f]/75 to-[#21180f]/20" />
@@ -115,7 +115,7 @@ useHead({
               />
               <img
                 :src="getRecipeImage(recipe.image)"
-                :srcset="getRecipeImageSrcSet(recipe.image, 'jpg')"
+                :srcset="getRecipeImageSrcSet(recipe.image)"
                 sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                 :alt="recipe.title[language]"
                 class="h-full w-full object-cover transition duration-500 group-hover:scale-105"

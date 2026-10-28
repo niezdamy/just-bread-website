@@ -21,7 +21,11 @@ const i18n = createI18n({
 
 export const createApp = ViteSSG(
   App,
-  { routes, base: import.meta.env.BASE_URL },
+  {
+    routes,
+    base: import.meta.env.BASE_URL,
+    scrollBehavior: () => ({ top: 0, left: 0 }),
+  },
   ({ app, router }) => {
     app.use(i18n);
 
