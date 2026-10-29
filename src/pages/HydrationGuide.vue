@@ -56,7 +56,7 @@ const focaccia = {
 } satisfies BakeImage;
 
 const selectedImage = ref<BakeImage | null>(null);
-const pageUrl = canonicalUrl("/hydratacja-ciasta");
+const pageUrl = canonicalUrl("/hydration-guide");
 
 function closeImageOnEscape(event: KeyboardEvent) {
   if (event.key === "Escape") {
