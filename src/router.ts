@@ -13,7 +13,7 @@ export const routes = [
   { path: "/", component: HomePage },
   { path: "/pizza-calculator", component: PizzaCalculatorPage },
   { path: "/hydration-calculator", component: HydrationCalculatorPage },
-  { path: "/hydratacja-ciasta", component: HydrationGuidePage },
+  { path: "/hydration-guide", component: HydrationGuidePage },
   { path: "/recipes", component: RecipesPage },
   ...recipes.map((recipe) => ({
     path: `/recipes/${recipe.id}`,

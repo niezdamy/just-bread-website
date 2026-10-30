@@ -18,8 +18,8 @@ const { t } = useI18n({
     <router-link to="/hydration-calculator">
       <p class="m-4 sm:m-8" :class="$route.path == '/hydration-calculator' ? 'font-bold' : 'font-semibold'"> {{ t('hydrationCalculator') }}</p>
     </router-link>
-    <router-link to="/hydratacja-ciasta">
-      <p class="m-4 sm:m-8" :class="$route.path == '/hydratacja-ciasta' ? 'font-bold' : 'font-semibold'"> {{ t('hydrationGuide') }}</p>
+    <router-link to="/hydration-guide">
+      <p class="m-4 sm:m-8" :class="$route.path == '/hydration-guide' ? 'font-bold' : 'font-semibold'"> {{ t('hydrationGuide') }}</p>
     </router-link>
     <router-link to="/recipes">
       <p class="m-4 sm:m-8" :class="$route.path.startsWith('/recipes') ? 'font-bold' : 'font-semibold'"> {{ t('recipes') }}</p>

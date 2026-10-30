@@ -40,7 +40,7 @@ export function getRecipeImage(path: string) {
   return variants[variants.length - 1].image;
 }
 
-export function getRecipeImageSrcSet(path: string, format: RecipeImageFormat) {
+export function getRecipeImageSrcSet(path: string, format: RecipeImageFormat = "jpg") {
   return getRecipeImageVariants(path, format)
     .map(({ image, width }) => `${image} ${width}w`)
     .join(", ");

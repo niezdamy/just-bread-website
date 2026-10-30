@@ -197,7 +197,7 @@ function resetCalculator() {
         <aside class="mt-8 border-l-4 border-gray_dark pl-4">
           <h3 class="font-semibold">{{ t("guide_title") }}</h3>
           <p class="mt-1 text-sm">{{ t("guide_summary") }}</p>
-          <router-link class="mt-3 inline-block font-semibold underline" to="/hydratacja-ciasta">{{ t("guide_link") }}</router-link>
+          <router-link class="mt-3 inline-block font-semibold underline" to="/hydration-guide">{{ t("guide_link") }}</router-link>
         </aside>
       </section>
     </section>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, nextTick, onMounted, onUnmounted, ref, watch } from "vue";
 import { useHead } from "@unhead/vue";
 import { useI18n } from "vue-i18n";
 import NavigationBar from "../components/NavigationBar.vue";
@@ -10,6 +10,55 @@ const props = defineProps<{ recipeId: number }>();
 const { locale, t } = useI18n({ inheritLocale: true });
 const language = computed(() => locale.value === "en" ? "en" : "pl");
 const recipe = computed(() => recipes.find((item) => item.id === props.recipeId));
+const selectedPhoto = ref<{ path: string; alt: string } | null>(null);
+const closeButton = ref<HTMLButtonElement | null>(null);
+let photoTrigger: HTMLButtonElement | null = null;
+let previousBodyOverflow = "";
+
+function openPhoto(path: string, alt: string, event: MouseEvent) {
+  photoTrigger = event.currentTarget as HTMLButtonElement;
+  selectedPhoto.value = { path, alt };
+}
+
+function closePhoto() {
+  selectedPhoto.value = null;
+}
+
+function handlePhotoKeydown(event: KeyboardEvent) {
+  if (event.key === "Escape" && selectedPhoto.value) {
+    closePhoto();
+    return;
+  }
+
+  if (event.key === "Tab" && selectedPhoto.value) {
+    event.preventDefault();
+    closeButton.value?.focus();
+  }
+}
+
+watch(selectedPhoto, async (photo) => {
+  if (photo) {
+    previousBodyOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    await nextTick();
+    closeButton.value?.focus();
+    return;
+  }
+
+  document.body.style.overflow = previousBodyOverflow;
+  await nextTick();
+  photoTrigger?.focus();
+  photoTrigger = null;
+});
+
+onMounted(() => {
+  window.addEventListener("keydown", handlePhotoKeydown);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("keydown", handlePhotoKeydown);
+  document.body.style.overflow = previousBodyOverflow;
+});
 
 useHead(() => ({
   title: recipe.value
@@ -43,7 +92,7 @@ useHead(() => ({
               />
               <img
                 :src="getRecipeImage(recipe.image)"
-                :srcset="getRecipeImageSrcSet(recipe.image, 'jpg')"
+                :srcset="getRecipeImageSrcSet(recipe.image)"
                 sizes="(min-width: 1024px) 55vw, 100vw"
                 :alt="recipe.title[language].trim()"
                 class="absolute inset-0 h-full w-full object-cover"
@@ -109,25 +158,30 @@ useHead(() => ({
         <section v-if="recipe.images.length" class="border-t border-[#eee7dd] px-6 py-8 sm:px-10 lg:px-12" :aria-label="t('gallery')">
           <h2 class="text-2xl font-semibold">{{ t("gallery") }}</h2>
           <div class="mt-5 flex snap-x gap-4 overflow-x-auto pb-3">
-            <picture
+            <button
               v-for="(image, index) in recipe.images"
               :key="image"
-              class="shrink-0 snap-start"
+              type="button"
+              class="group shrink-0 snap-start rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#9b6a27]"
+              :aria-label="t('enlarge_photo', { number: index + 1 })"
+              @click="openPhoto(image, `${recipe.title[language].trim()} — ${t('photo')} ${index + 1}`, $event)"
             >
-              <source
-                type="image/avif"
-                :srcset="getRecipeImageSrcSet(image, 'avif')"
-                sizes="320px"
-              />
-              <img
-                :src="getRecipeImage(image)"
-                :srcset="getRecipeImageSrcSet(image, 'jpg')"
-                sizes="320px"
-                :alt="`${recipe.title[language].trim()} — ${t('photo')} ${index + 1}`"
-                class="h-48 w-64 rounded-2xl object-cover sm:h-56 sm:w-80"
-                loading="lazy"
-              />
-            </picture>
+              <picture class="block overflow-hidden rounded-2xl">
+                <source
+                  type="image/avif"
+                  :srcset="getRecipeImageSrcSet(image, 'avif')"
+                  sizes="(min-width: 640px) 320px, 256px"
+                />
+                <img
+                  :src="getRecipeImage(image)"
+                  :srcset="getRecipeImageSrcSet(image)"
+                  sizes="(min-width: 640px) 320px, 256px"
+                  :alt="`${recipe.title[language].trim()} — ${t('photo')} ${index + 1}`"
+                  class="h-48 w-64 rounded-2xl object-cover transition duration-200 group-hover:brightness-90 sm:h-56 sm:w-80"
+                  loading="lazy"
+                />
+              </picture>
+            </button>
           </div>
         </section>
 
@@ -148,6 +202,44 @@ useHead(() => ({
       <RouterLink to="/recipes" class="mt-6 inline-flex rounded-full bg-gold px-5 py-3 font-semibold">{{ t("back_to_recipes") }}</RouterLink>
     </section>
 
+    <div
+      v-if="selectedPhoto"
+      class="fixed inset-0 z-[60] flex items-center justify-center bg-black/90 p-4 sm:p-8"
+      role="dialog"
+      aria-modal="true"
+      :aria-label="t('image_preview')"
+      @click.self="closePhoto"
+    >
+      <button
+        ref="closeButton"
+        type="button"
+        class="absolute right-4 top-4 flex h-12 w-12 items-center justify-center rounded-full bg-white text-[#2b2118] shadow-lg transition hover:rotate-90 hover:bg-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+        :aria-label="t('close_preview')"
+        @click="closePhoto"
+      >
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg">
+          <path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+      <figure class="flex max-h-full max-w-full flex-col items-center gap-3">
+        <picture class="contents">
+          <source
+            type="image/avif"
+            :srcset="getRecipeImageSrcSet(selectedPhoto.path, 'avif')"
+            sizes="90vw"
+          />
+          <img
+            :src="getRecipeImage(selectedPhoto.path)"
+            :srcset="getRecipeImageSrcSet(selectedPhoto.path)"
+            sizes="90vw"
+            :alt="selectedPhoto.alt"
+            class="max-h-[85vh] max-w-[90vw] rounded-xl object-contain shadow-2xl"
+          />
+        </picture>
+        <figcaption class="text-center text-sm text-white/85">{{ selectedPhoto.alt }}</figcaption>
+      </figure>
+    </div>
+
     <NavigationBar />
   </main>
 </template>
@@ -165,6 +257,9 @@ en:
   no_wait: No waiting required
   gallery: Recipe photos
   photo: photo
+  enlarge_photo: Enlarge photo {number}
+  image_preview: Enlarged recipe photo
+  close_preview: Close photo preview
   author: Recipe by
   not_found: Recipe not found
   not_found_description: This recipe may have moved. Browse the full recipe collection to find something to bake.
@@ -181,6 +276,9 @@ pl:
   no_wait: Bez oczekiwania
   gallery: Zdjęcia przepisu
   photo: zdjęcie
+  enlarge_photo: Powiększ zdjęcie {number}
+  image_preview: Powiększone zdjęcie przepisu
+  close_preview: Zamknij podgląd zdjęcia
   author: Przepis
   not_found: Nie znaleziono przepisu
   not_found_description: Ten przepis mógł zostać przeniesiony. Zobacz wszystkie przepisy i wybierz coś do upieczenia.

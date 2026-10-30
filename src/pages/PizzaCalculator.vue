@@ -186,7 +186,7 @@ function resetCalculator() {
       <aside class="border-l-4 border-gold bg-gray px-6 py-5">
         <h2 class="text-xl font-semibold">{{ t("hydration_guide_title") }}</h2>
         <p class="mt-2">{{ t("hydration_guide_text") }}</p>
-        <router-link class="mt-4 inline-block font-semibold underline" to="/hydratacja-ciasta">{{ t("hydration_guide_link") }}</router-link>
+        <router-link class="mt-4 inline-block font-semibold underline" to="/hydration-guide">{{ t("hydration_guide_link") }}</router-link>
       </aside>
     </article>
     <NavigationBar />
