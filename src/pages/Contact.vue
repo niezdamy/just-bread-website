@@ -108,13 +108,15 @@ useHead(() => ({
 <style scoped>
 .contact-page {
   --gold: #ffb300;
-  --ink: #2b2118;
-  --paper: #fbf6ea;
-  --surface: #fffdf8;
-  --muted: #62574d;
-  --brown: #80571f;
+  --ink: #263a2d;
+  --moss: #3a5542;
+  --paper: #f5f1e8;
+  --surface: #fbf9f4;
+  --muted: #5d6458;
   --butter: #fff2d1;
-  --line: #eadfc8;
+  --linen: #ede6d3;
+  --cream: #fbf5e9;
+  --line: #dcd5c7;
   min-height: 100vh;
   background: var(--paper);
   color: var(--ink);
@@ -129,16 +131,16 @@ useHead(() => ({
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  background: var(--gold);
-  color: var(--ink);
+  background: var(--ink);
+  color: var(--cream);
 }
 
 .hero-grain {
   position: absolute;
   z-index: -1;
   inset: 0;
-  opacity: 0.13;
-  background-image: radial-gradient(#2b2118 0.65px, transparent 0.65px);
+  opacity: 0.12;
+  background-image: radial-gradient(#e9d8b8 0.65px, transparent 0.65px);
   background-size: 7px 7px;
   mask-image: linear-gradient(90deg, #000 0%, transparent 76%);
 }
@@ -174,7 +176,7 @@ useHead(() => ({
 }
 
 .hero-eyebrow {
-  color: var(--ink);
+  color: var(--gold);
 }
 
 .hero-eyebrow span {
@@ -201,7 +203,7 @@ useHead(() => ({
 .hero-lead {
   max-width: 510px;
   margin: 1.5rem 0 0;
-  color: #3b2a10;
+  color: #dfe5d8;
   font-size: 1.08rem;
   line-height: 1.75;
 }
@@ -221,13 +223,14 @@ useHead(() => ({
   width: 68%;
   height: 68%;
   border-radius: 50%;
-  background: radial-gradient(circle at 36% 32%, #4a3a2b, #2b2118 68%);
+  background: radial-gradient(circle at 36% 32%, #4b6a55, #2f4637 68%);
+  box-shadow: 0 0 0 10px rgb(255 179 0 / 12%);
   content: "";
 }
 
 .art-orbit {
   position: absolute;
-  border: 1px solid rgb(43 33 24 / 30%);
+  border: 1px solid rgb(255 179 0 / 40%);
   border-radius: 50%;
 }
 
@@ -245,7 +248,7 @@ useHead(() => ({
   position: relative;
   z-index: 1;
   width: 84%;
-  filter: drop-shadow(0 20px 14px rgb(26 18 11 / 30%));
+  filter: drop-shadow(0 20px 14px rgb(0 0 0 / 35%));
   transform: rotate(-8deg);
   transition: transform 450ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
@@ -257,7 +260,7 @@ useHead(() => ({
 .art-spark {
   position: absolute;
   z-index: 2;
-  color: var(--ink);
+  color: var(--gold);
 }
 
 .art-spark-one {
@@ -276,7 +279,7 @@ useHead(() => ({
   position: absolute;
   right: 0;
   bottom: 3%;
-  color: var(--ink);
+  color: var(--cream);
   font-size: 0.58rem;
   font-weight: 600;
   letter-spacing: 0.2em;
@@ -284,7 +287,7 @@ useHead(() => ({
 
 .art-caption span {
   padding-inline: 0.3rem;
-  color: var(--ink);
+  color: var(--gold);
 }
 
 .contact-content {
@@ -301,7 +304,11 @@ useHead(() => ({
 
 .section-eyebrow,
 .panel-eyebrow {
-  color: var(--brown);
+  color: var(--moss);
+}
+
+.email-panel .panel-eyebrow {
+  color: var(--gold);
 }
 
 .section-eyebrow span {
@@ -360,8 +367,8 @@ useHead(() => ({
 .topic-card:hover {
   z-index: 1;
   transform: translateY(-4px);
-  border-color: #d9a93a;
-  box-shadow: 0 16px 35px rgb(128 87 31 / 16%);
+  border-color: var(--gold);
+  box-shadow: 0 16px 35px rgb(38 58 45 / 16%);
 }
 
 .topic-card:hover::after {
@@ -371,13 +378,13 @@ useHead(() => ({
 .topic-card:focus-visible,
 .email-button:focus-visible,
 .elsewhere-links a:focus-visible {
-  outline: 2px solid var(--brown);
+  outline: 3px solid var(--moss);
   outline-offset: 4px;
 }
 
 .topic-number {
-  color: #8a7a66;
-  font-size: 0.68rem;
+  color: var(--muted);
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.16em;
 }
@@ -389,7 +396,7 @@ useHead(() => ({
   margin-top: 1.4rem;
   border-radius: 50%;
   background: var(--butter);
-  color: var(--brown);
+  color: var(--ink);
   font-size: 1.25rem;
   place-items: center;
 }
@@ -412,7 +419,7 @@ useHead(() => ({
   align-items: center;
   gap: 0.55rem;
   margin-top: auto;
-  color: var(--brown);
+  color: var(--moss);
   font-size: 0.86rem;
   font-weight: 700;
 }
@@ -444,7 +451,8 @@ useHead(() => ({
   align-items: flex-end;
   justify-content: space-between;
   gap: 2rem;
-  background: var(--butter);
+  background: var(--ink);
+  color: var(--cream);
 }
 
 .email-copy {
@@ -460,7 +468,7 @@ useHead(() => ({
 
 .panel-description {
   margin: 0.7rem 0 0;
-  color: var(--muted);
+  color: #dfe5d8;
   font-size: 0.91rem;
   line-height: 1.65;
 }
@@ -473,9 +481,9 @@ useHead(() => ({
   justify-content: center;
   gap: 1.1rem;
   padding: 0.8rem 1.1rem;
-  background: var(--ink);
-  color: var(--gold);
-  font-size: 0.82rem;
+  background: var(--gold);
+  color: var(--ink);
+  font-size: 0.86rem;
   font-weight: 600;
   text-decoration: none;
   transition: background 180ms ease, transform 180ms ease;
@@ -483,7 +491,7 @@ useHead(() => ({
 
 .email-button:hover {
   transform: translateY(-2px);
-  background: #46362a;
+  background: #ffc43d;
 }
 
 .elsewhere-panel {
@@ -499,10 +507,10 @@ useHead(() => ({
 }
 
 .elsewhere-links a {
-  color: var(--brown);
+  color: var(--moss);
   font-size: 0.86rem;
   font-weight: 700;
-  text-decoration-color: #d9a93a;
+  text-decoration-color: var(--gold);
   text-underline-offset: 4px;
 }
 
