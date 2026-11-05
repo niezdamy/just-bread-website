@@ -44,7 +44,7 @@ useHead({
 </script>
 
 <template>
-  <main class="flex flex-col bg-whtite_gray">
+  <main class="mx-auto flex w-full max-w-[1360px] flex-col bg-whtite_gray">
     <div class=" flex flex-col justify-between items-center content-center sm:flex-row ">
       <div class="sm:ml-32 ">
         <img class="object-scale-down" src="../assets/Logo_Just_Bread.svg" alt="Just Bread" width="238" height="104" />
