@@ -382,6 +382,10 @@ useHead(() => ({
   outline-offset: 4px;
 }
 
+.email-button:focus-visible {
+  outline-color: var(--gold);
+}
+
 .topic-number {
   color: var(--muted);
   font-size: 0.75rem;
