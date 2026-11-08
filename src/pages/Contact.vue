@@ -472,9 +472,13 @@ useHead(() => ({
 
 .panel-description {
   margin: 0.7rem 0 0;
-  color: #dfe5d8;
+  color: var(--muted);
   font-size: 0.91rem;
   line-height: 1.65;
+}
+
+.email-panel .panel-description {
+  color: #dfe5d8;
 }
 
 .email-button {
