@@ -294,7 +294,7 @@ useHead({
 
 .faq-number {
   padding-top: 0.3rem;
-  color: #8a7a66;
+  color: var(--muted);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.15em;
