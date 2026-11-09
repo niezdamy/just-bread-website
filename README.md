@@ -27,6 +27,22 @@ http://127.0.0.1:5173/#/
 
 Set `VITE_SITE_URL` to the public, canonical site URL without a trailing slash. It is used for canonical links and structured data. The production workflow sets it to `https://justbread.app`; update both [`.env.example`](.env.example) and the deployment workflow if the canonical domain changes.
 
+## Design systems
+
+Static, self-contained HTML references (open them directly in a browser) live in [`design-systems/`](design-systems/). They are discussion material and are not part of the Vite build.
+
+[![Gold vs. evergreen + gold design systems: hero, topic cards, panels and consent card](design-systems/design-systems-preview.png)](design-systems/design-system-comparison.html)
+
+| File | Contents |
+| --- | --- |
+| [`design-system-before.html`](design-systems/design-system-before.html) | Previous system (archive) |
+| [`design-system-proposed.html`](design-systems/design-system-proposed.html) | Gold system (`#FFB300` hero, dark brown ink); used by the FAQ page |
+| [`design-system-green-gold.html`](design-systems/design-system-green-gold.html) / [`.pl.html`](design-systems/design-system-green-gold.pl.html) | Evergreen + gold system with an accessibility section (EN / PL); used by the Contact page |
+| [`design-system-comparison.html`](design-systems/design-system-comparison.html) | Gold vs. evergreen + gold: WCAG contrast, pros and cons, recommendation (PL) |
+| [`design-system-dark.html`](design-systems/design-system-dark.html) | Dark-mode extension of both systems, with tokens and contrast ratios (PL) |
+
+The app pages are currently styled with these systems via per-page CSS variables in `src/pages/Faq.vue` (gold), `src/pages/Contact.vue` (evergreen + gold) and `src/App.vue` (consent card, gold). Dark mode is not implemented in the app yet.
+
 ## Tests
 
 Run the frontend test suite once:

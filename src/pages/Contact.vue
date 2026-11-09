@@ -15,63 +15,83 @@ useHead(() => ({
 </script>
 
 <template>
-  <main class="min-h-screen bg-whtite_gray text-[#2b2118]">
-    <header class="relative isolate overflow-hidden bg-[#2b2118] px-6 py-16 text-white sm:py-24">
-      <div aria-hidden="true" class="absolute -right-20 -top-32 -z-10 h-80 w-80 rounded-full border-[48px] border-gold/15 sm:right-[10%] sm:top-[-12rem] sm:h-[30rem] sm:w-[30rem] sm:border-[72px]" />
-      <div class="mx-auto max-w-6xl">
-        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">{{ t("eyebrow") }}</p>
-        <h1 class="mt-4 max-w-3xl text-4xl font-semibold leading-tight sm:text-6xl">{{ t("title") }}</h1>
-        <p class="mt-5 max-w-2xl text-lg text-white/80 sm:text-xl">{{ t("lead") }}</p>
+  <main class="contact-page">
+    <header class="contact-hero">
+      <div aria-hidden="true" class="hero-grain" />
+      <div class="contact-wrap hero-layout">
+        <div class="hero-copy">
+          <p class="hero-eyebrow"><span aria-hidden="true">✳</span>{{ t("eyebrow") }}</p>
+          <h1>{{ t("title") }}</h1>
+          <p class="hero-lead">{{ t("lead") }}</p>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-orbit art-orbit-outer" />
+          <div class="art-orbit art-orbit-inner" />
+          <svg class="bread-illustration" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="160" cy="252" rx="112" ry="22" fill="#120c07" fill-opacity=".4" />
+            <path d="M55 211c-14-17-20-42-13-70 13-53 62-94 121-98 59-4 108 31 119 83 11 50-16 87-56 99-43 13-142 12-171-14Z" fill="#E39A2D" />
+            <path d="M55 211c-14-17-20-42-13-70 13-53 62-94 121-98 59-4 108 31 119 83 11 50-16 87-56 99-43 13-142 12-171-14Z" stroke="#F0BE75" stroke-width="5" />
+            <path d="M83 171c6-26 20-47 43-63M126 190c9-30 27-54 52-73M173 197c10-25 27-45 48-59" stroke="#F6D6A0" stroke-width="11" stroke-linecap="round" />
+            <path d="M83 171c6-26 20-47 43-63M126 190c9-30 27-54 52-73M173 197c10-25 27-45 48-59" stroke="#B96A36" stroke-opacity=".48" stroke-width="2" stroke-linecap="round" />
+            <path d="M64 237c47 17 130 19 183 3" stroke="#E8C99A" stroke-opacity=".8" stroke-width="3" stroke-linecap="round" />
+          </svg>
+          <span class="art-spark art-spark-one">✳</span>
+          <span class="art-spark art-spark-two">✳</span>
+          <span class="art-caption">JUST BREAD <span>·</span> 01</span>
+        </div>
       </div>
     </header>
 
-    <section class="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-16" aria-labelledby="contact-options-heading">
-      <div class="max-w-2xl">
-        <p class="text-sm font-semibold uppercase tracking-[0.16em] text-[#9b6a27]">{{ t("section_eyebrow") }}</p>
-        <h2 id="contact-options-heading" class="mt-2 text-3xl font-semibold sm:text-4xl">{{ t("section_title") }}</h2>
-        <p class="mt-4 text-[#62574d]">{{ t("section_text") }}</p>
+    <section class="contact-wrap contact-content" aria-labelledby="contact-options-heading">
+      <div class="section-intro">
+        <div>
+          <p class="section-eyebrow"><span aria-hidden="true" />{{ t("section_eyebrow") }}</p>
+          <h2 id="contact-options-heading">{{ t("section_title") }}</h2>
+        </div>
+        <p class="section-description">{{ t("section_text") }}</p>
       </div>
 
-      <div class="mt-8 grid gap-4 md:grid-cols-3">
+      <div class="topic-grid">
         <a
-          v-for="topic in ['app', 'recipes', 'feedback']"
+          v-for="(topic, index) in ['app', 'recipes', 'feedback']"
           :key="topic"
           :href="`mailto:justbreadapp@gmail.com?subject=${encodeURIComponent(t(`${topic}_subject`))}`"
-          class="group rounded-3xl border border-[#eee7dd] bg-white p-6 shadow-[0_8px_28px_rgba(50,35,20,0.05)] transition duration-200 hover:-translate-y-1 hover:border-[#e2c58f] hover:shadow-[0_16px_36px_rgba(50,35,20,0.1)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#9b6a27]"
+          class="topic-card"
         >
-          <span aria-hidden="true" class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#fff4d8] text-xl text-[#80571f]">
-            {{ topic === "app" ? "✳" : topic === "recipes" ? "◌" : "♡" }}
-          </span>
-          <h3 class="mt-5 text-xl font-semibold">{{ t(`${topic}_title`) }}</h3>
-          <p class="mt-2 min-h-12 text-[#62574d]">{{ t(`${topic}_text`) }}</p>
-          <span class="mt-5 inline-flex items-center gap-2 font-semibold text-[#80571f] group-hover:underline">
+          <span class="topic-number">{{ `0${index + 1}` }}</span>
+          <span aria-hidden="true" class="topic-symbol">{{ topic === "app" ? "✳" : topic === "recipes" ? "◌" : "♡" }}</span>
+          <h3>{{ t(`${topic}_title`) }}</h3>
+          <p>{{ t(`${topic}_text`) }}</p>
+          <span class="topic-action">
             {{ t("email_action") }}
-            <span aria-hidden="true">→</span>
+            <span aria-hidden="true">↗</span>
           </span>
         </a>
       </div>
 
-      <div class="mt-8 grid gap-4 md:grid-cols-[1.2fr_0.8fr]">
-        <section class="rounded-3xl bg-[#fff2d1] p-6 sm:p-8" aria-labelledby="email-heading">
-          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-[#80571f]">{{ t("email_eyebrow") }}</p>
-          <h2 id="email-heading" class="mt-2 text-2xl font-semibold">{{ t("email_title") }}</h2>
-          <p class="mt-2 text-[#62574d]">{{ t("email_text") }}</p>
+      <div class="contact-bottom">
+        <section class="email-panel" aria-labelledby="email-heading">
+          <div class="email-copy">
+            <p class="panel-eyebrow">{{ t("email_eyebrow") }}</p>
+            <h2 id="email-heading">{{ t("email_title") }}</h2>
+            <p class="panel-description">{{ t("email_text") }}</p>
+          </div>
           <a
-            class="mt-5 inline-flex min-h-12 items-center justify-center rounded-full bg-[#2b2118] px-6 py-3 font-semibold text-white transition hover:bg-[#493727] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#80571f]"
+            class="email-button"
             href="mailto:justbreadapp@gmail.com"
-          >{{ t("email_button") }}</a>
+          >{{ t("email_button") }}<span aria-hidden="true">↗</span></a>
         </section>
 
-        <section class="rounded-3xl border border-[#eee7dd] bg-white p-6 sm:p-8" aria-labelledby="other-ways-heading">
-          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-[#9b6a27]">{{ t("other_ways_eyebrow") }}</p>
-          <h2 id="other-ways-heading" class="mt-2 text-2xl font-semibold">{{ t("other_ways_title") }}</h2>
-          <p class="mt-2 text-[#62574d]">{{ t("other_ways_text") }}</p>
-          <div class="mt-5 flex flex-wrap gap-x-5 gap-y-3">
-            <RouterLink class="font-semibold text-[#80571f] underline decoration-[#d7b77d] underline-offset-4 hover:text-[#5d3d15]" to="/faq">
+        <section class="elsewhere-panel" aria-labelledby="other-ways-heading">
+          <p class="panel-eyebrow">{{ t("other_ways_eyebrow") }}</p>
+          <h2 id="other-ways-heading">{{ t("other_ways_title") }}</h2>
+          <p class="panel-description">{{ t("other_ways_text") }}</p>
+          <div class="elsewhere-links">
+            <RouterLink to="/faq">
               {{ t("faq_link") }}
             </RouterLink>
             <a
-              class="font-semibold text-[#80571f] underline decoration-[#d7b77d] underline-offset-4 hover:text-[#5d3d15]"
               href="https://www.instagram.com/justbreadapp/"
               target="_blank"
               rel="noopener noreferrer"
@@ -84,6 +104,527 @@ useHead(() => ({
     <NavigationBar />
   </main>
 </template>
+
+<style scoped>
+.contact-page {
+  --gold: #ffb300;
+  --ink: #263a2d;
+  --moss: #3a5542;
+  --paper: #f5f1e8;
+  --surface: #fbf9f4;
+  --muted: #5d6458;
+  --butter: #fff2d1;
+  --linen: #ede6d3;
+  --cream: #fbf5e9;
+  --line: #dcd5c7;
+  min-height: 100vh;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.contact-wrap {
+  width: min(100% - 3rem, 1140px);
+  margin-inline: auto;
+}
+
+.contact-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.hero-grain {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: 0.12;
+  background-image: radial-gradient(#e9d8b8 0.65px, transparent 0.65px);
+  background-size: 7px 7px;
+  mask-image: linear-gradient(90deg, #000 0%, transparent 76%);
+}
+
+.hero-layout {
+  display: grid;
+  min-height: 470px;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 2rem;
+  padding-block: 4.5rem 4rem;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  animation: rise-in 650ms both;
+}
+
+.hero-eyebrow,
+.section-eyebrow,
+.panel-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.hero-eyebrow {
+  color: var(--gold);
+}
+
+.hero-eyebrow span {
+  font-size: 1.1rem;
+}
+
+.hero-copy h1,
+.section-intro h2,
+.topic-card h3,
+.email-panel h2,
+.elsewhere-panel h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -0.045em;
+}
+
+.hero-copy h1 {
+  max-width: 680px;
+  margin: 1.25rem 0 0;
+  font-size: clamp(3.6rem, 7vw, 6.5rem);
+  line-height: 0.98;
+}
+
+.hero-lead {
+  max-width: 510px;
+  margin: 1.5rem 0 0;
+  color: #dfe5d8;
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+.hero-art {
+  position: relative;
+  display: grid;
+  aspect-ratio: 1;
+  width: min(100%, 410px);
+  place-items: center;
+  justify-self: end;
+  animation: rise-in 800ms 120ms both;
+}
+
+.hero-art::before {
+  position: absolute;
+  width: 68%;
+  height: 68%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 36% 32%, #4b6a55, #2f4637 68%);
+  box-shadow: 0 0 0 10px rgb(255 179 0 / 12%);
+  content: "";
+}
+
+.art-orbit {
+  position: absolute;
+  border: 1px solid rgb(255 179 0 / 40%);
+  border-radius: 50%;
+}
+
+.art-orbit-outer {
+  inset: 2%;
+}
+
+.art-orbit-inner {
+  inset: 12%;
+  border-style: dashed;
+  opacity: 0.55;
+}
+
+.bread-illustration {
+  position: relative;
+  z-index: 1;
+  width: 84%;
+  filter: drop-shadow(0 20px 14px rgb(0 0 0 / 35%));
+  transform: rotate(-8deg);
+  transition: transform 450ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.hero-art:hover .bread-illustration {
+  transform: rotate(-3deg) translateY(-5px);
+}
+
+.art-spark {
+  position: absolute;
+  z-index: 2;
+  color: var(--gold);
+}
+
+.art-spark-one {
+  top: 13%;
+  right: 16%;
+  font-size: 1.25rem;
+}
+
+.art-spark-two {
+  bottom: 22%;
+  left: 8%;
+  font-size: 0.85rem;
+}
+
+.art-caption {
+  position: absolute;
+  right: 0;
+  bottom: 3%;
+  color: var(--cream);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+
+.art-caption span {
+  padding-inline: 0.3rem;
+  color: var(--gold);
+}
+
+.contact-content {
+  padding-block: 5.25rem 5.75rem;
+}
+
+.section-intro {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.section-eyebrow,
+.panel-eyebrow {
+  color: var(--moss);
+}
+
+.email-panel .panel-eyebrow {
+  color: var(--gold);
+}
+
+.section-eyebrow span {
+  width: 1.7rem;
+  height: 1px;
+  background: currentColor;
+}
+
+.section-intro h2 {
+  margin: 0.7rem 0 0;
+  font-size: clamp(2.4rem, 4vw, 3.5rem);
+  line-height: 1.08;
+}
+
+.section-description {
+  max-width: 445px;
+  margin: 0 0 0.3rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.topic-card {
+  position: relative;
+  display: flex;
+  min-height: 280px;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: hidden;
+  padding: 1.55rem 1.6rem 1.45rem;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--surface);
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+}
+
+.topic-card::after {
+  position: absolute;
+  right: -2.25rem;
+  bottom: -3.1rem;
+  width: 8rem;
+  height: 8rem;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  content: "";
+  transition: transform 350ms ease;
+}
+
+.topic-card:hover {
+  z-index: 1;
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: 0 16px 35px rgb(38 58 45 / 16%);
+}
+
+.topic-card:hover::after {
+  transform: scale(1.25);
+}
+
+.topic-card:focus-visible,
+.email-button:focus-visible,
+.elsewhere-links a:focus-visible {
+  outline: 3px solid var(--moss);
+  outline-offset: 4px;
+}
+
+.email-button:focus-visible {
+  outline-color: var(--gold);
+}
+
+.topic-number {
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+
+.topic-symbol {
+  display: grid;
+  width: 2.6rem;
+  height: 2.6rem;
+  margin-top: 1.4rem;
+  border-radius: 50%;
+  background: var(--butter);
+  color: var(--ink);
+  font-size: 1.25rem;
+  place-items: center;
+}
+
+.topic-card h3 {
+  margin: 1rem 0 0;
+  font-size: 1.48rem;
+  line-height: 1.15;
+}
+
+.topic-card > p {
+  margin: 0.55rem 0 1.25rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.topic-action {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: auto;
+  color: var(--moss);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.topic-action span {
+  font-size: 1.1rem;
+  transition: transform 180ms ease;
+}
+
+.topic-card:hover .topic-action span {
+  transform: translate(2px, -2px);
+}
+
+.contact-bottom {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.email-panel,
+.elsewhere-panel {
+  min-height: 240px;
+  padding: 2rem;
+}
+
+.email-panel {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.email-copy {
+  max-width: 420px;
+}
+
+.email-panel h2,
+.elsewhere-panel h2 {
+  margin: 0.7rem 0 0;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 1.08;
+}
+
+.panel-description {
+  margin: 0.7rem 0 0;
+  color: var(--muted);
+  font-size: 0.91rem;
+  line-height: 1.65;
+}
+
+.email-panel .panel-description {
+  color: #dfe5d8;
+}
+
+.email-button {
+  display: inline-flex;
+  min-height: 3rem;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 1.1rem;
+  padding: 0.8rem 1.1rem;
+  background: var(--gold);
+  color: var(--ink);
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.email-button:hover {
+  transform: translateY(-2px);
+  background: #ffc43d;
+}
+
+.elsewhere-panel {
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.elsewhere-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.4rem;
+  margin-top: 1.1rem;
+}
+
+.elsewhere-links a {
+  color: var(--moss);
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-decoration-color: var(--gold);
+  text-underline-offset: 4px;
+}
+
+.elsewhere-links a:hover {
+  color: var(--ink);
+  text-decoration-thickness: 2px;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 760px) {
+  .contact-wrap {
+    width: min(100% - 2.5rem, 560px);
+  }
+
+  .hero-layout {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding-block: 4rem 1.5rem;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(3.35rem, 12vw, 5rem);
+  }
+
+  .hero-art {
+    width: min(72%, 300px);
+    margin: -0.3rem auto 0;
+    justify-self: center;
+  }
+
+  .contact-content {
+    padding-block: 3.5rem 4rem;
+  }
+
+  .section-intro {
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-description {
+    margin-top: 1rem;
+  }
+
+  .topic-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .topic-card {
+    min-height: 245px;
+  }
+
+  .contact-bottom {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-wrap {
+    width: min(100% - 2rem, 560px);
+  }
+
+  .hero-layout {
+    padding-top: 3.5rem;
+  }
+
+  .hero-lead {
+    font-size: 1rem;
+  }
+
+  .email-panel {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.4rem;
+    padding: 1.5rem;
+  }
+
+  .elsewhere-panel {
+    padding: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
 
 <i18n lang="yaml">
 en:

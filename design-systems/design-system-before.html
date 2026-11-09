@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Just Bread — Previous design system</title>
+  <style>
+    :root {
+      --gold: #ffb300;
+      --gold-soft: #fff2d1;
+      --ink: #2b2118;
+      --text: #62574d;
+      --brown: #80571f;
+      --brown-soft: #9b6a27;
+      --paper: #fbfbfb;
+      --white: #fff;
+      --line: #eee7dd;
+      --gray: #f0f0f0;
+      --shadow: 0 8px 28px rgb(50 35 20 / 5%);
+      --round: 24px;
+      --font: Poppins, "Avenir Next", Avenir, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 400 15px/1.65 var(--font);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+    .topbar {
+      display: flex; align-items: center; justify-content: space-between;
+      min-height: 74px; border-bottom: 1px solid var(--line);
+      font-size: 12px; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; }
+    .brand-mark {
+      display: grid; width: 30px; height: 30px; border-radius: 50%;
+      background: var(--gold); color: var(--ink); place-items: center;
+      font-size: 18px;
+    }
+    .topbar-note { color: var(--text); font-weight: 500; letter-spacing: .04em; }
+    .intro { padding: 66px 0 42px; }
+    .kicker {
+      margin: 0 0 14px; color: var(--brown-soft); font-size: 11px;
+      font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 800px; margin-bottom: 14px; font-size: clamp(38px, 6vw, 68px); line-height: 1.08; letter-spacing: -.055em; }
+    .intro > p:last-child { max-width: 650px; margin-bottom: 0; color: var(--text); font-size: 17px; }
+    .section { padding: 34px 0 64px; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 22px; }
+    .section-head h2 { margin: 0; font-size: 25px; letter-spacing: -.04em; }
+    .section-head p { max-width: 490px; margin: 0; color: var(--text); font-size: 13px; }
+    .eyebrow { color: var(--brown-soft); font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .swatch {
+      overflow: hidden; border: 1px solid var(--line); border-radius: 16px;
+      background: var(--white); box-shadow: var(--shadow);
+    }
+    .swatch-color { height: 92px; }
+    .swatch-info { padding: 12px 14px 14px; }
+    .swatch-info strong, .swatch-info code { display: block; }
+    .swatch-info strong { font-size: 12px; }
+    .swatch-info code { margin-top: 3px; color: var(--text); font-size: 11px; }
+    .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
+    .type-sample {
+      padding: 28px; border: 1px solid var(--line); border-radius: var(--round);
+      background: var(--white);
+    }
+    .type-display { margin: 8px 0 12px; font-size: clamp(32px, 4vw, 48px); line-height: 1.08; letter-spacing: -.05em; }
+    .type-body { color: var(--text); }
+    .type-label { color: var(--brown-soft); font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .scale { display: grid; gap: 11px; padding: 20px; border: 1px solid var(--line); background: white; }
+    .scale-row { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; border-bottom: 1px solid #f1ede6; padding-bottom: 8px; }
+    .scale-row:last-child { border: 0; padding: 0; }
+    .scale-row span:last-child { color: var(--text); font: 11px ui-monospace, monospace; }
+    .preview { margin-top: 16px; overflow: hidden; border: 1px solid var(--line); border-radius: var(--round); background: var(--white); }
+    .preview-label {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 16px; border-bottom: 1px solid var(--line);
+      color: var(--text); font-size: 10px; font-weight: 700;
+      letter-spacing: .15em; text-transform: uppercase;
+    }
+    .preview-label span:last-child { color: var(--brown-soft); }
+    .faq-preview { padding: 20px; }
+    .faq-banner { padding: 24px; background: var(--gold); text-align: center; }
+    .faq-banner .eyebrow { color: #694815; }
+    .faq-banner h3 { margin: 4px 0 0; font-size: 25px; }
+    .faq-row { padding: 16px 2px; border-bottom: 1px solid #d5d5d5; }
+    .faq-row:last-child { border: 0; }
+    .faq-row h4 { margin: 0; font-size: 14px; }
+    .faq-row p { margin: 5px 0 0; color: var(--text); font-size: 13px; }
+    .contact-preview { padding: 24px; background: var(--ink); color: white; }
+    .contact-preview .eyebrow { color: var(--gold); }
+    .contact-preview h3 { margin: 8px 0; font-size: 34px; line-height: 1.1; }
+    .contact-preview > p { max-width: 430px; margin-bottom: 20px; color: rgb(255 255 255 / 78%); font-size: 13px; }
+    .contact-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .mini-card { min-height: 110px; padding: 12px; border-radius: 16px; background: white; color: var(--ink); }
+    .mini-card b { display: block; margin: 5px 0; font-size: 12px; }
+    .mini-card small { color: var(--text); font-size: 10px; }
+    .mini-icon { color: var(--brown); font-size: 17px; }
+    .consent-preview {
+      width: min(100%, 440px); margin-left: auto; padding: 20px;
+      border: 1px solid #e5e7eb; background: white;
+      box-shadow: 0 12px 34px rgb(0 0 0 / 12%);
+    }
+    .consent-preview h3 { margin: 0; font-size: 18px; letter-spacing: -.03em; }
+    .consent-preview p { margin: 7px 0 14px; color: var(--text); font-size: 12px; line-height: 1.55; }
+    .button-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .button {
+      min-height: 40px; padding: 9px 13px; border: 1px solid var(--ink);
+      background: transparent; color: var(--ink); font: 700 11px var(--font);
+    }
+    .button.primary { border-color: var(--gold); background: var(--gold); }
+    .consent-link { display: inline-block; margin-top: 10px; font-size: 11px; }
+    .tokens {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+      margin-top: 18px;
+    }
+    .token { padding: 14px; border: 1px solid var(--line); background: #fff; }
+    .token strong { display: block; font-size: 12px; }
+    .token span { color: var(--text); font: 11px ui-monospace, monospace; }
+    .footer { padding: 26px 0 38px; border-top: 1px solid var(--line); color: var(--text); font-size: 11px; }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 32px, 620px); }
+      .topbar-note { display: none; }
+      .intro { padding-top: 45px; }
+      .section-head, .columns { display: block; }
+      .section-head p { margin-top: 10px; }
+      .columns > * + * { margin-top: 18px; }
+      .grid { grid-template-columns: repeat(2, 1fr); }
+      .tokens { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 440px) {
+      .contact-cards { grid-template-columns: 1fr; }
+      .mini-card { min-height: auto; }
+      .swatch-color { height: 65px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar wrap">
+    <div class="brand"><span class="brand-mark">✳</span> Just Bread <span class="topbar-note">/ Previous visual system</span></div>
+    <span class="topbar-note">Reference · 01</span>
+  </header>
+
+  <main class="wrap">
+    <section class="intro">
+      <p class="kicker">Design language · archived snapshot</p>
+      <h1>Warm, familiar, and built around the bread.</h1>
+      <p>The earlier FAQ and contact pages used a friendly Poppins-led interface: golden highlights, dark-brown copy, white cards, and soft rounded corners. This page records those visual foundations and the original component direction.</p>
+    </section>
+
+    <section class="section" aria-labelledby="color-title">
+      <div class="section-head">
+        <div><p class="eyebrow">01 / Palette</p><h2 id="color-title">A sunny, flour-dusted palette</h2></div>
+        <p>Golden yellow is the unmistakable brand accent; warm dark brown carries headings and primary actions.</p>
+      </div>
+      <div class="grid">
+        <div class="swatch"><div class="swatch-color" style="background:#ffb300"></div><div class="swatch-info"><strong>Brand gold</strong><code>#FFB300 · primary accent</code></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#2b2118"></div><div class="swatch-info"><strong>Bread crust</strong><code>#2B2118 · hero / ink</code></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#80571f"></div><div class="swatch-info"><strong>Toasted brown</strong><code>#80571F · links / actions</code></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#fff2d1"></div><div class="swatch-info"><strong>Butter cream</strong><code>#FFF2D1 · warm panel</code></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#fbfbfb"></div><div class="swatch-info"><strong>Soft white</strong><code>#FBFBFB · page canvas</code></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#62574d"></div><div class="swatch-info"><strong>Flour-grey</strong><code>#62574D · body copy</code></div></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="type-title">
+      <div class="section-head">
+        <div><p class="eyebrow">02 / Typography</p><h2 id="type-title">One friendly voice</h2></div>
+        <p>Poppins was used for both display and body text. Weight, scale, and color did the work of creating hierarchy.</p>
+      </div>
+      <div class="columns">
+        <div class="type-sample">
+          <span class="type-label">Poppins · 600 / display</span>
+          <h3 class="type-display">Let’s talk bread.</h3>
+          <p class="type-body">A question, a recipe idea, or something not quite working? Pick a topic and drop us a line.</p>
+        </div>
+        <div class="scale" aria-label="Typography scale">
+          <div class="scale-row"><strong style="font-size:30px">Page title</strong><span>48–60 / 1.1</span></div>
+          <div class="scale-row"><strong style="font-size:21px">Section heading</strong><span>30–36 / 1.2</span></div>
+          <div class="scale-row"><strong style="font-size:16px">Card title</strong><span>20 / 1.35</span></div>
+          <div class="scale-row"><span style="font-size:14px">Body copy and helper text</span><span>16–20 / 1.6</span></div>
+          <div class="scale-row"><span style="font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase">Eyebrow / label</span><span>12 / 1.4</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="components-title">
+      <div class="section-head">
+        <div><p class="eyebrow">03 / Components</p><h2 id="components-title">The original page patterns</h2></div>
+        <p>Generous rounded surfaces and clear, uncomplicated paths to answers and email.</p>
+      </div>
+      <div class="columns">
+        <article class="preview">
+          <div class="preview-label"><span>FAQ page</span><span>Gold masthead · divided list</span></div>
+          <div class="faq-banner"><p class="eyebrow">Just Bread</p><h3>Frequently asked questions</h3></div>
+          <div class="faq-preview">
+            <div class="faq-row"><h4>Where can I download the app?</h4><p>Available on the Apple App Store and Google Play.</p></div>
+            <div class="faq-row"><h4>What languages are supported?</h4><p>Polish and English are currently supported.</p></div>
+            <div class="faq-row"><h4>Need a hand with a recipe?</h4><p><a href="mailto:justbreadapp@gmail.com">Email us for help</a></p></div>
+          </div>
+        </article>
+        <article class="preview">
+          <div class="preview-label"><span>Contact page</span><span>Dark hero · topic cards</span></div>
+          <div class="contact-preview">
+            <p class="eyebrow">A little note goes a long way</p>
+            <h3>Let’s talk bread.</h3>
+            <p>Pick a topic and send us a note. We’ll get it to the right place.</p>
+            <div class="contact-cards">
+              <div class="mini-card"><span class="mini-icon">✳</span><b>App support</b><small>Something not working?</small></div>
+              <div class="mini-card"><span class="mini-icon">◌</span><b>Recipes</b><small>Ask about your bake.</small></div>
+              <div class="mini-card"><span class="mini-icon">♡</span><b>Feedback</b><small>Share an idea.</small></div>
+            </div>
+          </div>
+        </article>
+      </div>
+      <article class="preview">
+        <div class="preview-label"><span>Analytics consent</span><span>White panel · gold primary action</span></div>
+        <div class="faq-preview">
+          <div class="consent-preview">
+            <h3>Site Analytics</h3>
+            <p>We use analytics to understand how people use the website. Providing consent is optional.</p>
+            <div class="button-row"><button class="button" type="button">Decline</button><button class="button primary" type="button">Accept</button></div>
+            <a class="consent-link" href="#privacy">Privacy Policy</a>
+          </div>
+        </div>
+      </article>
+      <div class="tokens" aria-label="Shape and elevation tokens">
+        <div class="token"><strong>Card radius</strong><span>24px / rounded-3xl</span></div>
+        <div class="token"><strong>Card border</strong><span>#EEE7DD · 1px</span></div>
+        <div class="token"><strong>Card shadow</strong><span>0 8px 28px · 5%</span></div>
+        <div class="token"><strong>Primary action</strong><span>#2B2118 or #FFB300</span></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="wrap">Just Bread · Previous visual system · Static reference</div></footer>
+</body>
+</html>
