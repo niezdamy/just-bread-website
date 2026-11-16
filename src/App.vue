@@ -77,7 +77,12 @@ onUnmounted(() => {
   z-index: 50;
   right: max(1.25rem, env(safe-area-inset-right));
   bottom: max(1.25rem, env(safe-area-inset-bottom));
+  box-sizing: border-box;
   width: min(25rem, calc(100vw - 2.5rem));
+  max-height: calc(100vh - 2.5rem);
+  max-height: calc(100dvh - 2.5rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
   padding: 1.25rem;
   border: 1px solid #eadfc8;
   border-top: 4px solid #ffb300;
@@ -214,6 +219,8 @@ onUnmounted(() => {
     right: max(0.75rem, env(safe-area-inset-right));
     bottom: max(0.75rem, env(safe-area-inset-bottom));
     width: calc(100vw - 1.5rem);
+    max-height: calc(100vh - 1.5rem);
+    max-height: calc(100dvh - 1.5rem);
     padding: 1rem;
   }
 }

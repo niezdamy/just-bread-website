@@ -1,5 +1,5 @@
 import { mount } from "@vue/test-utils";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { createI18n } from "vue-i18n";
 import App from "./App.vue";
 
@@ -48,5 +48,24 @@ describe("analytics consent", () => {
     expect(wrapper.text()).toContain("Decline analytics");
     expect(wrapper.text()).toContain("Allow analytics");
     wrapper.unmount();
+  });
+
+  it("keeps the consent banner usable when localStorage is unavailable", async () => {
+    vi.spyOn(Storage.prototype, "getItem").mockImplementation(() => {
+      throw new DOMException("Storage is unavailable");
+    });
+    vi.spyOn(Storage.prototype, "setItem").mockImplementation(() => {
+      throw new DOMException("Storage is unavailable");
+    });
+    vi.spyOn(console, "warn").mockImplementation(() => {});
+
+    const wrapper = mountApp();
+    expect(wrapper.find('[role="region"]').exists()).toBe(true);
+
+    await wrapper.get(".consent-decline").trigger("click");
+
+    expect(wrapper.find('[role="region"]').exists()).toBe(false);
+    wrapper.unmount();
+    vi.restoreAllMocks();
   });
 });
