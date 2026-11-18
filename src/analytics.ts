@@ -9,6 +9,8 @@ const googleAnalyticsMeasurementId = import.meta.env.VITE_GA_MEASUREMENT_ID;
 
 let isInitialized = false;
 let isGoogleAnalyticsInitialized = false;
+let inMemoryConsent: AnalyticsConsent | null = null;
+let hasWarnedAboutConsentStorage = false;
 
 declare global {
   interface Window {
@@ -23,9 +25,23 @@ export function getAnalyticsConsent(): AnalyticsConsent | null {
     return null;
   }
 
-  const value = window.localStorage.getItem(CONSENT_STORAGE_KEY);
+  try {
+    const value = window.localStorage.getItem(CONSENT_STORAGE_KEY);
+    inMemoryConsent = value === "granted" || value === "denied" ? value : null;
+    return inMemoryConsent;
+  } catch (error) {
+    warnAboutConsentStorage(error);
+    return inMemoryConsent;
+  }
+}
 
-  return value === "granted" || value === "denied" ? value : null;
+function warnAboutConsentStorage(error: unknown) {
+  if (hasWarnedAboutConsentStorage) {
+    return;
+  }
+
+  console.warn("Unable to access analytics consent in localStorage; using in-memory consent for this page.", error);
+  hasWarnedAboutConsentStorage = true;
 }
 
 export function setAnalyticsConsent(consent: AnalyticsConsent) {
@@ -33,7 +49,12 @@ export function setAnalyticsConsent(consent: AnalyticsConsent) {
     return;
   }
 
-  window.localStorage.setItem(CONSENT_STORAGE_KEY, consent);
+  inMemoryConsent = consent;
+  try {
+    window.localStorage.setItem(CONSENT_STORAGE_KEY, consent);
+  } catch (error) {
+    warnAboutConsentStorage(error);
+  }
   window.dispatchEvent(new CustomEvent("analytics-consent-changed", { detail: consent }));
 
   if (consent === "granted") {
