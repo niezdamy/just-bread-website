@@ -94,15 +94,21 @@ export function initializeAnalytics() {
 }
 
 function initializeGoogleAnalytics() {
-  if (isGoogleAnalyticsInitialized || !googleAnalyticsMeasurementId) {
+  if (!googleAnalyticsMeasurementId) {
+    return;
+  }
+
+  window[`ga-disable-${googleAnalyticsMeasurementId}`] = false;
+  if (isGoogleAnalyticsInitialized) {
     return;
   }
 
   window.dataLayer ??= [];
-  window.gtag ??= (...arguments_: unknown[]) => {
-    window.dataLayer?.push(arguments_);
+  window.gtag ??= function () {
+    // Google Tag Manager expects an arguments object, not a rest-parameter array.
+    // eslint-disable-next-line prefer-rest-params
+    window.dataLayer?.push(arguments);
   };
-  window[`ga-disable-${googleAnalyticsMeasurementId}`] = false;
   window.gtag("js", new Date());
   window.gtag("config", googleAnalyticsMeasurementId, { send_page_view: false });
 
