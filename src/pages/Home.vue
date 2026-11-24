@@ -13,9 +13,9 @@ const { t } = useI18n({
 useHead({
   title: "Just Bread - domowe pieczenie chleba",
   meta: [
-    { name: "description", content: "Just Bread to aplikacja z przepisami, kalkulatorem hydracji i wskazówkami do domowego pieczenia chleba." },
+    { name: "description", content: "Przepisy na domowe pieczywo, lista przepisów, kalkulator ciasta na pizzę i kalkulator hydratacji. Just Bread pomaga w domowym pieczeniu." },
     { property: "og:title", content: "Just Bread - domowe pieczenie chleba" },
-    { property: "og:description", content: "Przepisy i narzędzia, które prowadzą krok po kroku przez domowe pieczenie chleba." },
+    { property: "og:description", content: "Przeglądaj przepisy na domowe pieczywo i skorzystaj z kalkulatora pizzy lub hydratacji." },
     { property: "og:type", content: "website" },
   ],
   link: [{ rel: "canonical", href: canonicalUrl("/") }],
@@ -53,6 +53,26 @@ useHead({
       </div>
       <img class="object-scale-down max-h-96 my-8 sm:max-h-full" src="../assets/home_1.png" :alt="t('home_screen_alt')" width="440" height="700" fetchpriority="high" />
     </div>
+
+    <section class="mx-6 my-12 rounded-3xl bg-gray p-6 sm:mx-12 sm:p-10 lg:mx-20" aria-labelledby="home-tools-heading">
+      <header class="max-w-3xl">
+        <p class="text-sm font-semibold uppercase tracking-widest text-[#80571f]">{{ t('tools_eyebrow') }}</p>
+        <h2 id="home-tools-heading" class="mt-3 text-3xl font-semibold">{{ t('tools_title') }}</h2>
+        <p class="mt-3 text-lg">{{ t('tools_intro') }}</p>
+      </header>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2">
+        <RouterLink to="/recipes" class="flex flex-col border border-gray-300 bg-white p-6 transition-colors hover:border-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray_dark">
+          <h3 class="text-xl font-semibold">{{ t('recipes_card_title') }}</h3>
+          <p class="mt-3 flex-1">{{ t('recipes_card_text') }}</p>
+          <span class="mt-6 font-semibold underline">{{ t('recipes_card_link') }} <span aria-hidden="true">→</span></span>
+        </RouterLink>
+        <RouterLink to="/pizza-calculator" class="flex flex-col border border-gray-300 bg-white p-6 transition-colors hover:border-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray_dark">
+          <h3 class="text-xl font-semibold">{{ t('pizza_card_title') }}</h3>
+          <p class="mt-3 flex-1">{{ t('pizza_card_text') }}</p>
+          <span class="mt-6 font-semibold underline">{{ t('pizza_card_link') }} <span aria-hidden="true">→</span></span>
+        </RouterLink>
+      </div>
+    </section>
 
     <img class="object-scale-down" src="../assets/home_2.png" :alt="t('sourdough_bread_alt')" width="1360" height="440" loading="lazy" />
 
@@ -188,6 +208,15 @@ en:
   homemade_bakes_alt: Homemade bakes made with Just Bread
   app_home_screen_alt: Just Bread app home screen
   recipe_image_alt: A recipe from the Just Bread app
+  tools_eyebrow: Recipes and baking tools
+  tools_title: Recipes and calculators for home baking
+  tools_intro: Browse recipes for homemade bread, rolls, and pizza, or calculate the ingredients for Neapolitan pizza dough.
+  recipes_card_title: Homemade baking recipes
+  recipes_card_text: Explore the recipe list and find a tried-and-tested recipe for bread, rolls, or pizza.
+  recipes_card_link: Browse all recipes
+  pizza_card_title: Neapolitan pizza dough calculator
+  pizza_card_text: Calculate the flour, water, salt, and yeast for your pizza dough.
+  pizza_card_link: Open the pizza calculator
   welcome: |
     Healthy, delicious bread
     at home
@@ -244,6 +273,15 @@ pl:
   homemade_bakes_alt: Domowe wypieki przygotowane z Just Bread
   app_home_screen_alt: Ekran główny aplikacji Just Bread
   recipe_image_alt: Przepis z aplikacji Just Bread
+  tools_eyebrow: Przepisy i narzędzia do pieczenia
+  tools_title: Przepisy i kalkulatory do domowego pieczenia
+  tools_intro: Przejrzyj listę przepisów na domowe pieczywo lub oblicz składniki na ciasto do pizzy neapolitańskiej.
+  recipes_card_title: Przepisy na domowe wypieki
+  recipes_card_text: Znajdź sprawdzony przepis na chleb, bułki lub pizzę na liście przepisów Just Bread.
+  recipes_card_link: Zobacz listę przepisów
+  pizza_card_title: Kalkulator ciasta na pizzę neapolitańską
+  pizza_card_text: Oblicz ilość mąki, wody, soli i drożdży potrzebnych do przygotowania ciasta na pizzę.
+  pizza_card_link: Otwórz kalkulator pizzy
   welcome: |
     Zdrowy i pyszny chleb
     w Twoim domu
