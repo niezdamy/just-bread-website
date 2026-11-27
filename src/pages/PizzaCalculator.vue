@@ -9,11 +9,11 @@ const { t } = useI18n({ inheritLocale: true });
 const pageUrl = canonicalUrl("/pizza-calculator");
 
 useHead({
-  title: "Kalkulator ciasta na pizzę neapolitańską | Just Bread",
+  title: "Kalkulator ciasta na pizzę | Just Bread",
   meta: [
-    { name: "description", content: "Kalkulator ciasta na pizzę neapolitańską: oblicz ilość mąki, wody, soli i drożdży dla wybranej liczby pizz, masy kulek oraz hydratacji." },
-    { property: "og:title", content: "Kalkulator ciasta na pizzę neapolitańską | Just Bread" },
-    { property: "og:description", content: "Oblicz składniki ciasta na pizzę neapolitańską i poznaj prosty plan fermentacji." },
+    { name: "description", content: "Oblicz składniki ciasta na pizzę neapolitańską, klasyczną lub rzymską dla wybranej liczby porcji i masy kulek." },
+    { property: "og:title", content: "Kalkulator ciasta na pizzę | Just Bread" },
+    { property: "og:description", content: "Oblicz składniki ciasta na pizzę neapolitańską, klasyczną lub rzymską." },
     { property: "og:type", content: "website" },
     { property: "og:url", content: pageUrl },
     { name: "twitter:card", content: "summary" },
@@ -24,8 +24,8 @@ useHead({
     innerHTML: JSON.stringify({
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      name: "Kalkulator ciasta na pizzę neapolitańską",
-      description: "Kalkulator ilości mąki, wody, soli i drożdży do ciasta na pizzę neapolitańską.",
+      name: "Kalkulator ciasta na pizzę",
+      description: "Kalkulator ilości składników do ciasta na pizzę neapolitańską, klasyczną lub rzymską.",
       url: pageUrl,
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
@@ -70,23 +70,38 @@ const portions = ref(4);
 const doughBallWeight = ref(250);
 const hydration = ref(65);
 const yeastType = ref<"fresh" | "dry">("fresh");
+type PizzaType = "neapolitan" | "classic" | "roman";
+const pizzaType = ref<PizzaType>("neapolitan");
+const pizzaProfiles: Record<PizzaType, { hydration: number; saltPercentage: number; oilPercentage: number }> = {
+  neapolitan: { hydration: 65, saltPercentage: 3, oilPercentage: 0 },
+  classic: { hydration: 60, saltPercentage: 2.5, oilPercentage: 0 },
+  roman: { hydration: 58, saltPercentage: 2.5, oilPercentage: 2 },
+};
 
 const yeastPercentage = computed(() => yeastType.value === "fresh" ? 0.1 : 0.04);
+const pizzaProfile = computed(() => pizzaProfiles[pizzaType.value]);
 const flour = computed(() => {
-  const denominator = 1 + hydration.value / 100 + 0.03 + yeastPercentage.value / 100;
+  const denominator = 1 + hydration.value / 100 + pizzaProfile.value.saltPercentage / 100
+    + pizzaProfile.value.oilPercentage / 100 + yeastPercentage.value / 100;
   return (portions.value * doughBallWeight.value) / denominator;
 });
 const water = computed(() => flour.value * hydration.value / 100);
-const salt = computed(() => flour.value * 0.03);
+const salt = computed(() => flour.value * pizzaProfile.value.saltPercentage / 100);
+const oil = computed(() => flour.value * pizzaProfile.value.oilPercentage / 100);
 const yeast = computed(() => flour.value * yeastPercentage.value / 100);
 
 function formatWeight(value: number) {
   return value < 10 ? value.toFixed(1) : Math.round(value).toString();
 }
 
+function updatePizzaType() {
+  hydration.value = pizzaProfiles[pizzaType.value].hydration;
+}
+
 function resetCalculator() {
   portions.value = 4;
   doughBallWeight.value = 250;
+  pizzaType.value = "neapolitan";
   hydration.value = 65;
   yeastType.value = "fresh";
 }
@@ -103,6 +118,30 @@ function resetCalculator() {
     <section class="mx-auto grid max-w-5xl gap-8 px-6 py-10 lg:grid-cols-[1.05fr_0.95fr] lg:py-16">
       <form class="border border-gray-300 bg-white p-6 sm:p-8" @submit.prevent>
         <h2 class="text-2xl font-semibold">{{ t("settings") }}</h2>
+
+        <div class="mt-7">
+          <label for="pizza-type" class="font-semibold">{{ t("pizza_type") }}</label>
+          <div class="mt-2 flex items-center gap-2">
+            <select id="pizza-type" v-model="pizzaType" class="min-w-0 flex-1 border border-gray-400 bg-white px-3 py-3" @change="updatePizzaType">
+              <option value="neapolitan">{{ t("neapolitan") }}</option>
+              <option value="classic">{{ t("classic") }}</option>
+              <option value="roman">{{ t("roman") }}</option>
+            </select>
+            <span class="group relative inline-flex">
+              <button
+                type="button"
+                class="flex h-8 w-8 items-center justify-center rounded-full border border-gray-500 font-semibold"
+                :aria-label="t('pizza_type_info')"
+                aria-describedby="pizza-type-tooltip"
+              >i</button>
+              <span
+                id="pizza-type-tooltip"
+                role="tooltip"
+                class="absolute right-0 top-full z-10 mt-2 hidden w-64 border border-gray-300 bg-white p-3 text-sm shadow-lg group-hover:block group-focus-within:block"
+              >{{ t(`pizza_type_${pizzaType}_tooltip`) }}</span>
+            </span>
+          </div>
+        </div>
 
         <div class="mt-7 grid gap-6 sm:grid-cols-2">
           <label class="block">
@@ -143,7 +182,7 @@ function resetCalculator() {
       </form>
 
       <section class="bg-gray p-6 sm:p-8" aria-live="polite" aria-labelledby="recipe-title">
-        <p class="text-sm font-semibold uppercase tracking-widest">{{ t("neapolitan") }}</p>
+        <p class="text-sm font-semibold uppercase tracking-widest">{{ t(pizzaType) }}</p>
         <h2 id="recipe-title" class="mt-2 text-2xl font-semibold">{{ t("recipe") }}</h2>
         <p class="mt-2">{{ t("recipe_for", { count: portions, weight: doughBallWeight }) }}</p>
 
@@ -151,6 +190,7 @@ function resetCalculator() {
           <div class="flex items-center justify-between py-4"><dt>{{ t("flour") }}</dt><dd class="text-xl font-semibold">{{ formatWeight(flour) }} g</dd></div>
           <div class="flex items-center justify-between py-4"><dt>{{ t("water") }}</dt><dd class="text-xl font-semibold">{{ formatWeight(water) }} g</dd></div>
           <div class="flex items-center justify-between py-4"><dt>{{ t("salt") }}</dt><dd class="text-xl font-semibold">{{ formatWeight(salt) }} g</dd></div>
+          <div v-if="pizzaProfile.oilPercentage > 0" class="flex items-center justify-between py-4"><dt>{{ t("olive_oil") }}</dt><dd class="text-xl font-semibold">{{ formatWeight(oil) }} g</dd></div>
           <div class="flex items-center justify-between py-4"><dt>{{ t("yeast_amount", { type: t(yeastType === 'fresh' ? 'fresh_yeast' : 'dry_yeast') }) }}</dt><dd class="text-xl font-semibold">{{ formatWeight(yeast) }} g</dd></div>
         </dl>
 
@@ -195,9 +235,14 @@ function resetCalculator() {
 
 <i18n lang="yaml">
 en:
-  title: Neapolitan pizza calculator
-  subtitle: Calculate the ingredients for a light, airy pizza dough.
+  title: Pizza dough calculator
+  subtitle: Calculate ingredients for Neapolitan, classic, or Roman pizza dough.
   settings: Dough settings
+  pizza_type: Pizza style
+  pizza_type_info: Learn about the differences between pizza styles
+  pizza_type_neapolitan_tooltip: Neapolitan dough is soft and airy, with a pronounced crust. It suits a very hot oven and a short bake.
+  pizza_type_classic_tooltip: Classic round pizza has a more even, less airy base than Neapolitan. This balanced dough is a good all-purpose starting point.
+  pizza_type_roman_tooltip: Roman tonda is rolled or stretched very thin for a crisp, cracker-like base. This profile includes olive oil; it is different from thicker Roman al taglio.
   portions: Number of pizzas
   ball_weight: Dough ball weight
   hydration: Hydration
@@ -207,17 +252,20 @@ en:
   dry_yeast: Dry yeast
   reset: Reset settings
   neapolitan: Neapolitan pizza
+  classic: Classic pizza
+  roman: Roman tonda
   recipe: Your ingredients
   recipe_for: "Makes {count} dough balls, {weight} g each"
   flour: Type 00 flour
   water: Water
   salt: Salt
+  olive_oil: Olive oil
   yeast_amount: "{type}"
   tip_title: A simple fermentation schedule
   tip: Let the dough rest at room temperature for 2 hours, then refrigerate it for 18–24 hours. Take it out 1–2 hours before baking.
   how_it_works_title: How the calculator works
-  how_it_works_text: Enter the number and weight of dough balls, then choose hydration and yeast type. The calculator uses the total dough weight to calculate the flour, water, salt, and yeast.
-  method_text: The default formula uses 3% salt and 65% hydration, calculated against the flour weight. Fresh yeast is set to 0.1% of flour weight; dry yeast is set to 0.04%.
+  how_it_works_text: Choose a pizza style, then enter the number and weight of dough balls and select hydration and yeast type. The calculator uses the total dough weight to calculate each ingredient.
+  method_text: Hydration and salt percentages depend on the selected style. Roman tonda also includes 2% olive oil. Fresh yeast is set to 0.1% of flour weight; dry yeast is set to 0.04%.
   starting_point_title: A practical starting point for pizza dough
   starting_point_text: 65% hydration is a balanced place to start when stretching dough by hand. If your flour and technique can handle wetter dough, increase hydration gradually by 1–2 percentage points.
   faq_title: Pizza dough calculator FAQ
@@ -231,10 +279,15 @@ en:
   hydration_guide_text: Understand how the water-to-flour ratio changes dough consistency and choose a value suited to your bake.
   hydration_guide_link: Read the hydration guide
 pl:
-  title: Kalkulator pizzy neapolitańskiej
-  subtitle: Oblicz ilości składników na lekkie i puszyste ciasto do pizzy.
+  title: Kalkulator ciasta na pizzę
+  subtitle: Oblicz składniki ciasta na pizzę neapolitańską, klasyczną lub rzymską.
   settings: Ustawienia ciasta
-  portions: Liczba porcji
+  pizza_type: Rodzaj pizzy
+  pizza_type_info: Poznaj różnice między rodzajami pizzy
+  pizza_type_neapolitan_tooltip: Ciasto neapolitańskie jest miękkie i puszyste, z wyraźnym rantem. Nadaje się do bardzo gorącego pieca i krótkiego wypieku.
+  pizza_type_classic_tooltip: Klasyczna pizza okrągła ma bardziej równy, mniej puszysty spód niż neapolitańska. To zrównoważone ciasto do codziennego wypieku.
+  pizza_type_roman_tooltip: Rzymska tonda jest rozciągana lub wałkowana bardzo cienko, aby spód był chrupiący. Ten profil zawiera oliwę i różni się od grubszej rzymskiej al taglio.
+  portions: Liczba pizz
   ball_weight: Masa porcji ciasta
   hydration: Hydratacja
   hydration_hint: 65% to dobry punkt wyjścia do ręcznego rozciągania ciasta.
@@ -243,17 +296,20 @@ pl:
   dry_yeast: Drożdże suszone
   reset: Przywróć ustawienia
   neapolitan: Pizza neapolitańska
+  classic: Pizza klasyczna
+  roman: Pizza rzymska tonda
   recipe: Twoje składniki
   recipe_for: "Liczba porcji: {count} × {weight} g"
   flour: Mąka typu 00
   water: Woda
   salt: Sól
+  olive_oil: Oliwa z oliwek
   yeast_amount: "{type}"
   tip_title: Prosty plan fermentacji
   tip: Zostaw ciasto na 2 godziny w temperaturze pokojowej, a następnie włóż je do lodówki na 18–24 godziny. Wyjmij je 1–2 godziny przed pieczeniem.
   how_it_works_title: Jak działa kalkulator ciasta na pizzę?
-  how_it_works_text: Podaj liczbę i masę kulek ciasta, a następnie wybierz hydratację oraz rodzaj drożdży. Kalkulator wykorzystuje całkowitą masę ciasta, aby obliczyć ilość mąki, wody, soli i drożdży.
-  method_text: Domyślna formuła zakłada 3% soli i 65% hydratacji liczonych względem masy mąki. Ilość świeżych drożdży wynosi 0,1% masy mąki, a suszonych 0,04%.
+  how_it_works_text: Wybierz rodzaj pizzy, podaj liczbę i masę kulek ciasta, a następnie ustaw hydratację i rodzaj drożdży. Kalkulator wykorzystuje całkowitą masę ciasta do obliczenia ilości każdego składnika.
+  method_text: Procent hydratacji i soli zależy od wybranego rodzaju pizzy. Ciasto rzymskie tonda zawiera dodatkowo 2% oliwy. Ilość świeżych drożdży wynosi 0,1% masy mąki, a suszonych 0,04%.
   starting_point_title: Od czego zacząć przy cieście na pizzę?
   starting_point_text: Hydratacja 65% to zrównoważony punkt wyjścia do ręcznego rozciągania ciasta. Jeśli mąka i technika pozwalają na bardziej wilgotne ciasto, zwiększaj hydratację stopniowo, o 1–2 punkty procentowe.
   faq_title: Pytania o kalkulator ciasta na pizzę
